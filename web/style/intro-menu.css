@@ -1,0 +1,42 @@
+
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+li{
+    display: inline-block;
+}
+
+
+.menu{
+    margin-top: 50px;
+    font-size: 1.3em;
+    border-top: 3px solid silver;
+    border-bottom: 3px solid silver;    
+}
+
+
+.ul-menu{
+
+}
+
+
+.li-menu{
+
+}
+
+
+.a-menu{
+    padding: 20px 40px;
+}
+
+
+.countdown{
+    padding: 20px 40px;
+}
+
+
