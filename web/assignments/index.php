@@ -24,7 +24,7 @@
         </div>
 
         <div class="content">
-            
+            <h3>Coming Soon</h3>
         </div>
 
         <div class="footer">
