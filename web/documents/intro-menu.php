@@ -13,7 +13,7 @@
             </a>
         </li>
         <li class="li-menu">
-            <a class="a-menu" href="../assingments/">
+            <a class="a-menu" href="../assingments/index.php">
                 Assingments
             </a>
         </li>
