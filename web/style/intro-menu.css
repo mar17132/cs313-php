@@ -32,11 +32,32 @@ li{
 
 .a-menu{
     padding: 20px 40px;
+    color: white;
+    text-decoration: none;
+    outline: none;
+}
+
+
+.a-menu:hover{
+    background-color: silver;
+    font-weight: bold;
+    color: black;
 }
 
 
 .countdown{
     padding: 20px 40px;
+}
+
+
+.countdown .lable-span{
+    float: left;
+}
+
+
+.countdown ul{
+    display: inline;
+    margin-left: 25px;
 }
 
 

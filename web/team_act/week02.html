@@ -4,16 +4,20 @@
     <head>
 	<meta charset="utf-8" />
         <title>week02 team act</title>
-        <link ref="stylesheet" href="../scripts/bootstrap/4.2.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../scripts/bootstrap/4.2.1/css/bootstrap.min.css" />
         <script src="../scripts/jquery/jquery-3.3.1.min.js" ></script>
         <script src="../scripts/bootstrap/4.2.1/js/bootstrap.bundle.min.js" ></script>
         <style type="text/css">
             .threeBox{
                 font-size: 1.2em;
-                width: 400px;
                 height: 400px;
                 border: 1px solid black;
                 float: left;
+            }
+
+            .row{
+                margin: 0;
+                padding: 0;
             }
 
             .threeBox:hover{
@@ -23,7 +27,7 @@
             .control{
                 position: relative;
                 display: block;
-                width: 400px;
+                width: 600px;
                 height: 150px;
                 margin-top: 50px;
                 float: left;
@@ -33,18 +37,29 @@
     </head>
     <body>
 
-        <div class="threeBox" id="div1">DIV one</div>
-        <div class="threeBox" id="div2">DIV Two</div>
-        <div class="threeBox" id="div3">DIV Three</div>
+        <div class="row" >
+            <div class="threeBox col" id="div1">DIV one</div>
+            <div class="threeBox col" id="div2">DIV Two</div>
+            <div class="threeBox col" id="div3">DIV Three</div>
+        </div>
 
         <br/>
 
         <div class="control">
             <input type="button" onclick="clicked()" value="Click Me!" />
             <br/><br/><br/>
+            
             <label for="changeDIV1Color" >Change color DIV one</label>
             <input type="text" id="changeDIV1Color" name="changeDIV1Color" />
             <input type="button" onclick="changeColor(document.getElementById('changeDIV1Color').value,document.getElementById('div1'))" value="DIV one color" />
+            <br/><br/><br/>
+
+            
+            <label for="changBackgroundColor" >Change color backgroundColor</label>
+            <input type="text" id="changBackgroundColor" name="changBackgroundColor" />
+            <input type="button" onclick="$('body').css('background-color',$('#changBackgroundColor').val())" value="DIV one color" />
+           
+
         </div>
 
         <script>

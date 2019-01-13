@@ -8,17 +8,20 @@
 <div class="menu">
     <ul class="ul-menu">
         <li class="li-menu">
-            <a class="a-menu" href="../index.php">
+            <a class="a-menu" href="index.html">
                 Home
             </a>
         </li>
         <li class="li-menu">
-            <a class="a-menu" href="../assingments/index.php">
+            <a class="a-menu" href="assingments/">
                 Assingments
             </a>
         </li>
         <li>
             <div class="countdown">
+                <span class="lable-span">
+                    Semester End Count.
+                </span>
                 <ul>
                     <li>
                         D:
