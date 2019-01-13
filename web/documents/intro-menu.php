@@ -8,12 +8,12 @@
 <div class="menu">
     <ul class="ul-menu">
         <li class="li-menu">
-            <a class="a-menu" href="index.html">
+            <a class="a-menu" href="../index.html">
                 Home
             </a>
         </li>
         <li class="li-menu">
-            <a class="a-menu" href="assingments/">
+            <a class="a-menu" href="../assingments/">
                 Assingments
             </a>
         </li>
