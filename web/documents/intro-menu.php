@@ -14,7 +14,7 @@
         </li>
         <li class="li-menu">
             <a class="a-menu" href="../assignments/index.php">
-                Assingments
+                Assignments
             </a>
         </li>
         <li>
