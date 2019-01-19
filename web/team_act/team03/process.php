@@ -1,7 +1,7 @@
 
 
 <?php
-
+//continets array
 $continets = array(
     "na"=>"North America",
     "sa"=>"South America",
