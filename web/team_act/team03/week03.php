@@ -2,6 +2,12 @@
 
 <?php
 
+$majorArray = array(
+    "CS"=>"Computer Science",
+    "WDD"=>"Web Design and Development",
+    "CIT"=>"Computer information Technology",
+    "CE"=>"Computer Engineering"
+);
 
 
 ?>
@@ -42,11 +48,18 @@
                 </table>
                 <br/>
                 <label>Major</label><br/>
-                <input type="radio" name="major" value="Computer Science" /> Computer Science <br/>
+               <!-- <input type="radio" name="major" value="Computer Science" /> Computer Science <br/>
                 <input type="radio" name="major" value="Web Design and Development" /> Web Design and Development <br/>
                 <input type="radio" name="major" value="Computer information Technology" /> Computer information Technology <br/>
-                <input type="radio" name="major" value="Computer Engineering" /> Computer Engineering <br/>
-                
+                <input type="radio" name="major" value="Computer Engineering" /> Computer Engineering <br/>-->
+                <?php
+                    foreach($majorArray as $major)
+                    {
+                        echo "<input type='radio' name='major' value='";
+                        echo "'$major'/>$major<br/>";
+
+                    }
+                ?>
                 <br/><br/>
                 
                 <label>Comments</label><br/>
