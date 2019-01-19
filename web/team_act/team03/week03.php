@@ -49,7 +49,7 @@
                 
                 <label>Comments</label>
                 <textarea name="comments"></textarea>
-                
+                <br/><br/>
                 <label>Continets that you have visited</label><br/>
                 <input type="checkbox" name="continets[]" value="North America" />North America <br/>
                 <input type="checkbox" name="continets[]" value="South America" />South America <br/>
