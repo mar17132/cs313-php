@@ -12,6 +12,7 @@ $continets = array(
     "an"=>"Antarctica"
 );
 
+
 ?>
 
 <!DOCTYPE HTML>
@@ -22,9 +23,10 @@ $continets = array(
         <title>week03 team act</title>
         <style type="text/css">
 
-        </style>    
+        </style>
     </head>
     <body>
+        <!--week03 team activity-->
 
         <div class="content" >
             <table>
@@ -34,7 +36,7 @@ $continets = array(
                     </td>
                     <td>
                         <span><?php echo $_POST['nameTxb']; ?></span>
-                    </td>                
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -42,7 +44,7 @@ $continets = array(
                     </td>
                     <td>
                         <span><?php echo $_POST['emailTxb']; ?></span>
-                    </td>                
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -50,7 +52,7 @@ $continets = array(
                     </td>
                     <td>
                         <span><?php echo $_POST['major']; ?></span>
-                    </td>                
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -58,8 +60,8 @@ $continets = array(
                     </td>
                     <td>
                         <span><?php echo $_POST['comments']; ?></span>
-                    </td>                
-                </tr>            
+                    </td>
+                </tr>
             </table>
             <br/><br/>
             <label>Continets that you have visited</label><br/>
@@ -69,7 +71,7 @@ $continets = array(
                     {
                         echo $continets[$selected]."<br/>";
                     }
-                
+
                 ?>
             </p>
 
