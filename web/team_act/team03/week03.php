@@ -66,13 +66,13 @@ $majorArray = array(
 
                 <br/><br/>
                 <label>Continets that you have visited</label><br/>
-                <input type="checkbox" name="continets[]" value="North America" />North America <br/>
-                <input type="checkbox" name="continets[]" value="South America" />South America <br/>
-                <input type="checkbox" name="continets[]" value="Europe" />Europe <br/>
-                <input type="checkbox" name="continets[]" value="Asia" />Asia <br/>
-                <input type="checkbox" name="continets[]" value="Africa" />Africa <br/>
-                <input type="checkbox" name="continets[]" value="Antarctica" />Antarctica <br/>
-                <input type="checkbox" name="continets[]" value="Australia" />Australia <br/>
+                <input type="checkbox" name="continets[]" value="na" />North America <br/>
+                <input type="checkbox" name="continets[]" value="sa" />South America <br/>
+                <input type="checkbox" name="continets[]" value="eu" />Europe <br/>
+                <input type="checkbox" name="continets[]" value="as" />Asia <br/>
+                <input type="checkbox" name="continets[]" value="af" />Africa <br/>
+                <input type="checkbox" name="continets[]" value="an" />Antarctica <br/>
+                <input type="checkbox" name="continets[]" value="au" />Australia <br/>
 
                 <br/><br/>
                 <input type="submit" value="submit" />

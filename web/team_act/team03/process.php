@@ -2,6 +2,15 @@
 
 <?php
 
+$continets = array(
+    "na"=>"North America",
+    "sa"=>"South America",
+    "eu"=>"Europe",
+    "as"=>"Asia",
+    "au"=>"Australia",
+    "af"=>"Africa",
+    "an"=>"Antarctica"
+);
 
 ?>
 
@@ -58,7 +67,7 @@
                 <?php
                     foreach($_POST['continets'] as $selected)
                     {
-                        echo $selected."<br/>";
+                        echo $continets[$selected]."<br/>";
                     }
                 
                 ?>
