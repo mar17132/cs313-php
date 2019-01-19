@@ -47,8 +47,11 @@
                 <input type="radio" name="major" value="Computer information Technology" /> Computer information Technology <br/>
                 <input type="radio" name="major" value="Computer Engineering" /> Computer Engineering <br/>
                 
-                <label>Comments</label>
+                <br/><br/>
+                
+                <label>Comments</label><br/><br/>
                 <textarea name="comments"></textarea>
+                
                 <br/><br/>
                 <label>Continets that you have visited</label><br/>
                 <input type="checkbox" name="continets[]" value="North America" />North America <br/>
