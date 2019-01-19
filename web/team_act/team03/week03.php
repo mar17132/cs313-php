@@ -55,8 +55,7 @@ $majorArray = array(
                 <?php
                     foreach($majorArray as $major)
                     {
-                        echo "<input type='radio' name='major' value='";
-                        echo "'$major'/>$major<br/>";
+                        echo "<input type='radio' name='major' value='".$major."'/>".$major."<br/>";
 
                     }
                 ?>
