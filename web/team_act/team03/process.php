@@ -43,7 +43,9 @@ $continets = array(
                         <label>Email</label>
                     </td>
                     <td>
-                        <span><?php echo $_POST['emailTxb']; ?></span>
+                        <a href="mailto:<?php echo $_POST['emailTxb']; ?>" target="_blank">
+                         <?php echo $_POST['emailTxb']; ?>
+                        </a>
                     </td>
                 </tr>
                 <tr>
