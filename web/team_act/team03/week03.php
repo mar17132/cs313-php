@@ -49,9 +49,9 @@
                 
                 <br/><br/>
                 
-                <label>Comments</label><br/><br/>
+                <label>Comments</label><br/>
                 <textarea name="comments"></textarea>
-                
+
                 <br/><br/>
                 <label>Continets that you have visited</label><br/>
                 <input type="checkbox" name="continets[]" value="North America" />North America <br/>
@@ -61,6 +61,9 @@
                 <input type="checkbox" name="continets[]" value="Africa" />Africa <br/>
                 <input type="checkbox" name="continets[]" value="Antarctica" />Antarctica <br/>
                 <input type="checkbox" name="continets[]" value="Australia" />Australia <br/>
+
+                <br/><br/>
+                <input type="submit" value="submit" />
                 
             
             </form>
