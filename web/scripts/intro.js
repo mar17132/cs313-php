@@ -54,6 +54,6 @@ $(document).ready(function(){
 
     setInterval(function(){
         calTime(semesterEnd);
-    },1000);
+    }, 1000);
     
 });
