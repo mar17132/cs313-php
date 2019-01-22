@@ -30,7 +30,7 @@ function getSessionCart()
 {
     if(isset($_SESSION["cart"]))
     {
-        return $_SESSION["cart"]
+        return $_SESSION["cart"];
     }
 
     return false;
