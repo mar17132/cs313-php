@@ -77,25 +77,30 @@ function getCountCartArray()
 }
 
 
+function runJavaScript($arrayCount)
+{
+    echo "<script type='text/javascript' >
+    if($.type(window.updateCartNumberDis))
+    {updateCartNumberDis($arrayCount);}
+    else{parent.updateCartNumberDis($arrayCount);}
+    </script>";
+}
 
+
+if(checkSession())
+{
+    if(isset($_GET["action"]))
+    {
+       if($_GET["action"] == "add")
+       {
+           setSessionVariables();
+           runJavaScript(getCountCartArray());
+       }
+       else if($_GET["action"] == "remove")
+       {
+           removeItemCart($_GET["value"]);
+       }
+    }
+}
 
 ?>
-
-<script type="text/javascript" >
-
-    if($.type(window.updateCartNumberDis))
-    {
-        updateCartNumberDis(<?php
-                    echo getCountCartArray();
-                ?>);
-    }
-    else
-    {
-        parent.updateCartNumberDis(<?php
-                    echo getCountCartArray();
-                ?>);
-    }
-
-
-</script>
-
