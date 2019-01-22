@@ -9,45 +9,57 @@
 
 
     <div class="content">
-            <div class="items">
 
-                <div class="item">
-                    <a class="item-link">
-                        <ul class="item-ul">
+                <?php
 
-                                <?php
+                    $loopCounter = 0;
 
-                                    foreach($items as $key => $prod)
-                                    {
-                                        //item Image
-                                        echo "<li class='item-li'>";
-                                        echo "<img class='itemImage'
-                                              alt='".$prod["itemName"]."'
-                                              src='".$prod["itemImage"]."' />";
-                                        echo "</li>";
+                    foreach($items as $key => $prod)
+                    {
+                        if($loopCounter % 4 == 0)
+                        {
+                            echo "div class='items'>";
+                        }
 
-                                        //item Name & price
-                                        echo "<li class='item-li'>";
-                                        echo "<span class='itemName'>";
-                                        echo $prod["itemName"]."<br/><br/>";
-                                        echo $prod["itemPrice"];
-                                        echo "</span></li>";
+                        echo "<div class='item'>
+                              <a class='item-link'>
+                              <ul class='item-ul'>";
 
-                                        //item button
-                                        echo "<li class='item-li'>";
-                                        echo "<input class='addCartBtn buttons'
-                                              value='Add To Cart' type='button'/>";
-                                        echo "<input class='itemID' type='hidden'
-                                              value='$key'/>";
-                                        echo "</li>";
+                        //item Image
+                        echo "<li class='item-li'>";
+                        echo "<img class='itemImage'
+                              alt='".$prod["itemName"]."'
+                              src='".$prod["itemImage"]."' />";
+                        echo "</li>";
 
-                                    }
+                        //item Name & price
+                        echo "<li class='item-li'>";
+                        echo "<span class='itemName'>";
+                        echo $prod["itemName"]."<br/><br/>";
+                        echo $prod["itemPrice"];
+                        echo "</span></li>";
 
-                                ?>
-                        </ul>
-                    </a>
-                </div>
-            </div>
+                        //item button
+                        echo "<li class='item-li'>";
+                        echo "<input class='addCartBtn buttons'
+                              value='Add To Cart' type='button'/>";
+                        echo "<input class='itemID' type='hidden'
+                              value='$key'/>";
+                        echo "</li>";
+
+                        echo "</ul></a></div>";
+
+                        if($loopCounter % 4 == 0)
+                        {
+                            echo "</div>";
+                        }
+
+                        $loopCounter++;
+
+                    }
+
+                ?>
+
         </div>
 
         <div class="footer">
