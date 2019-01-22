@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+
+<html lang="en" >
+    <head>
+        <meta charset="utf-8" />
+        <title>CS 313 Shopping Cart</title>
+        <link rel="stylesheet" href="../style/cart.css" />
+        <link rel="stylesheet" href="../style/content.css" />
+        <link rel="stylesheet" href="../style/menu.css" />
+        <style type="text/css">
+
+        </style>
+        <script src="../../../scripts/jquery/jquery-3.3.1.min.js" ></script>
+    </head>
+    <body>
+        <div class="header">
+            <h1 class="title">CS 313 Shopping Cart</h1>
+            <div class="menu">
+                <ul class="ul-menu">
+                    <li class="li-menu">
+                        <a class="a-menu" href="">
+                            Home
+                        </a>
+                    </li>
+                    <li class="li-menu">
+                        <a class="a-menu" href="">
+                            Cart
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="cart-items">
+                <ul class="cart-items-ul">
+                    <li class="cart-items-li">
+                        <div class="cart-item">
+                            <ul class="cart-item-ul">
+                                <li class="cart-item-li">
+                                    <img class="cart-itemImage" alt="" src="../../../images/wrath.jpg" />
+                                </li>
+                                <li class="cart-item-li">
+                                    <span class="cart-itemName">
+                                        this is an item
+                                    </span>
+                                </li>
+                                <li class="cart-item-li">
+                                    <span class="cart-itemPrice">
+                                        $7.00
+                                    </span>
+                                </li>
+                                <li class="cart-item-li">
+                                    <input type="button" value="Remove" class="buttons removeCartBtn" />
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </li>
+
+
+
+                    <li class="cart-items-li">
+                        <div class="cart-item">
+                            <ul class="cart-item-ul">
+                                <li class="cart-item-li">
+                                    <img class="cart-itemImage" alt="" src="../../../images/wrath.jpg" />
+                                </li>
+                                <li class="cart-item-li">
+                                    <span class="cart-itemName">
+                                        this is an item
+                                    </span>
+                                </li>
+                                <li class="cart-item-li">
+                                    <span class="cart-itemPrice">
+                                        $7.00
+                                    </span>
+                                </li>
+
+                                 <li class="cart-item-li">
+                                    <input type="button" value="Remove" class="buttons removeCartBtn" />
+
+                                </li>
+                            </ul>
+
+                        </div>
+                    </li>
+                    <li class="cart-items-li">
+                <table class="totals">
+                    <tr>
+                        <td>
+                            <span class="totals">
+                                Subtotal
+                            </span>
+                        </td>
+                        <td>
+                            <span class="totals" id="subTotal">
+                                $8.94
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="totals">
+                                Tax
+                            </span>
+                        </td>
+                        <td>
+                            <span class="totals" id="tax">
+                                .0625
+                            </span>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                            <span class="totals">
+                                Shipping
+                            </span>
+                        </td>
+                        <td>
+                            <span class="totals" id="shipping">
+                                $3.00
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="totals">
+                                Total
+                            </span>
+                        </td>
+                        <td>
+                            <span class="totals" id="total">
+                                $12.00
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+
+            </li>
+                    <li class="cart-items-li">
+                        <input type="button" value="Checkout" class="buttons checkoutCartBtn" />
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+
+        </div>
+
+
+        <script type="text/javascript" > </script>
+    </body>
+</html>
