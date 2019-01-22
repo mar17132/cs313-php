@@ -18,7 +18,7 @@
                     {
                         if($loopCounter % 4 == 0)
                         {
-                            echo "div class='items'>";
+                            echo "<div class='items'>";
                         }
 
                         echo "<div class='item'>

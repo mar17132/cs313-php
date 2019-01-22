@@ -4,7 +4,8 @@
 $baseURL = "https://enigmatic-lowlands-70024.herokuapp.com";
 $location = "/assignments/week03";
 
-include "scripts/items.array.script.php";
+include_once "../scripts/items.array.script.php";
+include_once "scripts/items.array.script.php";
 //include "scripts/session.manage.script.php";
 
 ?>
