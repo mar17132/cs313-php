@@ -17,7 +17,7 @@
 
                                 <?php
 
-                                    foreach($itmes as $key => $prod)
+                                    foreach($items as $key => $prod)
                                     {
                                         //item Image
                                         echo "<li class='item-li'>";
