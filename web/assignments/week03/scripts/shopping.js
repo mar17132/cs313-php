@@ -7,7 +7,7 @@ $(document).ready(function(){
     var itemInCartDis = $('.items-in-cart');
     var hiddenIframe = $('.hiddenIframe');
     var baseURL = "https://enigmatic-lowlands-70024.herokuapp.com";
-    var sessionURL = "/assingments/week03/scripts/session.manage.script.php";
+    var sessionURL = "/assignments/week03/scripts/session.manage.script.php";
 
 
     function addCart(value)
