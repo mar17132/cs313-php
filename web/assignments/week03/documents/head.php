@@ -1,13 +1,11 @@
 
 <?php
 
-include_once "../scripts/items.array.script.php";
-include_once "../scripts/session.manage.script.php";
-
 $baseURL = "https://enigmatic-lowlands-70024.herokuapp.com";
 $location = "/assignments/week03";
 
-
+include_once $baseURL.$location."/scripts/items.array.script.php";
+include_once $baseURL.$location."/scripts/session.manage.script.php";
 ?>
 
 <!DOCTYPE HTML>

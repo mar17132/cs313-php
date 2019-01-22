@@ -7,7 +7,7 @@
  <div class="menu">
     <ul class="ul-menu">
         <li class="li-menu">
-            <a class="a-menu" href="<?php echo $baseURL.$location."index.php"; ?>">
+            <a class="a-menu" href="<?php echo $baseURL.$location."/index.php"; ?>">
                 Home
             </a>
         </li>

@@ -13,7 +13,7 @@ $(document).ready(function(){
     function addCart(value)
     {
         var urlVar = "?action=add&value=" + value;
-        var addURL = baseURL + sessionURL + urlVar ;
+        var addURL = baseURL + sessionURL + urlVar;
         hiddenIframe.attr('src',addURL);
     }
 
@@ -31,12 +31,12 @@ $(document).ready(function(){
     }
 
 
-    addCartBtn.on('click'function(){
+    addCartBtn.on('click',function(){
         addCart($(this).next(prodID).val());
     });
 
 
-    removeCartBtn.on('click'function(){
+    removeCartBtn.on('click',function(){
         removeCart($(this).next(prodID).val());
     });
 
