@@ -6,7 +6,8 @@ $location = "/assignments/week03";
 
 include_once "../scripts/items.array.script.php";
 include_once "scripts/items.array.script.php";
-//include "scripts/session.manage.script.php";
+include_once "scripts/session.manage.script.php";
+include_once "../scripts/session.manage.script.php";
 
 ?>
 

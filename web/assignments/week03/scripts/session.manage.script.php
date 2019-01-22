@@ -77,20 +77,7 @@ function getCountCartArray()
 }
 
 
-if(checkSession())
-{
-    if(isset($_GET["action"]))
-    {
-       if($_GET["action"] == "add")
-       {
-           setSessionVariables();
-       }
-       else if($_GET["action"] == "remove")
-       {
-           removeItemCart($_GET["value"]);
-       }
-    }
-}
+
 
 ?>
 
