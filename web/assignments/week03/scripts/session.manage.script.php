@@ -80,7 +80,7 @@ function getCountCartArray()
 function runJavaScript($arrayCount)
 {
     echo "<script type='text/javascript' >
-    if($.type(window.updateCartNumberDis))
+    if(window.updateCartNumberDis)
     {updateCartNumberDis($arrayCount);}
     else{parent.updateCartNumberDis($arrayCount);}
     </script>";
@@ -94,12 +94,13 @@ if(checkSession())
        if($_GET["action"] == "add")
        {
            setSessionVariables();
-           runJavaScript(getCountCartArray());
        }
        else if($_GET["action"] == "remove")
        {
            removeItemCart($_GET["value"]);
        }
+
+       runJavaScript(getCountCartArray());
     }
 }
 
