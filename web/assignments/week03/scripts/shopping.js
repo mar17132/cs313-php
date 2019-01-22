@@ -14,7 +14,8 @@ $(document).ready(function(){
     {
         var urlVar = "?action=add&value=" + value;
         var addURL = baseURL + sessionURL + urlVar;
-        hiddenIframe.attr('src',addURL);
+       // hiddenIframe.attr('src',addURL);
+        hiddenIframe.load(addURL);
     }
 
 
