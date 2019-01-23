@@ -90,12 +90,17 @@ body{
 
 
 input:focus{
-    outline: none;
+    outline: 0;
 }
 
 
 *:focus {
-    outline: none;
+    outline: 0;
+}
+
+
+input::-moz-focus-inner {
+  border: 0;
 }
 
 
