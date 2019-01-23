@@ -89,6 +89,16 @@ body{
 }
 
 
+.buttons:focus{
+    outline: none;
+}
+
+
+.buttons:-moz-focus-inner {
+    border: 0;
+}
+
+
 .addCartBtn{
     width: 200px;
     margin-top: 15px;
