@@ -7,7 +7,7 @@ function checkSession()
     if(session_status() != PHP_SESSION_ACTIVE)
     {
         session_start();
-        $_SESSION["cart"] = array();
+        //$_SESSION["cart"] = array();
     }
     return true;
 }
@@ -19,11 +19,11 @@ function setSessionVariables()
     {
         if(isset($_GET["value"]))
         {
-            $newCartArray = array();
-            $newCartArray = $_SESSION["cart"];
-            array_push($_SESSION["cart"],$_GET["value"]);
+            $newCartArray = array($_GET["value"]);
+            $newCartArray = array_merge($newCartArray,$_SESSION["cart"]);
 
-           // unset($_SESSION["cart"]);
+            unset($_SESSION["cart"]);
+            $_SESSION["cart"] = $newCartArray;
         }
     }
 }
