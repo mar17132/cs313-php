@@ -82,7 +82,7 @@ function runJavaScript($arrayCount)
     //echo "<input id='cartItemCount' value='$arrayCount' type='hidden'/>";
 
     echo "<script type='text/javascript' >
-    if($.type(window.updateCartNumberDis))
+    if(window.updateCartNumberDis)
     {updateCartNumberDis($arrayCount);}
     else{parent.updateCartNumberDis($arrayCount);}
     </script>";
