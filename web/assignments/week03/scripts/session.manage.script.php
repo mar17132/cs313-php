@@ -30,8 +30,8 @@ function setSessionVariables()
                         12,
                         490
                         );
-            print_r($newCartArray);
-            var_dump($_SESSION["cart"]);
+            //print_r($newCartArray);
+            print_r($_SESSION["cart"]);
         }
     }
 }
