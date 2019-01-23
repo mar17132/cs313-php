@@ -8,8 +8,9 @@ function checkSession()
     {
         session_start();
         $_SESSION["cart"] = array();
+        echo "tes1";
     }
-
+echo "tes2";
     return true;
 }
 
@@ -41,7 +42,9 @@ function getSessionCart()
 {
     if(isset($_SESSION["cart"]))
     {
-        return $_SESSION["cart"];
+        $cartArray = $_SESSION["cart"];
+        print_r($cartArray);
+        return count($cartArray);
     }
 
     return false;
