@@ -26,8 +26,8 @@ function setSessionVariables()
             }
             //$newCartArray = array_merge($newCartArray,$_SESSION["cart"]);
 
-            //unset($_SESSION["cart"]);
-            $_SESSION["cart"] = $_GET["value"];
+            unset($_SESSION["cart"]);
+            $_SESSION["cart"] = $newCartArray;
         }
     }
 }
