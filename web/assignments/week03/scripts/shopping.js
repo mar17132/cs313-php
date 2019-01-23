@@ -34,7 +34,7 @@ $(document).ready(function(){
 
     addCartBtn.on('click',function(){
         addCart($(this).next(prodID).val());
-        updateCartNumberDis(hiddenIframe.contents().find("#cartItemCount").html());
+        updateCartNumberDis(hiddenIframe.contents().find("#cartItemCount").val());
     });
 
 

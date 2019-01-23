@@ -79,7 +79,7 @@ function getCountCartArray()
 
 function runJavaScript($arrayCount)
 {
-    echo "<div id='cartItemCount'>$arrayCount</div>";
+    echo "<input id='cartItemCount' value='$arrayCount' type='hidden'/>";
 }
 
 
