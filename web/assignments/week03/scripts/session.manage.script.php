@@ -91,7 +91,8 @@ function runJavaScript($arrayCount)
     {updateCartNumberDis($arrayCount);
     changeSrc(urlCart);}
     else{parent.updateCartNumberDis($arrayCount);
-       //  parent.changeSrc('');}
+       //  parent.changeSrc('');
+       }
     </script>";
 
     var_dump($_SESSION["cart"]);
