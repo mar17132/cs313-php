@@ -1,6 +1,7 @@
 
 $(document).ready(function(){
 
+    var itemsInCartDis = $('.items-in-cart');
     var prodID = $('.itemID');
     var addCartBtn = $('.addCartBtn');
     var removeCartBtn = $('.removeCartBtn');
