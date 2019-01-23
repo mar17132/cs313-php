@@ -14,9 +14,14 @@ function addCart(value)
 {
     var urlVar = "?action=add&value=" + value;
     var addURL = baseURL + sessionURL + urlVar;
-    hiddenIframe.attr('src',addURL);
+    changeSrc(addURL);
 }
 
+
+function changeSrc(urlCart)
+{
+    hiddenIframe.attr('src',urlCart);
+}
 
 function removeCart(value)
 {
@@ -44,7 +49,6 @@ $(document).ready(function(){
 
     addCartBtn.on('click',function(){
         addCart($(this).next(prodID).val());
-        hiddenIframe.attr('src',"");
     });
 
     removeCartBtn.on('click',function(){

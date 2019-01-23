@@ -82,8 +82,10 @@ function runJavaScript($arrayCount)
 {
     echo "<script type='text/javascript' >
     if(window.updateCartNumberDis)
-    {updateCartNumberDis($arrayCount);}
-    else{parent.updateCartNumberDis($arrayCount);}
+    {updateCartNumberDis($arrayCount);
+    changeSrc(urlCart);}
+    else{parent.updateCartNumberDis($arrayCount);
+         parent.changeSrc(urlCart);}
     </script>";
 
     var_dump($_SESSION["cart"]);
