@@ -24,8 +24,12 @@ function setSessionVariables()
             $newCartArray = $_SESSION["cart"];
             array_push($newCartArray,$_GET["value"]);
 
-            unset($_SESSION["cart"]);
-            $_SESSION["cart"][] = $newCartArray;
+           // unset($_SESSION["cart"]);
+          $_SESSION["cart"][] =  array(
+                        123,
+                        12,
+                        490
+                        );
             print_r($newCartArray);
             var_dump($_SESSION["cart"]);
         }
