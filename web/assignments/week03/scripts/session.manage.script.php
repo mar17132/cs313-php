@@ -20,6 +20,7 @@ function setSessionVariables()
     {
         if(isset($_GET["value"]))
         {
+            $newCartArray = array();
             $newCartArray = $_SESSION["cart"];
             array_push($newCartArray,$_GET["value"]);
 
