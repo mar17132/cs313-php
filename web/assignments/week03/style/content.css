@@ -73,12 +73,19 @@ body{
     font-size: 1em;
     border-radius: 30px;
     border: 1px solid steelblue;
+    outline: none;
 }
 
 
 .buttons:hover{
     border: 1px solid blue;
     background-color:lightcyan;
+    outline: none;
+}
+
+
+.buttons:active{
+    outline: none;
 }
 
 

@@ -43,8 +43,8 @@ $(document).ready(function(){
     sessionURL = "session.manage.script.php";
 
     addCartBtn.on('click',function(){
-    addCart($(this).next(prodID).val());
-    //updateCartNumberDis(hiddenIframe.contents().find("#cartItemCount").val());
+        addCart($(this).next(prodID).val());
+        hiddenIframe.attr('src',"");
     });
 
     removeCartBtn.on('click',function(){
