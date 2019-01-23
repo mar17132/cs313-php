@@ -20,8 +20,11 @@ function setSessionVariables()
     {
         if(isset($_GET["value"]))
         {
-            $_SESSION["cart"][] = $_GET["value"];
-            $_SESSION["cart"][] = $_GET["value"];
+            $newCartArray = $_SESSION["cart"];
+            array_push($newCartArray,$_GET["value"]);
+
+            unset($_SESSION["cart"]);
+            $_SESSION["cart"][] = $newCartArray;
         }
     }
 }
