@@ -14,8 +14,7 @@ $(document).ready(function(){
     {
         var urlVar = "?action=add&value=" + value;
         var addURL = baseURL + sessionURL + urlVar;
-       // hiddenIframe.attr('src',addURL);
-        hiddenIframe.load(addURL);
+        hiddenIframe.attr('src',addURL);
     }
 
 
@@ -34,6 +33,7 @@ $(document).ready(function(){
 
     addCartBtn.on('click',function(){
         addCart($(this).next(prodID).val());
+        updateCartNumberDis(hiddenIframe.contents().find("#cartItemCount").html());
     });
 
 

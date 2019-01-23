@@ -84,6 +84,7 @@ function runJavaScript($arrayCount)
     {updateCartNumberDis($arrayCount);}
     else{parent.updateCartNumberDis($arrayCount);}
     </script>";
+    echo "<div id='cartItemCount'>$arrayCount</div>";
 }
 
 
