@@ -35,7 +35,7 @@ $(document).ready(function(){
     addCartBtn.on('click',function(){
         addCart($(this).next(prodID).val());
         test1 = hiddenIframe.contents();
-        test2 = test1.find("#cartItemCount");
+        test2 = test1.find("input").val();
         console.log(test1);
         console.log(test2);
         updateCartNumberDis(hiddenIframe.contents().find("#cartItemCount").val());
