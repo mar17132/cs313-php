@@ -18,9 +18,9 @@ function setSessionVariables()
 {
     if(checkSession())
     {
-        if(isset($_GET["productID"]))
+        if(isset($_GET["value"]))
         {
-            $_SESSION["cart"][] = $_GET["productID"];
+            $_SESSION["cart"][] = $_GET["value"];
         }
     }
 }
