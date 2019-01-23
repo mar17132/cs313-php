@@ -13,10 +13,10 @@ $(document).ready(function(){
 
     function addCart(value)
     {
-        var urlVar = "?action=add&value=" + value;
-        var addURL = baseURL + sessionURL + urlVar;
+        var urlVar = "scripts/session.manage.script.php?action=add&value=" + value;
+        //var addURL = baseURL + sessionURL + urlVar;
        // hiddenIframe.attr('src',addURL);
-        hiddenIframe.load(addURL);
+        hiddenIframe.load(urlVar);
     }
 
 
