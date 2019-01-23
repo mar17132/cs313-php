@@ -21,6 +21,7 @@ function setSessionVariables()
         if(isset($_GET["value"]))
         {
             $_SESSION["cart"][] = $_GET["value"];
+            $_SESSION["cart"][] = $_GET["value"];
         }
     }
 }
@@ -79,13 +80,13 @@ function getCountCartArray()
 
 function runJavaScript($arrayCount)
 {
-    //echo "<input id='cartItemCount' value='$arrayCount' type='hidden'/>";
-
     echo "<script type='text/javascript' >
     if(window.updateCartNumberDis)
     {updateCartNumberDis($arrayCount);}
     else{parent.updateCartNumberDis($arrayCount);}
     </script>";
+
+    var_dump($_SESSION["cart"]);
 }
 
 
