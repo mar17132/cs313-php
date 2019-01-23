@@ -20,10 +20,14 @@ function setSessionVariables()
         if(isset($_GET["value"]))
         {
             $newCartArray = array($_GET["value"]);
-            $newCartArray = array_merge($newCartArray,$_SESSION["cart"]);
+            foreach($_SESSION["cart"] as $prodID)
+            {
+                array_push($newCartArray,$prodID);
+            }
+            //$newCartArray = array_merge($newCartArray,$_SESSION["cart"]);
 
-            unset($_SESSION["cart"]);
-            $_SESSION["cart"] = $newCartArray;
+            //unset($_SESSION["cart"]);
+            $_SESSION["cart"] = $_GET["value"];
         }
     }
 }
