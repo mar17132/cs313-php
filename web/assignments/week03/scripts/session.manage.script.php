@@ -31,8 +31,7 @@ function setSessionVariables()
                         12,
                         490
                         );
-            //print_r($newCartArray);
-            print_r($_SESSION["cart"]);
+            echo count($_SESSION["cart"]);
         }
     }
 }
@@ -42,9 +41,7 @@ function getSessionCart()
 {
     if(isset($_SESSION["cart"]))
     {
-        $cartArray = $_SESSION["cart"];
-        print_r($cartArray);
-        return count($cartArray);
+        return count($_SESSION["cart"]);
     }
 
     return false;
