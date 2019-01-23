@@ -84,7 +84,7 @@ function runJavaScript($arrayCount)
     echo "<script type='text/javascript' >
     if(window.updateCartNumberDis)
     {updateCartNumberDis($arrayCount);}
-    else{window.parent.updateCartNumberDis($arrayCount);}
+    else{parent.updateCartNumberDis($arrayCount);}
     </script>";
 }
 
