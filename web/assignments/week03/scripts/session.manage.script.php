@@ -7,7 +7,7 @@ function checkSession()
     if(session_status() != PHP_SESSION_ACTIVE)
     {
         session_start();
-        //$_SESSION["cart"] = array();
+        $_SESSION["cart"] = array();
     }
 
     return true;
@@ -79,7 +79,8 @@ function getCountCartArray()
 
 function runJavaScript($arrayCount)
 {
-    echo "<input id='cartItemCount' value='$arrayCount' type='hidden'/>";
+    echo $arrayCount;
+    var_dump($_SESSION["cart"]);
 }
 
 
