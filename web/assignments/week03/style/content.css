@@ -95,7 +95,7 @@ body{
 
 
 .buttons:-moz-focus-inner {
-    border: 0;
+    outline: none;
 }
 
 
