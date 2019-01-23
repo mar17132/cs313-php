@@ -24,7 +24,7 @@ function setSessionVariables()
             array_push($newCartArray,$_GET["value"]);
 
            // unset($_SESSION["cart"]);
-          $_SESSION["cart"][] =  array(
+          $_SESSION["cart"] =  array(
                         123,
                         12,
                         490
