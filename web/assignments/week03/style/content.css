@@ -89,12 +89,12 @@ body{
 }
 
 
-.buttons:focus{
+input:focus{
     outline: none;
 }
 
 
-.buttons:-moz-focus-inner {
+*:focus {
     outline: none;
 }
 
