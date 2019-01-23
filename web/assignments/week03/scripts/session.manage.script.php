@@ -7,10 +7,8 @@ function checkSession()
     if(session_status() != PHP_SESSION_ACTIVE)
     {
         session_start();
-        $_SESSION["cart"] = array();
-        echo "tes1";
+        //$_SESSION["cart"] = array();
     }
-echo "tes2";
     return true;
 }
 
