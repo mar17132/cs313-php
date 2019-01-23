@@ -79,8 +79,13 @@ function getCountCartArray()
 
 function runJavaScript($arrayCount)
 {
-    echo $arrayCount;
-    var_dump($_SESSION["cart"]);
+    //echo "<input id='cartItemCount' value='$arrayCount' type='hidden'/>";
+
+    echo "<script type='text/javascript' >
+    if($.type(window.updateCartNumberDis))
+    {updateCartNumberDis($arrayCount);}
+    else{parent.updateCartNumberDis($arrayCount);}
+    </script>";
 }
 
 

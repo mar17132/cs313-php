@@ -7,16 +7,15 @@ $(document).ready(function(){
     var removeCartBtn = $('.removeCartBtn');
     var itemInCartDis = $('.items-in-cart');
     var hiddenIframe = $('.hiddenIframe');
-    var baseURL = "https://enigmatic-lowlands-70024.herokuapp.com";
-    var sessionURL = "/assignments/week03/scripts/session.manage.script.php";
+    var baseURL = "scripts/";
+    var sessionURL = "session.manage.script.php";
 
 
     function addCart(value)
     {
-        var urlVar = "scripts/session.manage.script.php?action=add&value=" + value;
-        //var addURL = baseURL + sessionURL + urlVar;
-       // hiddenIframe.attr('src',addURL);
-        hiddenIframe.load(urlVar);
+        var urlVar = "?action=add&value=" + value;
+        var addURL = baseURL + sessionURL + urlVar;
+        hiddenIframe.attr('src',addURL);
     }
 
 
