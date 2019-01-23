@@ -1,5 +1,15 @@
 
 
+var itemsInCartDis;
+var prodID;
+var addCartBtn;
+var removeCartBtn;
+var itemInCartDis;
+var hiddenIframe;
+var baseURL;
+var sessionURL;
+
+
 function addCart(value)
 {
     var urlVar = "?action=add&value=" + value;
@@ -23,14 +33,14 @@ function updateCartNumberDis(itemsInCart)
 
 $(document).ready(function(){
 
-    var itemsInCartDis = $('.items-in-cart');
-    var prodID = $('.itemID');
-    var addCartBtn = $('.addCartBtn');
-    var removeCartBtn = $('.removeCartBtn');
-    var itemInCartDis = $('.items-in-cart');
-    var hiddenIframe = $('.hiddenIframe');
-    var baseURL = "scripts/";
-    var sessionURL = "session.manage.script.php";
+    itemsInCartDis = $('.items-in-cart');
+    prodID = $('.itemID');
+    addCartBtn = $('.addCartBtn');
+    removeCartBtn = $('.removeCartBtn');
+    itemInCartDis = $('.items-in-cart');
+    hiddenIframe = $('.hiddenIframe');
+    baseURL = "scripts/";
+    sessionURL = "session.manage.script.php";
 
     addCartBtn.on('click',function(){
     addCart($(this).next(prodID).val());
