@@ -27,6 +27,7 @@ function setSessionVariables()
 
             unset($_SESSION["cart"]);
             $_SESSION["cart"] = $newCartArray;
+            print_r($_SESSION["cart"]);
         }
     }
 }
