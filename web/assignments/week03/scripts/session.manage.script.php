@@ -68,6 +68,7 @@ function removeItemCart($prodID)
 
         unset($_SESSION["cart"]);
         $_SESSION["cart"][] = $newCartArray;
+        var_dump($_SESSION["cart"]);
     }
 }
 
