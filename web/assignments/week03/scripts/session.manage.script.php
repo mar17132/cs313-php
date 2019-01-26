@@ -86,10 +86,8 @@ function runJavaScript($arrayCount)
 {
     echo "<script type='text/javascript' >
     if(window.updateCartNumberDis)
-    {updateCartNumberDis($arrayCount);
-    changeSrc(urlCart);}
+    {updateCartNumberDis($arrayCount);}
     else{parent.updateCartNumberDis($arrayCount);
-       //  parent.changeSrc('');
        }
     </script>";
 
@@ -110,8 +108,10 @@ if(checkSession())
            removeItemCart($_GET["value"]);
        }
 
-       runJavaScript(getCountCartArray());
     }
 }
+
+runJavaScript(getCountCartArray());
+
 
 ?>
