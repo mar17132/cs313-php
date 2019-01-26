@@ -95,13 +95,13 @@ $(document).ready(function(){
         baseURL = "../scripts/";
         removeCart($(this).next(prodID).val());
         removeCartItem($(this));
+        calTotals();
     });
 
     checkOutBtn.on('click',function(){
 
     });
 
-    calTotals();
 
 });
 

@@ -117,7 +117,9 @@
 <div class="footer">
 
 </div>
-
+<script type="text/javascript" >
+    calTotals();
+</script>
 </body>
 </html>
 
