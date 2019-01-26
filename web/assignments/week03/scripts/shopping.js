@@ -56,13 +56,13 @@ function calTotals()
     total = 0;
 
     allItemPrices.each(function(){
-        test = Number($(this).html());
-        subTotalItems =+ Number($(this).html());
+        numberArray = $(this).html().split("$");
+        subTotalItems += parseFloat(numberArray[1]);
     });
 
     subTotalSpan.html(subTotalItems);
-    tax = subTotalItems * Number(taxSpan.html());
-    total = tax + subTotalItems + Number(shippingSpan.html());
+    tax = subTotalItems * parseFloat(taxSpan.html());
+    total = tax + subTotalItems + parseFloat(shippingSpan.html().split("$")[1]);
 
     totalSpan.html(total);
 }
