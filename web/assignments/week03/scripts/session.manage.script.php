@@ -27,7 +27,6 @@ function setSessionVariables()
 
             unset($_SESSION["cart"]);
             $_SESSION["cart"] = $newCartArray;
-            print_r($_SESSION["cart"]);
         }
     }
 }
@@ -69,7 +68,6 @@ function removeItemCart($prodID)
 
         unset($_SESSION["cart"]);
         $_SESSION["cart"] = $newCartArray;
-        var_dump($_SESSION["cart"]);
     }
 }
 
