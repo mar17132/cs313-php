@@ -92,6 +92,18 @@ function runJavaScript($arrayCount)
 }
 
 
+function runJavaScriptInDoc($arrayCount)
+{
+    echo "<script type='text/javascript' >
+     $(document).ready(function(){
+    if(window.updateCartNumberDis)
+    {updateCartNumberDis($arrayCount);}
+    else{parent.updateCartNumberDis($arrayCount);}
+    });
+    </script>";
+}
+
+
 if(checkSession())
 {
     if(isset($_GET["action"]))

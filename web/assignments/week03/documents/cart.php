@@ -115,14 +115,7 @@
 
 </div>
 
-<script type="text/javascript" >
-
-    $(document).ready(function(){
-
-        <?php runJavaScript(getCountCartArray()); ?>
-    });
-
-</script>
+<?php runJavaScriptInDoc(getCountCartArray()); ?>
 </body>
 </html>
 

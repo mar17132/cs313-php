@@ -66,14 +66,8 @@
 
         </div>
 
-        <script type="text/javascript" >
+        <?php runJavaScriptInDoc(getCountCartArray()); ?>
 
-            $(document).ready(function(){
-
-                <?php runJavaScript(getCountCartArray()); ?>
-            });
-
-        </script>
     </body>
 </html>
 
