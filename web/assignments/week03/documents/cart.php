@@ -2,7 +2,13 @@
 
 <?php
 
-print_r($_SESSION["cart"]);
+if(isset($_SESSION["cart"]))
+{
+    echo true;
+}
+else{
+    echo false;
+}
 
     //$cartArray = getSessionCart();
 
