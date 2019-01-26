@@ -4,16 +4,9 @@
 
 function checkSession()
 {
-    if(session_id() == "" && isset($_GET('sessionid')))
-    {
-        echo "start session";
+
         session_start();
-    }
-    else
-    {
-        echo "con session";
-        session_start();
-    }
+
     return true;
 }
 
