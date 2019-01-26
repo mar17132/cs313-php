@@ -37,7 +37,7 @@ function updateCartNumberDis(itemsInCart)
 }
 
 
-function removeItem(item)
+function removeCartItem(item)
 {
     cartParentUL.remove(item.parents().find('.cart-items-li'));
 }
@@ -62,6 +62,7 @@ $(document).ready(function(){
     removeCartBtn.on('click',function(){
         baseURL = "../scripts/";
         removeCart($(this).next(prodID).val());
+        removeCartItem($(this));
     });
 
 });
