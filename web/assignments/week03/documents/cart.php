@@ -4,10 +4,10 @@
 
 if(isset($_SESSION["cart"]))
 {
-    echo true;
+    echo "test1";
 }
 else{
-    echo false;
+    echo "testfalse";
 }
 
     //$cartArray = getSessionCart();
