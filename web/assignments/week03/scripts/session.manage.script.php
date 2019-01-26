@@ -4,7 +4,7 @@
 
 function checkSession()
 {
-    if(session_status() != PHP_SESSION_ACTIVE)
+    if(session_id() == "")
     {
         session_start();
     }
