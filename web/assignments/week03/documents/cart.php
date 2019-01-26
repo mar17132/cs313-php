@@ -7,6 +7,8 @@
 
     $cartArray = getSessionCart();
 
+    var_dump($_SESSION["cart"]);
+
 ?>
 
 
