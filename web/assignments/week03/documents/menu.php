@@ -12,7 +12,7 @@
             </a>
         </li>
         <li class="li-menu">
-            <a class="a-menu" href="<?php echo $baseURL.$location."/documents/cart.php?sessionid=".session_id(); ?>">
+            <a class="a-menu" href="<?php echo $baseURL.$location."/documents/cart.php"; ?>">
                 Cart
                 <span class="items-in-cart">
                     <?php echo getCountCartArray(); ?>
