@@ -6,7 +6,12 @@ function checkSession()
 {
     if(session_id() == "")
     {
+        echo "start session";
         session_start();
+    }
+    else
+    {
+        echo "con session";
     }
     return true;
 }
