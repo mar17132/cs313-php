@@ -107,11 +107,10 @@ if(checkSession())
        {
            removeItemCart($_GET["value"]);
        }
-
+        runJavaScript(getCountCartArray());
     }
 }
 
-runJavaScript(getCountCartArray());
 
 
 ?>
