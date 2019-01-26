@@ -56,8 +56,8 @@ function calTotals()
     total = 0;
 
     allItemPrices.each(function(){
-        test = $(this).html();
-        subTotalItems += Number($(this).html());
+        test = Number($(this).html());
+        subTotalItems =+ Number($(this).html());
     });
 
     subTotalSpan.html(subTotalItems);
