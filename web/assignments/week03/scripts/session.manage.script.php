@@ -85,11 +85,9 @@ function getCountCartArray()
 function runJavaScript($arrayCount)
 {
     echo "<script type='text/javascript' >
-    $(document).ready(function(){
     if(window.updateCartNumberDis)
     {updateCartNumberDis($arrayCount);}
     else{parent.updateCartNumberDis($arrayCount);
-       }});
     </script>";
 }
 
