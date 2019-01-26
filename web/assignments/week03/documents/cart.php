@@ -11,6 +11,7 @@
 
 
 <div class="content">
+    <form method="post" action="checkOut.php">
     <div class="cart-items">
         <ul class="cart-items-ul">
 
@@ -106,10 +107,11 @@
             </li>
 
             <li class="cart-items-li">
-                <input type="button" value="Checkout" class="buttons checkoutCartBtn" />
+                <input type="submit" value="Checkout" class="buttons checkoutCartBtn" />
             </li>
         </ul>
     </div>
+    </form>
 </div>
 
 <div class="footer">

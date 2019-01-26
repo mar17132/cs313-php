@@ -9,6 +9,7 @@ var hiddenIframe;
 var baseURL;
 var sessionURL;
 var cartParentUL;
+var checkOutBtn;
 
 
 function addCart(value)
@@ -48,6 +49,7 @@ $(document).ready(function(){
     itemsInCartDis = $('.items-in-cart');
     prodID = $('.itemID');
     addCartBtn = $('.addCartBtn');
+    checkOutBtn = $('.checkoutCartBtn');
     removeCartBtn = $('.removeCartBtn');
     itemInCartDis = $('.items-in-cart');
     hiddenIframe = $('.hiddenIframe');
@@ -63,6 +65,10 @@ $(document).ready(function(){
         baseURL = "../scripts/";
         removeCart($(this).next(prodID).val());
         removeCartItem($(this));
+    });
+
+    checkOutBtn.on('click',function(){
+
     });
 
 });
