@@ -2,7 +2,7 @@
 
 <?php
 
-    $cartArray = getSessionCart();
+    //$cartArray = getSessionCart();
 
 ?>
 
