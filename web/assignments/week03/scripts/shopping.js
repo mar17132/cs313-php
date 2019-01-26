@@ -55,8 +55,8 @@ function calTotals()
     tax = 0;
     total = 0;
 
-    $.each(allItemPrices,function(){
-        subTotalItems += parseFloat($(this).html());
+    $.each(allItemPrices,function(index,value){
+        subTotalItems += parseFloat(value.html());
     });
 
     tax = subTotalItems * parseFloat(taxSpan.html());
