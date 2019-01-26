@@ -60,11 +60,11 @@ function calTotals()
         subTotalItems += parseFloat(numberArray[1]);
     });
 
-    subTotalSpan.html(subTotalItems);
+    subTotalSpan.html("$" + subTotalItems.toFixed(2));
     tax = subTotalItems * parseFloat(taxSpan.html());
     total = tax + subTotalItems + parseFloat(shippingSpan.html().split("$")[1]);
 
-    totalSpan.html(total);
+    totalSpan.html("$" + total.toFixed(2));
 }
 
 
