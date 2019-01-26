@@ -90,8 +90,6 @@ function runJavaScript($arrayCount)
     else{parent.updateCartNumberDis($arrayCount);
        }
     </script>";
-
-    var_dump($_SESSION["cart"]);
 }
 
 
