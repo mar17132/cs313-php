@@ -1,21 +1,14 @@
 
 
-<?php
-session_start();
-if(isset($_SESSION["cart"]))
-{
-    echo "test1";
-}
-else{
-    echo "testfalse";
-}
+<?php include "header-cart.php"; ?>
 
-    //$cartArray = getSessionCart();
+
+<?php
+
+    $cartArray = getSessionCart();
 
 ?>
 
-
-<?php include "header-cart.php"; ?>
 
 <div class="content">
     <div class="cart-items">

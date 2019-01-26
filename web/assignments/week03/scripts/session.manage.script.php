@@ -4,8 +4,10 @@
 
 function checkSession()
 {
-
+    if(session_id() == "")
+    {
         session_start();
+    }
 
     return true;
 }
