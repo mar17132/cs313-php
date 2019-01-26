@@ -10,6 +10,11 @@ var baseURL;
 var sessionURL;
 var cartParentUL;
 var checkOutBtn;
+var allItemPrices;
+var subTotalSpan;
+var taxSpan;
+var shippingSpan;
+var totalSpan;
 
 
 function addCart(value)
@@ -44,6 +49,23 @@ function removeCartItem(item)
 }
 
 
+function calTotals()
+{
+    subTotalItems = 0;
+    tax = 0;
+    total = 0;
+
+    $.each(function(){
+        subTotalItems += parseFloat($(this).html());
+    });
+
+    tax = subTotalItems * parseFloat(taxSpan.html());
+    total = tax + subTotalItems + parseFloat(shippingSpan.html());
+
+    totalSpan.html(total);
+}
+
+
 $(document).ready(function(){
 
     itemsInCartDis = $('.items-in-cart');
@@ -56,6 +78,12 @@ $(document).ready(function(){
     baseURL = "scripts/";
     sessionURL = "session.manage.script.php";
     cartParentUL = $('.cart-items-ul');
+    allItemPrices = $('.cart-itemPrice');
+
+    subTotalSpan = $('#subTotal');
+    taxSpan = $('#tax');
+    shippingSpan = $('#shipping');
+    totalSpan = $('#total');
 
     addCartBtn.on('click',function(){
         addCart($(this).next(prodID).val());
@@ -70,6 +98,8 @@ $(document).ready(function(){
     checkOutBtn.on('click',function(){
 
     });
+
+    calTotals();
 
 });
 
