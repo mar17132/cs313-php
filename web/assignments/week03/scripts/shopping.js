@@ -52,6 +52,7 @@ $(document).ready(function(){
     });
 
     removeCartBtn.on('click',function(){
+        baseURL = "../scripts/";
         removeCart($(this).next(prodID).val());
     });
 

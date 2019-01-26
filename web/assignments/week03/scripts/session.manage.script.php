@@ -7,7 +7,6 @@ function checkSession()
     if(session_status() != PHP_SESSION_ACTIVE)
     {
         session_start();
-        //$_SESSION["cart"] = array();
     }
     return true;
 }
@@ -24,7 +23,6 @@ function setSessionVariables()
             {
                 array_push($newCartArray,$prodID);
             }
-            //$newCartArray = array_merge($newCartArray,$_SESSION["cart"]);
 
             unset($_SESSION["cart"]);
             $_SESSION["cart"] = $newCartArray;

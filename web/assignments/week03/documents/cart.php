@@ -12,46 +12,46 @@
 <div class="content">
     <div class="cart-items">
         <ul class="cart-items-ul">
-            <li class="cart-items-li">
-                <div class="cart-item">
-                    <ul class="cart-item-ul">
-                        <?php
 
-                            foreach($cartArray as $prod)
-                            {
-                                //item image
-                                echo "<li class='cart-item-li'>";
-                                echo "<img class='cart-itemImage'
-                                      alt='".$items[$prod]["itemName"]."'
-                                      src='".$items[$prod]["itemImage"]."' />";
-                                echo "</li>";
+                <?php
 
-                                //item name
-                                echo "<li class='cart-item-li'>";
-                                echo "<span class='cart-itemName'>";
-                                echo $items[$prod]["itemName"];
-                                echo "</span></li>";
+                    foreach($cartArray as $prod)
+                    {
+                        echo " <li class='cart-items-li'>
+                        <div class='cart-item'>
+                        <ul class='cart-item-ul'>";
 
-                                //item price
-                                echo "<li class='cart-item-li'>";
-                                echo "<span class='cart-itemPrice'>";
-                                echo $items[$prod]["itemPrice"];
-                                echo "</span></li>";
+                        //item image
+                        echo "<li class='cart-item-li'>";
+                        echo "<img class='cart-itemImage'
+                              alt='".$items[$prod]["itemName"]."'
+                              src='".$items[$prod]["itemImage"]."' />";
+                        echo "</li>";
 
-                                //remove button
-                                echo "<li class='cart-item-li'>";
-                                echo "<input type='button' value='Remove'
-                                      class='buttons removeCartBtn' />";
-                                echo "<input class='itemID' type='hidden'
-                                        value='$prod'/>";
-                                echo "</li>";
+                        //item name
+                        echo "<li class='cart-item-li'>";
+                        echo "<span class='cart-itemName'>";
+                        echo $items[$prod]["itemName"];
+                        echo "</span></li>";
 
-                            }
+                        //item price
+                        echo "<li class='cart-item-li'>";
+                        echo "<span class='cart-itemPrice'>";
+                        echo $items[$prod]["itemPrice"];
+                        echo "</span></li>";
 
-                        ?>
-                    </ul>
-                </div>
-            </li>
+                        //remove button
+                        echo "<li class='cart-item-li'>";
+                        echo "<input type='button' value='Remove'
+                              class='buttons removeCartBtn' />";
+                        echo "<input class='itemID' type='hidden'
+                                value='$prod'/>";
+                        echo "</li>";
+
+                        echo "</ul></div></li>";
+                    }
+
+                ?>
 
 
             <li class="cart-items-li">

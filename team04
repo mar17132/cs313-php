@@ -1,0 +1,7 @@
+/d
+\d
+\du
+\l
+createdb
+createdb team04
+\s team04
