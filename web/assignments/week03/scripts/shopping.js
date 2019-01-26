@@ -54,7 +54,7 @@ $(document).ready(function(){
     hiddenIframe = $('.hiddenIframe');
     baseURL = "scripts/";
     sessionURL = "session.manage.script.php";
-    cartParentUL = $('.cart-items-li');
+    cartParentUL = $('.cart-items-ul');
 
     addCartBtn.on('click',function(){
         addCart($(this).next(prodID).val());
