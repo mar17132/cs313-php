@@ -91,7 +91,8 @@ function runJavaScript($arrayCount)
     {updateCartNumberDis($arrayCount);
     changeSrc('');}
     else{parent.updateCartNumberDis($arrayCount);
-    parent.changeSrc('');}
+    //parent.changeSrc('');
+    }
     </script>";
 }
 
