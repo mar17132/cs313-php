@@ -15,7 +15,7 @@
             <a class="a-menu" href="<?php echo $baseURL.$location."/documents/cart.php"; ?>">
                 Cart
                 <span class="items-in-cart">
-                    0
+                    <?php echo getCountCartArray(); ?>
                 </span>
             </a>
         </li>

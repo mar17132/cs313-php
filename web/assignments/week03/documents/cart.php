@@ -115,7 +115,6 @@
 
 </div>
 
-<?php runJavaScriptInDoc(getCountCartArray()); ?>
 </body>
 </html>
 
