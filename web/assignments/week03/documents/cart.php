@@ -118,7 +118,9 @@
 
 </div>
 <script type="text/javascript" >
-    calTotals();
+    $(document).ready(function(){
+        calTotals();
+    });
 </script>
 </body>
 </html>
