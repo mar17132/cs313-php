@@ -8,6 +8,7 @@ var itemInCartDis;
 var hiddenIframe;
 var baseURL;
 var sessionURL;
+var cartParentUL;
 
 
 function addCart(value)
@@ -36,6 +37,12 @@ function updateCartNumberDis(itemsInCart)
 }
 
 
+function removeItem(item)
+{
+    cartParentUL.remove(item.parents().find('.cart-items-li'));
+}
+
+
 $(document).ready(function(){
 
     itemsInCartDis = $('.items-in-cart');
@@ -46,6 +53,7 @@ $(document).ready(function(){
     hiddenIframe = $('.hiddenIframe');
     baseURL = "scripts/";
     sessionURL = "session.manage.script.php";
+    cartParentUL = $('.cart-items-li');
 
     addCartBtn.on('click',function(){
         addCart($(this).next(prodID).val());
