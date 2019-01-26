@@ -46,6 +46,7 @@ function updateCartNumberDis(itemsInCart)
 function removeCartItem(item)
 {
     item.parents('.cart-items-li').remove();
+    calTotals();
 }
 
 
@@ -95,7 +96,6 @@ $(document).ready(function(){
         baseURL = "../scripts/";
         removeCart($(this).next(prodID).val());
         removeCartItem($(this));
-        calTotals();
     });
 
     checkOutBtn.on('click',function(){
