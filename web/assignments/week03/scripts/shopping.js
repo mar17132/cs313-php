@@ -39,7 +39,7 @@ function updateCartNumberDis(itemsInCart)
 
 function removeCartItem(item)
 {
-    test = item.parents().find('.cart-items-li');
+    test = item.parents('.cart-items-li');
     test.remove();
    // cartParentUL.remove(test);
 }
