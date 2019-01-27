@@ -21,6 +21,8 @@
                             echo "<div class='items'>";
                         }
 
+                        $loopCounter++;
+
                         echo "<div class='item'>
                               <a class='item-link'>
                               <ul class='item-ul'>";
@@ -49,12 +51,12 @@
 
                         echo "</ul></a></div>";
 
-                        if($loopCounter % 4 == 0)
+                        if($loopCounter % 4 == 0 && $loopCounter != 0)
                         {
                             echo "</div>";
                         }
 
-                        $loopCounter++;
+                       // $loopCounter++;
 
                     }
 
