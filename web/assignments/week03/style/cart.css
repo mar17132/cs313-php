@@ -114,6 +114,21 @@ table.totals{
 }
 
 
+.addressTable{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+
+}
+
+
+.confirmationTable{
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+}
+
 .footer{
 
 }
