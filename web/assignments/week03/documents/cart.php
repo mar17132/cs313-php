@@ -31,7 +31,7 @@
                         echo "</li>";
 
                         //item name
-                        echo "<li class='cart-item-li'>";
+                        echo "<li class='cart-item-li cart-item-name'>";
                         echo "<span class='cart-itemName'>";
                         echo $items[$prod]["itemName"];
                         echo "</span></li>";

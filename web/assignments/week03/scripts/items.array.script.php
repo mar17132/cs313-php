@@ -26,12 +26,12 @@
         5 =>array(
             "itemName" => "WOPR",
             "itemImage" => "$baseURL$location/images/WOPR-SideView.png",
-            "itemPrice" => "$100,000,000.00"
+            "itemPrice" => "$100000000.00"
         ),
         6 =>array(
             "itemName" => "Time Machine",
             "itemImage" => "$baseURL$location/images/time.png",
-            "itemPrice" => "$100,000.00"
+            "itemPrice" => "$100000.00"
         )
 
 

@@ -67,6 +67,11 @@ body{
 }
 
 
+.cart-item-name{
+    width: 190px;
+}
+
+
 .cart-itemImage{
     width: 125px;
 }
