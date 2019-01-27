@@ -24,7 +24,14 @@
         </div>
 
         <div class="content">
-            <h3>Coming Soon</h3>
+            <ul>
+
+                <li>
+                    <a href="week03/index.php">
+                        Assignment 3
+                    </a>
+                </li>
+            </ul>
         </div>
 
         <div class="footer">

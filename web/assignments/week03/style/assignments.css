@@ -1,0 +1,12 @@
+.assignmentsUL{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 125px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.assignmentsUL li{
+    padding: 25px;
+}
