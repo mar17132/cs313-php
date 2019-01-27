@@ -142,6 +142,11 @@ table.totals{
     margin-left: auto;
     margin-right: auto;
     margin-top: 25px;
+    font-size: 1.2em;
+}
+
+.confirmationTable td{
+    padding: 20px;
 }
 
 .footer{
