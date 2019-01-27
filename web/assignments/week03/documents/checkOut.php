@@ -23,7 +23,7 @@
 
             <tr>
                 <td>
-                    <label for="addressTxb">Name</label>
+                    <label for="addressTxb">Address</label>
                 </td>
                 <td>
                     <input type="text" name="addressTxb" id="addressTxb" />
@@ -32,7 +32,7 @@
 
             <tr>
                 <td>
-                    <label for="cityTxb">Name</label>
+                    <label for="cityTxb">City</label>
                 </td>
                 <td>
                     <input type="text" name="cityTxb" id="cityTxb" />
@@ -41,7 +41,7 @@
 
             <tr>
                 <td>
-                    <label for="stateTxb">Name</label>
+                    <label for="stateTxb">State</label>
                 </td>
                 <td>
                     <input type="text" name="stateTxb" id="stateTxb" />
@@ -50,7 +50,7 @@
 
             <tr>
                 <td>
-                    <label for="zipTxb">Name</label>
+                    <label for="zipTxb">Zip</label>
                 </td>
                 <td>
                     <input type="text" name="zipTxb" id="zipTxb" />
