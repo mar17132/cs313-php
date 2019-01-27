@@ -56,15 +56,19 @@ function calTotals()
     total = 0;
     allItemPrices = $('.cart-itemPrice');
 
-    allItemPrices.each(function(){
-        numberArray = $(this).html().split("$");
-        subTotalItems += parseFloat(numberArray[1]);
-    });
+    if(allItemPrices.length > 0)
+    {
+        allItemPrices.each(function(){
+            numberArray = $(this).html().split("$");
+            subTotalItems += parseFloat(numberArray[1]);
+        });
+
+        tax = subTotalItems * parseFloat(taxSpan.html());
+        total = tax + subTotalItems + parseFloat(shippingSpan.html().split("$")[1]);
+
+    }
 
     subTotalSpan.html("$" + subTotalItems.toFixed(2));
-    tax = subTotalItems * parseFloat(taxSpan.html());
-    total = tax + subTotalItems + parseFloat(shippingSpan.html().split("$")[1]);
-
     totalSpan.html("$" + total.toFixed(2));
 }
 
