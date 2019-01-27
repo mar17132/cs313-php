@@ -65,7 +65,7 @@
                     </a>
                 </td>
                 <td class="buttonsTd">
-                    <input type='button' value='Complete Order' class='buttons completeOrderBtn' />
+                    <input type='submit' value='Complete Order' class='buttons completeOrderBtn' />
                 </td>
             </tr>
         </table>
