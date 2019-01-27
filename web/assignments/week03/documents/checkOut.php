@@ -59,12 +59,12 @@
 
 
             <tr>
-                <td>
+                <td class="buttonsTd">
                     <a href="cart.php">
                         <input type='button' value='Return to Cart' class='buttons cartReturnBtn' />
                     </a>
                 </td>
-                <td>
+                <td class="buttonsTd">
                     <input type='button' value='Complete Order' class='buttons completeOrderBtn' />
                 </td>
             </tr>

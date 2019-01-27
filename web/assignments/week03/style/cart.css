@@ -118,12 +118,22 @@ table.totals{
     margin-left: auto;
     margin-right: auto;
     margin-top: 25px;
-    font-size: 1.1em;
+    font-size: 1.2em;
 
 }
 
 .addressTable td{
+    padding: 20px;
+}
+
+
+.addressTable .buttonsTd{
     padding: 50px;
+}
+
+.addressTable .buttons{
+
+    width: 150px;
 }
 
 
