@@ -46,7 +46,6 @@ function updateCartNumberDis(itemsInCart)
 function removeCartItem(item)
 {
     item.parents('.cart-items-li').remove();
-    calTotals();
 }
 
 
@@ -55,6 +54,7 @@ function calTotals()
     subTotalItems = 0;
     tax = 0;
     total = 0;
+    allItemPrices = $('.cart-itemPrice');
 
     allItemPrices.each(function(){
         numberArray = $(this).html().split("$");
@@ -96,6 +96,7 @@ $(document).ready(function(){
         baseURL = "../scripts/";
         removeCart($(this).next(prodID).val());
         removeCartItem($(this));
+        calTotals();
     });
 
     checkOutBtn.on('click',function(){
