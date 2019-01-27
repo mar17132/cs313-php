@@ -55,6 +55,10 @@
                         {
                             echo "</div>";
                         }
+                        elseif(count($items) == $key)
+                        {
+                            echo "</div>";
+                        }
 
                        // $loopCounter++;
 
