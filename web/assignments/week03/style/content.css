@@ -27,11 +27,11 @@ body{
 }
 
 .items{
-    margin-top: 50px;
+    margin-top: 70px;
 }
 
 .items:last-child{
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 
