@@ -30,6 +30,10 @@ body{
     margin-top: 70px;
 }
 
+.items:first-child{
+    margin-top: 50px;
+}
+
 .items:last-child{
     margin-bottom: 50px;
 }
