@@ -24,7 +24,7 @@
         </div>
 
         <div class="content">
-            <ul>
+            <ul class="assignmentsUL">
 
                 <li>
                     <a href="week03/index.php">

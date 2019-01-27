@@ -10,3 +10,9 @@
 .assignmentsUL li{
     padding: 25px;
 }
+
+
+.assignmentsUL a{
+    color: white;
+    font-size: 1.3em;
+}
