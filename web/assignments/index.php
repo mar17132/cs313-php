@@ -15,6 +15,7 @@
         <title>CS 313 Assignments</title>
         <link rel="stylesheet" href="../style/introduction.css" />
         <link rel="stylesheet" href="../style/intro-menu.css" />  
+        <link rel="stylesheet" href="../style/assignments.css" />
         <script src="../scripts/jquery/jquery-3.3.1.min.js" ></script>
     </head>
     <body>
