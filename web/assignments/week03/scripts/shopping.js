@@ -68,8 +68,8 @@ function calTotals()
 
     }
 
-    subTotalSpan.html("$" + parseFloat(subTotalItems.toFixed(2)).toLocaleString().toFixed(2));
-    totalSpan.html("$" + parseFloat(total.toFixed(2)).toLocaleString());
+    subTotalSpan.html("$" + subTotalItems.toFixed(2));
+    totalSpan.html("$" + total.toFixed(2));
 }
 
 
