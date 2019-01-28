@@ -1,0 +1,72 @@
+Bash$ heroku addons:create heroku-postgresql:hobby-dev
+Creating heroku-postgresql:hobby-dev on ⬢ enigmatic-lowlands-70024... free
+Database has been created and is available
+ ! This database is empty. If upgrading, you can transfer
+ ! data from another database with pg:copy
+Created postgresql-solid-45215 as HEROKU_POSTGRESQL_PINK_URL
+Use heroku addons:docs heroku-postgresql to view documentation
+Bash$ heroku config -s
+DATABASE_URL='postgres://slslbiexbctcag:1e01412a806ed5a1cec30a5c99a6a784333ecd1c5b1ae5ec12b988069918ea53@ec2-107-22-162-8.compute-1.amazonaws.com:5432/dap2vvqc2qoa99'
+HEROKU_POSTGRESQL_PINK_URL='postgres://tvhojqetgdcial:8a5512b5170f6983b0f3dd7ef469ef17c605c4ea4024e260ab840e0d1d305ebc@ec2-54-221-253-228.compute-1.amazonaws.com:5432/dectot75ur0ivn'
+Bash$ heroku pg:info
+=== DATABASE_URL
+Plan:                  Hobby-dev
+Status:                Available
+Connections:           0/20
+PG Version:            10.6
+Created:               2019-01-26 14:54 UTC
+Data Size:             8.2 MB
+Tables:                6
+Rows:                  0/10000 (In compliance) - refreshing
+Fork/Follow:           Unsupported
+Rollback:              Unsupported
+Continuous Protection: Off
+Add-on:                postgresql-objective-11620
+
+=== HEROKU_POSTGRESQL_PINK_URL
+Plan:                  Hobby-dev
+Status:                Available
+Connections:           0/20
+PG Version:            10.6
+Created:               2019-01-28 19:23 UTC
+Data Size:             7.7 MB
+Tables:                0
+Rows:                  0/10000 (In compliance) - refreshing
+Fork/Follow:           Unsupported
+Rollback:              Unsupported
+Continuous Protection: Off
+Add-on:                postgresql-solid-45215
+
+Bash$ heroku pg:psql
+--> Connecting to postgresql-objective-11620
+psql (10.6)
+SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)
+Type "help" for help.
+
+enigmatic-lowlands-70024::DATABASE=> \q
+Bash$ heroku pg:psql -d postgresql-solid-45215
+ ›   Error: Unexpected argument: postgresql-solid-45215
+ ›   See more help with --help
+Bash$ heroku pg:psql
+--> Connecting to postgresql-objective-11620
+psql (10.6)
+SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)
+Type "help" for help.
+
+enigmatic-lowlands-70024::DATABASE=> \s postgresql-objective-45215
+Wrote history to file "postgresql-objective-45215".
+enigmatic-lowlands-70024::DATABASE=> \q
+
+
+
+Bash$ heroku pg:promote HEROKU_POSTGRESQL_PINK_URL
+Ensuring an alternate alias for existing DATABASE_URL... HEROKU_POSTGRESQL_AMBER_URL
+Promoting postgresql-solid-45215 to DATABASE_URL on ⬢ enigmatic-lowlands-70024... done
+Bash$ heroku pg:psql
+--> Connecting to postgresql-solid-45215
+psql (10.6)
+SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)
+Type "help" for help.
+
+enigmatic-lowlands-70024::DATABASE=> 
+

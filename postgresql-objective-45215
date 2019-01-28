@@ -1,0 +1,254 @@
+/d
+\d
+\du
+\l
+createdb
+createdb team04
+\s team04
+\su team04
+create database team04;
+create database team04;
+CREATE TABLE Speaker(
+    ID      SERIAL PRIMARY KEY,
+    Name    varchar(80)
+);
+CREATE TABLE Talk(
+    ID      SERIAL PRIMARY KEY,
+    Name    varchar(80)
+);
+CREATE TABLE Sessions(
+    ID           SERIAL PRIMARY KEY,
+    DayofWeek    varchar(25),
+    TimeofDay    varchar(25)
+);
+CREATE TABLE Delivered(
+    ID          SERIAL PRIMARY KEY,
+    Talk_ID     int REFERENCES Talk(ID),
+    Speaker_ID  int REFERENCES Speaker(ID),
+    Year        varchar(4),
+    Month       varchar(10) 
+);
+CREATE TABLE Users(
+    ID      SERIAL PRIMARY KEY,
+    Name    varchar(80),
+    Pass    varchar(80)
+);
+CREATE TABLE Notes(
+    ID          SERIAL PRIMARY KEY,
+    Talk_ID     int REFERENCES Talk(ID),
+    User_ID     int REFERENCES Users(ID),
+    Note        varchar(200)
+);
+show tables;
+\dt
+INSERT INTO Speaker VALUES('','Russell M. Nelson');
+INSERT INTO Speaker VALUES('Russell M. Nelson');
+INSERT INTO Speaker VALUES(,'Russell M. Nelson');
+INSERT INTO Speaker(Name) VALUES('Russell M. Nelson');
+select * from speaker;
+INSERT INTO Speaker(Name) VALUES('Henry B. Eyring');
+INSERT INTO Speaker(Name) VALUES('Dallin H. Oaks');
+select * from speaker;
+drop table Delivered;
+REATE TABLE Delivered(
+    ID          SERIAL PRIMARY KEY,
+    Talk_ID     int REFERENCES Talk(ID),
+    Speaker_ID  int REFERENCES Speaker(ID),
+    Session_ID  int REFERENCES Sessions(ID),
+    Year        varchar(4),
+    Month       varchar(10) 
+);
+CREATE TABLE Delivered(
+    ID          SERIAL PRIMARY KEY,
+    Talk_ID     int REFERENCES Talk(ID),
+    Speaker_ID  int REFERENCES Speaker(ID),
+    Session_ID  int REFERENCES Sessions(ID),
+    Year        varchar(4),
+    Month       varchar(10) 
+);
+\dt
+select * from speakers
+select * from speakers;
+select * from speaker;
+select * from talk;
+select * from sessions;
+INSERT INTO Talk(Name) VALUES('Opening Remarks');
+INSERT INTO Talk(Name) VALUES('Parents and Children');
+INSERT INTO Talk(Name) VALUES('Try,Try,Try');
+INSERT INTO Sessions(DayofWeek,TimeofDay) VALUES('Saturday','Morning'); 
+INSERT INTO Sessions(DayofWeek,TimeofDay) VALUES('Saturday','Afternoon');
+INSERT INTO Sessions(DayofWeek,TimeofDay) VALUES('Sunday','Morning');
+INSERT INTO Sessions(DayofWeek,TimeofDay) VALUES('Sunday','Afternoon'); 
+INSERT INTO Delivered(Talk_ID,Speaker_ID,Session_ID,Year,Month)
+VALUES(
+    (SELECT ID FROM Talk WHERE Name = 'Opening Remarks'),
+    (SELECT ID FROM Speaker WHERE Name = 'Russell M. Nelson'),
+    (SELECT ID FROM Sessions WHERE DayofWeek = 'Saturday' AND TimeofDay = 'Morning'),
+    '2018',
+    'October'
+); 
+select * from Delivered;
+delete from Talk where Name = 'Parents and Children';
+select * from Talk;
+INSERT INTO Talk(Name) VALUES('Tuth and the Plan'); 
+select * from Talk;
+select * from Delivered;
+INSERT INTO Delivered(Talk_ID,Speaker_ID,Session_ID,Year,Month)
+VALUES(
+    (SELECT ID FROM Talk WHERE Name = 'Try,Try,Try'),
+    (SELECT ID FROM Speaker WHERE Name = 'Henry B. Eyring'),
+    (SELECT ID FROM Sessions WHERE DayofWeek = 'Sunday' AND TimeofDay = 'Afternoon'),
+    '2018',
+    'October'
+); 
+INSERT INTO Delivered(Talk_ID,Speaker_ID,Session_ID,Year,Month)
+VALUES(
+    (SELECT ID FROM Talk WHERE Name = 'Tuth and the Plan'),
+    (SELECT ID FROM Speaker WHERE Name = 'Dallin H. Oaks'),
+    (SELECT ID FROM Sessions WHERE DayofWeek = 'Saturday' AND TimeofDay = 'Morning'),
+    '2018',
+    'October'
+); 
+select * from Delivered;
+\dt
+INSERT INTO Users(Name,Pass)
+VALUES('Bob','notaPassword');
+INSERT INTO Users(Name,Pass)
+VALUES('Harry','notaPassword');
+INSERT INTO Users(Name,Pass)
+VALUES('Luke','notaPassword');
+INSERT INTO Note(Talk_ID,User_ID,Note)
+VALUES(
+    (SELECT ID FROM Talk WHERE Name = 'Try,Try,Try'),
+    (SELECT ID FROM Users WHERE Name = 'Harry'),
+    'Great Talk!'
+);
+INSERT INTO Notes(Talk_ID,User_ID,Note)
+VALUES(
+    (SELECT ID FROM Talk WHERE Name = 'Try,Try,Try'),
+    (SELECT ID FROM Users WHERE Name = 'Harry'),
+    'Great Talk!'
+);
+INSERT INTO Notes(Talk_ID,User_ID,Note)
+VALUES(
+    (SELECT ID FROM Talk WHERE Name = 'Tuth and the Plan'),
+    (SELECT ID FROM Users WHERE Name = 'Harry'),
+    'Great Talk!'
+);
+INSERT INTO Notes(Talk_ID,User_ID,Note)
+VALUES(
+    (SELECT ID FROM Talk WHERE Name = 'Opening Remarks'),
+    (SELECT ID FROM Users WHERE Name = 'Harry'),
+    'Great Talk!'
+);
+INSERT INTO Notes(Talk_ID,User_ID,Note)
+VALUES(
+    (SELECT ID FROM Talk WHERE Name = 'Try,Try,Try'),
+    (SELECT ID FROM Users WHERE Name = 'Bob'),
+    'Great Talk!'
+);
+INSERT INTO Notes(Talk_ID,User_ID,Note)
+VALUES(
+    (SELECT ID FROM Talk WHERE Name = 'Tuth and the Plan'),
+    (SELECT ID FROM Users WHERE Name = 'Bob'),
+    'Great Talk!'
+);
+INSERT INTO Notes(Talk_ID,User_ID,Note)
+VALUES(
+    (SELECT ID FROM Talk WHERE Name = 'Opening Remarks'),
+    (SELECT ID FROM Users WHERE Name = 'Bob'),
+    'Great Talk!'
+);
+INSERT INTO Notes(Talk_ID,User_ID,Note)
+VALUES(
+    (SELECT ID FROM Talk WHERE Name = 'Try,Try,Try'),
+    (SELECT ID FROM Users WHERE Name = 'Luke'),
+    'Great Talk!'
+);
+INSERT INTO Notes(Talk_ID,User_ID,Note)
+VALUES(
+    (SELECT ID FROM Talk WHERE Name = 'Tuth and the Plan'),
+    (SELECT ID FROM Users WHERE Name = 'Luke'),
+    'Great Talk!'
+);
+INSERT INTO Notes(Talk_ID,User_ID,Note)
+VALUES(
+    (SELECT ID FROM Talk WHERE Name = 'Opening Remarks'),
+    (SELECT ID FROM Users WHERE Name = 'Luke'),
+    'Great Talk!'
+);
+INSERT INTO Notes(Talk_ID,User_ID,Note)
+VALUES(
+    (SELECT ID FROM Talk WHERE Name = 'Opening Remarks'),
+    (SELECT ID FROM Users WHERE Name = 'Luke'),
+    'Best Talk ever!'
+);
+SELECT Talk.Name AS 'Talk', Users.Name AS 'User', Notes.Note
+       Speaker.Name AS 'Speaker',Talk.Name AS 'Talk'
+       FROM Notes
+       JOIN Talk ON Notes.Talk_ID = Talk.ID
+       JOIN Users ON Notes.User_ID = Users.ID
+       JOIN Delivered ON Notes.Talk_ID = Delivered.Talk_ID
+       JOIN Speaker ON Delivered.Speaker_ID = Speaker.ID;
+SELECT Talk.Name AS Talk, Users.Name AS User, Notes.Note
+       Speaker.Name AS Speaker,Talk.Name AS Talk
+       FROM Notes
+       JOIN Talk ON Notes.Talk_ID = Talk.ID
+       JOIN Users ON Notes.User_ID = Users.ID
+       JOIN Delivered ON Notes.Talk_ID = Delivered.Talk_ID
+       JOIN Speaker ON Delivered.Speaker_ID = Speaker.ID;
+SELECT Talk.Name AS Talk, Users.Name AS User, Notes.Note,
+       Speaker.Name AS Speaker,Talk.Name AS Talk
+       FROM Notes
+       JOIN Talk ON Notes.Talk_ID = Talk.ID
+       JOIN Users ON Notes.User_ID = Users.ID
+       JOIN Delivered ON Notes.Talk_ID = Delivered.Talk_ID
+       JOIN Speaker ON Delivered.Speaker_ID = Speaker.ID;
+SELECT Talk.Name AS Talk, Users.Name AS User, Notes.Note,
+       Speaker.Name AS Speaker
+       FROM Notes
+       JOIN Talk ON Notes.Talk_ID = Talk.ID
+       JOIN Users ON Notes.User_ID = Users.ID
+       JOIN Delivered ON Notes.Talk_ID = Delivered.Talk_ID
+       JOIN Speaker ON Delivered.Speaker_ID = Speaker.ID;
+SELECT Talk.Name AS Talk, Speaker.Name AS Speaker, Users.Name AS User,
+       Notes.Note       
+       FROM Notes
+       JOIN Talk ON Notes.Talk_ID = Talk.ID
+       JOIN Users ON Notes.User_ID = Users.ID
+       JOIN Delivered ON Notes.Talk_ID = Delivered.Talk_ID
+       JOIN Speaker ON Delivered.Speaker_ID = Speaker.ID;
+\q
+\dt
+select * from Talk;
+select * from Delivered;
+INSERT INTO Speaker(Name) VALUES("Dieter F. Uchtdorf");
+INSERT INTO Speaker(Name) VALUES('Dieter F. Uchtdorf');
+select * from Speaker;
+SELECT Talk.Name AS Talk, Speaker.Name AS Speaker, Users.Name AS User,
+       Notes.Note       
+       FROM Notes
+       JOIN Talk ON Notes.Talk_ID = Talk.ID
+       JOIN Users ON Notes.User_ID = Users.ID
+       JOIN Delivered ON Notes.Talk_ID = Delivered.Talk_ID
+       JOIN Speaker ON Delivered.Speaker_ID = Speaker.ID;
+SELECT Talk.Name AS Talk, Speaker.Name AS Speaker, Users.Name AS User,
+       Notes.Note       
+       FROM Notes
+       JOIN Talk ON Notes.Talk_ID = Talk.ID
+       JOIN Users ON Notes.User_ID = Users.ID
+       JOIN Delivered ON Notes.Talk_ID = Delivered.Talk_ID
+       JOIN Speaker ON Delivered.Speaker_ID = Speaker.ID
+       WHERE Talk.Name = 'Opening Remarks';    
+SELECT Talk.Name AS Talk, Speaker.Name AS Speaker, Users.Name AS User,
+       Notes.Note       
+       FROM Notes
+       JOIN Talk ON Notes.Talk_ID = Talk.ID
+       JOIN Users ON Notes.User_ID = Users.ID
+       JOIN Delivered ON Notes.Talk_ID = Delivered.Talk_ID
+       JOIN Speaker ON Delivered.Speaker_ID = Speaker.ID
+       WHERE Talk.Name = 'Opening Remarks'
+       AND Users.Name = 'Luke';  
+\q
+\q
+\s postgresql-objective-45215
