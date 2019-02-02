@@ -40,7 +40,7 @@ catch (PDOException $ex)
 
         <?php
 
-          foreach($db->query('SELECT * FROM Scriptures WHERE book = '.$_POST['search'].';') as $row)
+          foreach($db->query("SELECT * FROM Scriptures WHERE book ='".$_POST['search']."';") as $row)
             {
                 echo "<a class='scripture' href='display.php?id=$row[id]' >";
                 echo $row[book]." ".$row[chapter].":".$row[verse];
