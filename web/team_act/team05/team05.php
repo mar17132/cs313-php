@@ -40,8 +40,9 @@ echo "test3";
             echo "test1";
 
             $test = $db->query('SELECT * FROM Scriptures;');
-
+echo "<br/>";
             echo count($test);
+        print_r($test);
 
 
           /*  foreach($db->query('SELECT * FROM Scriptures;') as $row)
