@@ -1,7 +1,7 @@
 <?php
 
 $db;
-echo "test2";
+
 try
 {
     $dbUrl = getenv('DATABASE_URL');
@@ -23,7 +23,6 @@ catch (PDOException $ex)
   die();
 }
 
-echo "test3";
 ?>
 
 
@@ -37,13 +36,12 @@ echo "test3";
         <h1>Scripture Resources</h1>
 
         <?php
-            echo "test1";
 
-            $statement = $db->query('SELECT * FROM Scriptures;');
-            $resultsArray = $statement->fetchAll(PDO::FETCH_ASSOC);
+           // $statement = $db->query('SELECT * FROM Scriptures;');
+           // $resultsArray = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 
-          foreach($resultsArray as $row)
+          foreach($db->query('SELECT * FROM Scriptures;') as $row)
             {
 
                 echo "<p>";
