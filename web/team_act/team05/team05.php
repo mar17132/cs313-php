@@ -31,15 +31,16 @@ catch (PDOException $ex)
 <html>
     <head>
         <title>Team 05</title>
+        <style type="text/css">
+            .scripture{
+                font-weight: bold;
+            }
+        </style>
     </head>
     <body>
         <h1>Scripture Resources</h1>
 
         <?php
-
-           // $statement = $db->query('SELECT * FROM Scriptures;');
-           // $resultsArray = $statement->fetchAll(PDO::FETCH_ASSOC);
-
 
           foreach($db->query('SELECT * FROM Scriptures;') as $row)
             {
