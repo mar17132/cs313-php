@@ -42,8 +42,8 @@ echo "test3";
             $statement = $db->query('SELECT * FROM Scriptures;');
             $resultsArray = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-
-          foreach($resultsArray as $row)
+print_r($resultsArray);
+          /*foreach($resultsArray as $row)
             {
                 echo "<p>";
                 //scripture
@@ -53,7 +53,7 @@ echo "test3";
                 echo "&quot;".$row['content']."&quot;";
                 echo "</p>";
 
-            }
+            }*/
 
         ?>
 
