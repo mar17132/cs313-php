@@ -39,14 +39,11 @@ echo "test3";
         <?php
             echo "test1";
 
-            $test = $db->query('SELECT * FROM Scriptures;');
-        $test2 = $test->fetchAll(PDO::FETCH_ASSOC);
-echo "<br/>";
-            echo count($test2);
-        print_r($test2);
+            $statement = $db->query('SELECT * FROM Scriptures;');
+            $resultsArray = $test->fetchAll(PDO::FETCH_ASSOC);
 
 
-          /*  foreach($db->query('SELECT * FROM Scriptures;') as $row)
+          foreach($resultsArray as $row)
             {
                 echo "<p>";
                 //scripture
@@ -56,7 +53,7 @@ echo "<br/>";
                 echo "&quot;".$row['content']."&quot;";
                 echo "</p>";
 
-            }*/
+            }
 
         ?>
 
