@@ -43,17 +43,18 @@ echo "test3";
             $resultsArray = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 print_r($resultsArray);
-          /*foreach($resultsArray as $row)
+          foreach($resultsArray as $row)
             {
-                echo "<p>";
+                print_r($row);
+               /* echo "<p>";
                 //scripture
                 echo "<span class='scripture'>";
                 echo $row['book']." ".$row['chapter'].":"$row['verses']." - ";
                 echo "</span>";
                 echo "&quot;".$row['content']."&quot;";
-                echo "</p>";
+                echo "</p>";*/
 
-            }*/
+            }
 
         ?>
 
