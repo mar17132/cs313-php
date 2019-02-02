@@ -38,6 +38,12 @@ echo "test3";
 
         <?php
             echo "test1";
+
+            $test = $db->query('SELECT * FROM Scriptures;');
+
+            echo count($test);
+
+
           /*  foreach($db->query('SELECT * FROM Scriptures;') as $row)
             {
                 echo "<p>";
