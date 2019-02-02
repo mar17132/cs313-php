@@ -1,7 +1,7 @@
 <?php
 
 $db;
-
+echo "test2";
 try
 {
     $dbUrl = getenv('DATABASE_URL');
@@ -23,7 +23,7 @@ catch (PDOException $ex)
   die();
 }
 
-
+echo "test3";
 ?>
 
 
