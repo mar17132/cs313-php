@@ -2,7 +2,7 @@
 
 $db;
 echo " test2";
-try
+/*try
 {
     $dbUrl = getenv('postgres://slslbiexbctcag:1e01412a806ed5a1cec30a5c99a6a784333ecd1c5b1ae5ec12b988069918ea53@ec2-107-22-162-8.compute-1.amazonaws.com:5432/dap2vvqc2qoa99');
     $dbOpts = parse_url($dbUrl);
@@ -22,7 +22,7 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-
+*/
 
 ?>
 
