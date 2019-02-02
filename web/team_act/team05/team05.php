@@ -45,14 +45,14 @@ echo "test3";
 
           foreach($resultsArray as $row)
             {
-                print_r($row);
-                /*echo "<p>";
+
+                echo "<p>";
                 //scripture
                 echo "<span class='scripture'>";
-                echo $row[book]." ".$row[chapter].":"$row[verse]." - ";
+                echo $row[book]." ".$row[chapter].":".$row[verse]." - ";
                 echo "</span>";
                 echo "&quot;".$row[content]."&quot;";
-                echo "</p>";*/
+                echo "</p>";
 
             }
 
