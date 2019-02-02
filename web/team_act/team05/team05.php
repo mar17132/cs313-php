@@ -38,7 +38,7 @@ echo "test3";
 
         <?php
             echo "test1";
-            foreach($db->query('SELECT * FROM Scriptures;') as $row)
+          /*  foreach($db->query('SELECT * FROM Scriptures;') as $row)
             {
                 echo "<p>";
                 //scripture
@@ -48,7 +48,7 @@ echo "test3";
                 echo "&quot;".$row['content']."&quot;";
                 echo "</p>";
 
-            }
+            }*/
 
         ?>
 
