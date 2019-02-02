@@ -1,6 +1,6 @@
 <?php
 
-$db;
+//$db;
 echo " test2";
 /*try
 {
@@ -37,7 +37,7 @@ catch (PDOException $ex)
         <h1>Scripture Resources</h1>
 
         <?php
-        echo " test1";
+       /* echo " test1";
 
             foreach($db->query('SELECT * FROM Scriptures') as $row)
             {
@@ -51,7 +51,7 @@ catch (PDOException $ex)
 
             }
 
-
+*/
         ?>
 
     </body>
