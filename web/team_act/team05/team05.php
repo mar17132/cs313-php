@@ -42,16 +42,17 @@ echo "test3";
             $statement = $db->query('SELECT * FROM Scriptures;');
             $resultsArray = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-print_r($resultsArray);
+
           foreach($resultsArray as $row)
             {
-                echo "<p>";
+                print_r($row);
+                /*echo "<p>";
                 //scripture
                 echo "<span class='scripture'>";
                 echo $row[book]." ".$row[chapter].":"$row[verse]." - ";
                 echo "</span>";
                 echo "&quot;".$row[content]."&quot;";
-                echo "</p>";
+                echo "</p>";*/
 
             }
 
