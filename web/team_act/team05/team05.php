@@ -40,9 +40,10 @@ echo "test3";
             echo "test1";
 
             $test = $db->query('SELECT * FROM Scriptures;');
+        $test2 = $test->fetchAll(PDO::FETCH_ASSOC);
 echo "<br/>";
-            echo count($test);
-        print_r($test);
+            echo count($test2);
+        print_r($test2);
 
 
           /*  foreach($db->query('SELECT * FROM Scriptures;') as $row)
