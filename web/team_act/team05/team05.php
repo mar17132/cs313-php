@@ -1,10 +1,9 @@
 <?php
 
 //$db;
-echo " test2";
+
 try
 {
-    echo " test3";
     $dbUrl = getenv('DATABASE_URL');
     $dbOpts = parse_url($dbUrl);
 
@@ -38,7 +37,6 @@ catch (PDOException $ex)
         <h1>Scripture Resources</h1>
 
         <?php
-       /* echo " test1";
 
             foreach($db->query('SELECT * FROM Scriptures') as $row)
             {
@@ -52,7 +50,6 @@ catch (PDOException $ex)
 
             }
 
-*/
         ?>
 
     </body>
