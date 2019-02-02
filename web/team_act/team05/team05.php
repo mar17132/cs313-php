@@ -40,7 +40,7 @@ echo "test3";
             echo "test1";
 
             $statement = $db->query('SELECT * FROM Scriptures;');
-            $resultsArray = $test->fetchAll(PDO::FETCH_ASSOC);
+            $resultsArray = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 
           foreach($resultsArray as $row)
