@@ -38,7 +38,7 @@ catch (PDOException $ex)
 
         <?php
             echo "test1";
-            foreach($db->query('SELECT * FROM Scriptures') as $row)
+            foreach($db->query('SELECT * FROM Scriptures;') as $row)
             {
                 echo "<p>";
                 //scripture
