@@ -7,18 +7,24 @@ CREATE TABLE Computers(
 
 
 CREATE TABLE PatchCycle(
-    ID         SERIAL PRIMARY KEY,
-    Name       VARCHAR(120),
-    Note      VARCHAR(200)
+    ID       SERIAL PRIMARY KEY,
+    Name     VARCHAR(120),
+    Note     VARCHAR(200)
 );
 
 
 CREATE TABLE PatchSchedlue(
     ID                 SERIAL PRIMARY KEY,
-    Computer_ID        INT REFERENCES Computers(ID),
     PatchCycle_ID      INT REFERENCES PatchCycle(ID),
     PatchDate          DATE, -- yyy-mm-dd
-    PatchTime          TIME  -- HH:MM:SS
+    PatchTime          TIME   -- HH:MM:SS
+);
+
+
+CREATE TABLE Patching(
+    ID                 SERIAL PRIMARY KEY,
+    Computers_id       INT REFERENCES Computers(ID),
+    PatchSchedlue_id   INT REFERENCES PatchSchedlue(ID)
 );
 
 
@@ -63,86 +69,143 @@ VALUES('Patch3','This will be patch 3');
 
 
 --PatchSchedlue
-INSERT INTO PatchSchedlue(Computer_ID,PatchCycle_ID,PatchDate,PatchTime)
+INSERT INTO PatchSchedlue(PatchCycle_ID,PatchDate,PatchTime)
 VALUES(
-    (SELECT ID FROM Computers WHERE Name = 'adserver1'),
     (SELECT ID FROM PatchCycle WHERE Name = 'Patch3'),
     '2018-02-28',
     '07:00:00'
 );
 
 
-INSERT INTO PatchSchedlue(Computer_ID,PatchCycle_ID,PatchDate,PatchTime)
+INSERT INTO PatchSchedlue(PatchCycle_ID,PatchDate,PatchTime)
 VALUES(
-    (SELECT ID FROM Computers WHERE Name = 'Server1'),
-    (SELECT ID FROM PatchCycle WHERE Name = 'Patch3'),
-    '2018-02-28',
-    '07:00:00'
-);
-
-
-INSERT INTO PatchSchedlue(Computer_ID,PatchCycle_ID,PatchDate,PatchTime)
-VALUES(
-    (SELECT ID FROM Computers WHERE Name = 'Server2'),
     (SELECT ID FROM PatchCycle WHERE Name = 'Patch2'),
     '2018-04-28',
     '07:00:00'
 );
 
 
-INSERT INTO PatchSchedlue(Computer_ID,PatchCycle_ID,PatchDate,PatchTime)
+INSERT INTO PatchSchedlue(PatchCycle_ID,PatchDate,PatchTime)
 VALUES(
-    (SELECT ID FROM Computers WHERE Name = 'webapp3'),
-    (SELECT ID FROM PatchCycle WHERE Name = 'Patch2'),
-    '2018-04-28',
-    '07:00:00'
-);
-
-
-INSERT INTO PatchSchedlue(Computer_ID,PatchCycle_ID,PatchDate,PatchTime)
-VALUES(
-    (SELECT ID FROM Computers WHERE Name = 'dnsserver2'),
     (SELECT ID FROM PatchCycle WHERE Name = 'Patch1'),
     '2018-05-28',
     '07:00:00'
 );
 
 
-INSERT INTO PatchSchedlue(Computer_ID,PatchCycle_ID,PatchDate,PatchTime)
+INSERT INTO PatchSchedlue(PatchCycle_ID,PatchDate,PatchTime)
+VALUES(
+    (SELECT ID FROM PatchCycle WHERE Name = 'Patch3'),
+    '2018-06-28',
+    '07:00:00'
+);
+
+
+--Patching
+
+--Patch 1
+INSERT INTO Patching(Computers_id,PatchSchedlue_id)
+VALUES(
+    (SELECT ID FROM Computers WHERE Name = 'Server1'),
+    (SELECT PatchSchedlue.ID FROM PatchSchedlue
+     WHERE PatchSchedlue.PatchCycle_ID =(SELECT ID FROM
+     PatchCycle WHERE Name = 'Patch1')
+     AND PatchSchedlue.PatchDate = '2018-05-28')
+);
+
+
+INSERT INTO Patching(Computers_id,PatchSchedlue_id)
 VALUES(
     (SELECT ID FROM Computers WHERE Name = 'webapp1'),
-    (SELECT ID FROM PatchCycle WHERE Name = 'Patch1'),
-    '2018-05-28',
-    '07:00:00'
+    (SELECT PatchSchedlue.ID FROM PatchSchedlue
+     WHERE PatchSchedlue.PatchCycle_ID =(SELECT ID FROM
+     PatchCycle WHERE Name = 'Patch1')
+     AND PatchSchedlue.PatchDate = '2018-05-28')
 );
 
 
-
-INSERT INTO PatchSchedlue(Computer_ID,PatchCycle_ID,PatchDate,PatchTime)
+INSERT INTO Patching(Computers_id,PatchSchedlue_id)
 VALUES(
-    (SELECT ID FROM Computers WHERE Name = 'adserver1'),
-    (SELECT ID FROM PatchCycle WHERE Name = 'Patch1'),
-    '2018-05-28',
-    '07:00:00'
+    (SELECT ID FROM Computers WHERE Name = 'dnsserver2'),
+    (SELECT PatchSchedlue.ID FROM PatchSchedlue
+     WHERE PatchSchedlue.PatchCycle_ID =(SELECT ID FROM
+     PatchCycle WHERE Name = 'Patch1')
+     AND PatchSchedlue.PatchDate = '2018-05-28')
 );
 
-
-INSERT INTO PatchSchedlue(Computer_ID,PatchCycle_ID,PatchDate,PatchTime)
+--Patch 2
+INSERT INTO Patching(Computers_id,PatchSchedlue_id)
 VALUES(
     (SELECT ID FROM Computers WHERE Name = 'Server1'),
-    (SELECT ID FROM PatchCycle WHERE Name = 'Patch3'),
-    '2018-06-28',
-    '07:00:00'
+    (SELECT PatchSchedlue.ID FROM PatchSchedlue
+     WHERE PatchSchedlue.PatchCycle_ID =(SELECT ID FROM
+     PatchCycle WHERE Name = 'Patch2')
+     AND PatchSchedlue.PatchDate = '2018-04-28')
 );
 
 
+INSERT INTO Patching(Computers_id,PatchSchedlue_id)
+VALUES(
+    (SELECT ID FROM Computers WHERE Name = 'webapp3'),
+    (SELECT PatchSchedlue.ID FROM PatchSchedlue
+     WHERE PatchSchedlue.PatchCycle_ID =(SELECT ID FROM
+     PatchCycle WHERE Name = 'Patch2')
+     AND PatchSchedlue.PatchDate = '2018-04-28')
+);
 
-INSERT INTO PatchSchedlue(Computer_ID,PatchCycle_ID,PatchDate,PatchTime)
+
+INSERT INTO Patching(Computers_id,PatchSchedlue_id)
 VALUES(
     (SELECT ID FROM Computers WHERE Name = 'adserver1'),
-    (SELECT ID FROM PatchCycle WHERE Name = 'Patch3'),
-    '2018-06-28',
-    '07:00:00'
+    (SELECT PatchSchedlue.ID FROM PatchSchedlue
+     WHERE PatchSchedlue.PatchCycle_ID =(SELECT ID FROM
+     PatchCycle WHERE Name = 'Patch2')
+     AND PatchSchedlue.PatchDate = '2018-04-28')
 );
+
+--Patch 3
+INSERT INTO Patching(Computers_id,PatchSchedlue_id)
+VALUES(
+    (SELECT ID FROM Computers WHERE Name = 'Server1'),
+    (SELECT PatchSchedlue.ID FROM PatchSchedlue
+     WHERE PatchSchedlue.PatchCycle_ID =(SELECT ID FROM
+     PatchCycle WHERE Name = 'Patch3')
+     AND PatchSchedlue.PatchDate = '2018-06-28')
+);
+
+
+INSERT INTO Patching(Computers_id,PatchSchedlue_id)
+VALUES(
+    (SELECT ID FROM Computers WHERE Name = 'Server2'),
+    (SELECT PatchSchedlue.ID FROM PatchSchedlue
+     WHERE PatchSchedlue.PatchCycle_ID =(SELECT ID FROM
+     PatchCycle WHERE Name = 'Patch3')
+     AND PatchSchedlue.PatchDate = '2018-06-28')
+);
+
+
+INSERT INTO Patching(Computers_id,PatchSchedlue_id)
+VALUES(
+    (SELECT ID FROM Computers WHERE Name = 'Server1'),
+    (SELECT PatchSchedlue.ID FROM PatchSchedlue
+     WHERE PatchSchedlue.PatchCycle_ID =(SELECT ID FROM
+     PatchCycle WHERE Name = 'Patch3')
+     AND PatchSchedlue.PatchDate = '2018-02-28')
+);
+
+
+INSERT INTO Patching(Computers_id,PatchSchedlue_id)
+VALUES(
+    (SELECT ID FROM Computers WHERE Name = 'Server2'),
+    (SELECT PatchSchedlue.ID FROM PatchSchedlue
+     WHERE PatchSchedlue.PatchCycle_ID =(SELECT ID FROM
+     PatchCycle WHERE Name = 'Patch3')
+     AND PatchSchedlue.PatchDate = '2018-02-28')
+);
+
+--Query
+
+SELECT * FROM PatchCycle;
+
 
 

@@ -1,3 +1,10 @@
+<?php
+
+include "scripts/db.php";
+
+?>
+
+
 
 <!DOCTYPE HTML>
 
@@ -39,6 +46,17 @@
         </div>
 
         <div class="content">
+            <?php
+
+            foreach($db->query("SELECT ") as $row)
+            {
+
+            }
+
+
+            ?>
+
+            <!-- Table elements
             <div class="table-div">
                 <ul class="table-row">
                     <li class="table-cell">
@@ -46,47 +64,8 @@
                             1
                         </div>
                     </li>
-                    <li class="table-cell">
-                        <div class="table-cell-head-content">
-                            2
-                        </div>
-                    </li>
-                    <li class="table-cell">
-                       <div class="table-cell-head-content">
-                            7
-                        </div>
-                    </li>
-                    <li class="table-cell">
-                        <div class="table-cell-head-content">
-                            8
-                        </div>
-                    </li>
                 </ul>
-                <ul class="table-row">
-                    <li class="table-cell">
-                       <div class="table-cell-content">
-                            3
-                        </div>
-                    </li>
-                    <li class="table-cell">
-                        <div class="table-cell-content">
-                            4
-                        </div>
-                    </li>
-                    <li class="table-cell">
-                       <div class="table-cell-content">
-                            5
-                        </div>
-                    </li>
-                    <li class="table-cell">
-                        <div class="table-cell-content">
-                            6
-                        </div>
-                    </li>
-
-                </ul>
-
-            </div>
+            </div>-->
 
         </div>
 

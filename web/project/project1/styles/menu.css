@@ -1,0 +1,40 @@
+
+
+.menu-ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.menu-li{
+    display: inline-block;
+}
+
+
+.menu-div{
+    margin-top: 50px;
+    font-size: 1.3em;
+    border-top: 3px solid silver;
+    border-bottom: 3px solid silver;
+}
+
+
+.menu-a{
+    padding: 20.5px 40px;
+    color: black;
+    text-decoration: none;
+    outline: none;
+    display: block;
+}
+
+
+.menu-a:hover{
+    background-color: silver;
+    font-weight: bold;
+    color: black;
+}
+
+
+
+
