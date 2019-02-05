@@ -90,22 +90,25 @@ include "scripts/db.php";
                     echo "<ul class='table-row'>";
 
                     //Name
-                    echo "<li class='table-cell'>
-                         <div class='table-cell-content'>";
+                    echo "<li class='table-cell'>";
+                    echo "<div class='table-cell-content'>";
                     echo $row[name];
-                    echo "</div></li>";
+                    echo "</div>";
+                    echo "</li>";
 
                     //Date
-                    echo "<li class='table-cell'>
-                         <div class='table-cell-content'>";
+                    echo "<li class='table-cell'>";
+                    echo "<div class='table-cell-content'>";
                     echo $row[patchdate];
-                    echo "</div></li>";
+                    echo "</div>";
+                    echo "</li>";
 
                     //Time
-                    echo "<li class='table-cell'>
-                         <div class='table-cell-content'>";
+                    echo "<li class='table-cell'>";
+                    echo "<div class='table-cell-content'>";
                     echo $row[patchtime];
-                    echo "</div></li>";
+                    echo "</div>";
+                    echo "</li>";
 
                     //Button
                   /*  echo "<li class='table-cell'>
