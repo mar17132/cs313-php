@@ -48,7 +48,7 @@ include "scripts/db.php";
         <div class="content">
             <h3>Upcoming Patches</h3>
             <div class="table-div">
-                <!--<ul class="table-row">
+                <ul class="table-row">
                     <li class="table-cell">
                         <div class="table-cell-head-content">
                             Name
@@ -64,37 +64,15 @@ include "scripts/db.php";
                             Time
                         </div>
                     </li>
-                    <li class="table-cell">
+                  <!--  <li class="table-cell">
                         <div class="table-cell-head-content">
-                            Buttons
-                        </div>
-                    </li>
-                </ul>-->
-
-            <?php
-
-            echo "<ul class='table-row'>
-                    <li class='table-cell'>
-                        <div class='table-cell-head-content'>
-                            Name
-                        </div>
-                    </li>
-                    <li class='table-cell'>
-                        <div class='table-cell-head-content'>
-                            Date
-                        </div>
-                    </li>
-                    <li class='table-cell'>
-                        <div class='table-cell-head-content'>
-                            Time
-                        </div>
-                    </li>
-                    <!--<li class='table-cell'>
-                        <div class='table-cell-head-content'>
                             Buttons
                         </div>
                     </li>-->
-                </ul>";
+                </ul>
+
+            <?php
+
 
             $statement = $db->query("SELECT PatchSchedlue.ID AS scheduleID,
                                 PatchSchedlue.patchdate,PatchSchedlue.patchtime,
@@ -124,14 +102,14 @@ include "scripts/db.php";
                     echo "<div class='table-cell-content'>";
                     echo $row[patchdate];
                     echo "</div>";
-                    echo "</li>";
+                    echo "</li>\r\n";
 
                     //Time
                     echo "<li class='table-cell'>";
                     echo "<div class='table-cell-content'>";
                     echo $row[patchtime];
                     echo "</div>";
-                    echo "</li>";
+                    echo "</li>\r\n";
 
                     //Button
                   /*  echo "<li class='table-cell'>
