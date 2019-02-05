@@ -117,7 +117,7 @@ include "scripts/db.php";
                     echo "<div class='table-cell-content'>";
                     echo $row[name];
                     echo "</div>";
-                    echo "</li>";
+                    echo "</li>\r\n";
 
                     //Date
                     echo "<li class='table-cell'>";
