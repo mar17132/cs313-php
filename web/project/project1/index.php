@@ -64,11 +64,11 @@ include "scripts/db.php";
                             Time
                         </div>
                     </li>
-                    <li class="table-cell">
+                  <!--  <li class="table-cell">
                         <div class="table-cell-head-content">
                             Buttons
                         </div>
-                    </li>
+                    </li>-->
                 </ul>
 
             <?php
@@ -108,10 +108,10 @@ include "scripts/db.php";
                     echo "</div></li>";
 
                     //Button
-                    echo "<li class='table-cell'>
+                  /*  echo "<li class='table-cell'>
                          <div class='table-cell-content'>";
                     echo "No current Patch Cycles";
-                    echo "</div></li>";
+                    echo "</div></li>";*/
 
                     echo "</ul>";
                 }
