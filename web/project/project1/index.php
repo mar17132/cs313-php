@@ -69,6 +69,8 @@ include "scripts/db.php";
                             Buttons
                         </div>
                     </li>
+                </ul>
+
             <?php
 
             $statement = $db->query("SELECT PatchSchedlue.ID AS scheduleID,
@@ -85,11 +87,12 @@ include "scripts/db.php";
             {
                 foreach($result as $row)
                 {
-                    print_r($row);
+                    echo "<ul class='table-row'>";
+
                     //Name
                     echo "<li class='table-cell'>
                          <div class='table-cell-content'>";
-                    echo $row[Name];
+                    echo $row[name];
                     echo "</div></li>";
 
                     //Date
@@ -108,14 +111,16 @@ include "scripts/db.php";
                     echo "<li class='table-cell'>
                          <div class='table-cell-content'>";
                     echo "</div></li>";
+
+                    echo "</ul>";
                 }
             }
             else
             {
-                echo "<li class='table-cell'>
+                echo "<ul class='table-row'><li class='table-cell'>
                      <div class='table-cell-content'>";
                 echo "No current Patch Cycles";
-                echo "</div></li>";
+                echo "</div></li></ul>";
             }
 
             ?>
@@ -130,7 +135,7 @@ include "scripts/db.php";
                     </li>
                 </ul>
             </div>-->
-              </ul>
+
             </div>
         </div>
 
