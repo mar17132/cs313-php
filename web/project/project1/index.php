@@ -110,6 +110,7 @@ include "scripts/db.php";
                     //Button
                     echo "<li class='table-cell'>
                          <div class='table-cell-content'>";
+                    echo "No current Patch Cycles";
                     echo "</div></li>";
 
                     echo "</ul>";
