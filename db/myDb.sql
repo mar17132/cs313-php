@@ -207,5 +207,16 @@ VALUES(
 
 SELECT * FROM PatchCycle;
 
+--Display All patchcycles by date
+SELECT PatchSchedlue.ID AS scheduleID,PatchSchedlue.patchdate,
+       PatchSchedlue.patchtime,PatchCycle.Name,PatchCycle.ID AS patchID
+FROM PatchSchedlue
+JOIN PatchCycle ON PatchSchedlue.PatchCycle_ID = PatchCycle.ID
+ORDER BY PatchSchedlue.patchdate;
+
+
+
+
+
 
 
