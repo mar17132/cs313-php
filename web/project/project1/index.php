@@ -54,12 +54,12 @@ include "scripts/db.php";
                             Name
                         </div>
                     </li>
-                    <li class="table-cell-head-content">
+                    <li class="table-cell">
                         <div class="table-cell-head-content">
                             Date
                         </div>
                     </li>
-                    <li class="table-cell-head-content">
+                    <li class="table-cell">
                         <div class="table-cell-head-content">
                             Time
                         </div>
