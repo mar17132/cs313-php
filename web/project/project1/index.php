@@ -83,8 +83,9 @@ include "scripts/db.php";
 
             if(count($result) > 0)
             {
-                foreach($result as $key => $row)
+                foreach($result as $row)
                 {
+                    print_r($row);
                     //Name
                     echo "<li class='table-cell'>
                          <div class='table-cell-content'>";
@@ -101,6 +102,11 @@ include "scripts/db.php";
                     echo "<li class='table-cell'>
                          <div class='table-cell-content'>";
                     echo $row[patchtime];
+                    echo "</div></li>";
+
+                    //Button
+                    echo "<li class='table-cell'>
+                         <div class='table-cell-content'>";
                     echo "</div></li>";
                 }
             }
