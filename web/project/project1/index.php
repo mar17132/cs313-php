@@ -94,21 +94,21 @@ include "scripts/db.php";
                     echo "<div class='table-cell-content'>";
                     echo $row[name];
                     echo "</div>";
-                    echo "</li>";
+                    echo "</li>&nbsp;";
 
                     //Date
                     echo "<li class='table-cell'>";
                     echo "<div class='table-cell-content'>";
                     echo $row[patchdate];
                     echo "</div>";
-                    echo "</li>";
+                    echo "</li>&nbsp;";
 
                     //Time
                     echo "<li class='table-cell'>";
                     echo "<div class='table-cell-content'>";
                     echo $row[patchtime];
                     echo "</div>";
-                    echo "</li>";
+                    echo "</li>&nbsp;";
 
                     //Button
                   /*  echo "<li class='table-cell'>
