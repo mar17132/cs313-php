@@ -11,5 +11,5 @@
     <iframe class="hiddenIframe" ></iframe>
     <div class="header">
         <h1 class="title">Patching</h1>
-        <?php include "documents/menu.php"; ?>
+        <?php include "menu.php"; ?>
     </div>
