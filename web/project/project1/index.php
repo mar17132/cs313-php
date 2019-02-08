@@ -1,49 +1,9 @@
 <?php
 
-include "scripts/db.php";
+include "documents/header-index.php";
 
 ?>
 
-
-
-<!DOCTYPE HTML>
-
-<html>
-    <head>
-        <title>Computer Patching</title>
-        <link rel="stylesheet" href="styles/menu.css"/>
-        <link rel="stylesheet" href="styles/body.css"/>
-        <link rel="stylesheet" href="styles/table.css"/>
-    </head>
-    <body>
-        <div class="header">
-            <h1>Patching</h1>
-
-            <div class="menu-div">
-                <ul class="menu-ul">
-                    <li class="menu-li">
-                        <a class="menu-a">
-                            Home
-                        </a>
-                    </li>
-                    <li class="menu-li">
-                        <a class="menu-a">
-                            Patching
-                        </a>
-                    </li>
-                    <li class="menu-li">
-                        <a class="menu-a">
-                            Servers
-                        </a>
-                    </li>
-                    <li class="menu-li">
-                        <a class="menu-a">
-                            Calenader
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
 
         <div class="content">
             <h3>Upcoming Patches</h3>
@@ -64,11 +24,11 @@ include "scripts/db.php";
                             Time
                         </div>
                     </li>
-                    <li class="table-cell">
+                    <!--<li class="table-cell">
                         <div class="table-cell-head-content">
                             Buttons
                         </div>
-                    </li>
+                    </li>-->
                 </ul>
 
             <?php
@@ -112,10 +72,10 @@ include "scripts/db.php";
                     echo "</li>\r\n";
 
                     //Button
-                    echo "<li class='table-cell'>
+                  /*  echo "<li class='table-cell'>
                          <div class='table-cell-content'>";
                     echo "No current Patch Cycles";
-                    echo "</div></li>";
+                    echo "</div></li>";*/
 
                     echo "</ul>";
                 }
