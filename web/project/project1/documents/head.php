@@ -17,10 +17,10 @@ include_once "scripts/db.php";
     <head>
         <meta charset="utf-8" />
         <title>Computer Patching</title>
-        <link rel="stylesheet" href="<?php echo $baseURL.$location."/style/body.css"; ?>" />
-        <link rel="stylesheet" href="<?php echo $baseURL.$location."/style/menu.css"; ?>" />
-        <link rel="stylesheet" href="<?php echo $baseURL.$location."/style/table.css"; ?>" />
-        <link rel="stylesheet" href="<?php echo $baseURL.$location."/style/iframe.css"; ?>" />
+        <link rel="stylesheet" href="<?php echo $baseURL.$location."/styles/body.css"; ?>" />
+        <link rel="stylesheet" href="<?php echo $baseURL.$location."/styles/menu.css"; ?>" />
+        <link rel="stylesheet" href="<?php echo $baseURL.$location."/styles/table.css"; ?>" />
+        <link rel="stylesheet" href="<?php echo $baseURL.$location."/styles/iframe.css"; ?>" />
         <script src="<?php echo $baseURL."/scripts/jquery/jquery-3.3.1.min.js"; ?>" ></script>
         <script src="<?php echo $baseURL.$location."/scripts/shopping.js"; ?>"></script>
     </head>
