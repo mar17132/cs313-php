@@ -8,17 +8,19 @@
 <?php include "header-docs.php"; ?>
 
         <div class="content">
-            <h3>Patche Cycles</h3>
+            <h3>Search Results</h3>
             <div class="table-results-div">
 
             <?php
 
             $result = search($_POST['searchtype'],$_POST['searchTerm']);
 
+            print_r($result);
+
 
             if(count($result) > 0)
             {
-                foreach($result as $row)
+                foreach($result as $key => $row)
                 {
                     echo "<ul class='table-results-row'>";
 
@@ -49,7 +51,7 @@
             {
                 echo "<ul class='table-results-row'><li class='table-cell'>
                      <div class='table-cell-results-content'>";
-                echo "No current Patch Cycles";
+                echo "No Results";
                 echo "</div></li></ul>";
             }
 
