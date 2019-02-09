@@ -47,14 +47,18 @@ catch (PDOException $ex)
 
             <label>Book</label>
             <input type="text" name="book" />
+            <br/>
 
             <label>Chapter</label>
             <input type="text" name="chapter"/>
+            <br/>
 
             <label>Verse</label>
             <input type="text" name="verse"/>
+            <br/>
 
             <label>Content</label>
+            <br/>
             <textarea name="content" ></textarea>
 
             <ul>
