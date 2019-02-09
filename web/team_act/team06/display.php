@@ -81,7 +81,7 @@ foreach($topics as $topic)
                                 Scriptures.book,Scriptures.chapter,
                                 Scriptures.verse,Scriptures.content
                                 FROM Scriptures_to_Topic
-                                JION Scriptures
+                                JOIN Scriptures
                                 ON Scriptures_to_Topic.Scriptures_id = Scriptures.ID
                                 WHERE Scriptures_to_Topic.Topic_id = $row[id];") as $scriptur)
             {
