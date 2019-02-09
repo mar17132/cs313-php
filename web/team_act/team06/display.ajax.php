@@ -55,7 +55,7 @@ $resultsCount = count($results);
 
 foreach($results as $key => $row)
 {
-    $javascripObj .= "{'topic':$row,"
+    $javascripObj .= "{'topic':$row,";
 
     foreach($db->query("SELECT Scriptures_to_Topic.Scriptures_id,
                         Scriptures.book,Scriptures.chapter,
@@ -66,7 +66,7 @@ foreach($results as $key => $row)
                         WHERE Scriptures_to_Topic.Topic_id = $row[id];") as $scriptur)
     {
         $javascripObj .= "'book':$scriptur[book],'chapter':$scriptur[chapter],";
-        $javascripObj .= "'verse':$scriptur[verse],'content'$scriptur[content]}";
+        $javascripObj .= "'verse':$scriptur[verse],'content':$scriptur[content]}";
     }
 
     if($key < ($resultsCount - 1))
