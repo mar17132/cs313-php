@@ -26,7 +26,7 @@ catch (PDOException $ex)
 
 function search($searchType,$searchTerm,$dbconnect)
 {
-    $searchArray = array();
+    $searchArray;
 
     switch($searchType)
     {
@@ -43,7 +43,6 @@ function search($searchType,$searchTerm,$dbconnect)
     }
 
     print_r($searchArray);
-    echo "test4<br/>";
 
     return $searchArray;
 }

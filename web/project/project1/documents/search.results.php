@@ -15,12 +15,10 @@
 
             $resultArray = search($_POST['searchtype'],$_POST['searchTerm'],$db);
 
-                print_r($searchArray);
-                echo "test5<br/>";
 
             if(count($resultArray) > 0)
             {
-               /* foreach($resultArray as $key => $row)
+                foreach($resultArray as $key => $row)
                 {
                     echo "<ul class='table-results-row'>";
 
@@ -42,10 +40,10 @@
                   /*  echo "<li class='table-cell'>
                          <div class='table-cell-content'>";
                     echo "No current Patch Cycles";
-                    echo "</div></li>";
+                    echo "</div></li>";*/
 
                     echo "</ul>";
-                }*/
+                }
             }
             else
             {
