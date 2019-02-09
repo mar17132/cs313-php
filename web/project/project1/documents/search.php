@@ -11,7 +11,7 @@
         <div class="content">
             <h3>Search</h3>
             <form method="post" action="search.results.php">
-                 <table>
+                 <table class="searchTable">
                     <tr>
                         <td>
                             <label>

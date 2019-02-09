@@ -41,3 +41,13 @@
     font-size: 1.1em;
 }
 
+
+.searchTable{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.searchTable td{
+    padding: 15px;
+}
