@@ -20,29 +20,31 @@
             {
                 foreach($resultArray as $key => $row)
                 {
-                    echo "<ul class='table-results-row'>";
+                    $linkpage;
 
-                    //Name
-                    echo "<li class='table-results-cell'>";
-                    echo "<div class='table-cell-results-content'>";
-                    echo $row[name];
-                    echo "</div>";
-                    echo "</li>\r\n";
+                    if($key == "computer")
+                    {
+                        $linkpage = "server.php?serverID=";
+                    }
+                    else
+                    {
+                        $linkpage = "patching.php?patchID=";
+                    }
 
-                    //Notes
-                    echo "<li class='table-results-cell'>";
-                    echo "<div class='table-cell-results-content'>";
-                    echo empty($row[notes]) ? "&nbsp;" : $row[notes] ;
-                    echo "</div>";
-                    echo "</li>\r\n";
+                    foreach($row as $searchedResluts)
+                    {
+                        echo "<ul class='table-results-row'>";
 
-                    //Button
-                  /*  echo "<li class='table-cell'>
-                         <div class='table-cell-content'>";
-                    echo "No current Patch Cycles";
-                    echo "</div></li>";*/
+                        //Name
+                        echo "<li class='table-results-cell'>";
+                        echo "<div class='table-cell-results-content'>";
+                        echo "<a href='".$baseURL.$location."/documents/".$linkpage."$searchedResluts[id]'";
+                        echo $searchedResluts[name];
+                        echo "</a></div>";
+                        echo "</li>\r\n";
 
-                    echo "</ul>";
+                        echo "</ul>";
+                    }
                 }
             }
             else
