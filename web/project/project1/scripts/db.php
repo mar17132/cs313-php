@@ -34,8 +34,7 @@ function search($searchType,$searchTerm)
     {
         case "computer":
             echo "test1";
-            $searchArray['computer'] = array();
-            array_push($searchArray['computer'],searchComputer($searchTerm));
+            $searchArray['computer'] = searchComputer($searchTerm);
             break;
         case "patch":
             $searchArray['patch'] = array();
@@ -57,6 +56,7 @@ function search($searchType,$searchTerm)
 
 function searchComputer($searchTerm)
 {
+    echo "test2";
     $statement = $db->query("SELECT * FROM Computers WHERE Name LIKE '%$searchTerm%'
                             OR IP LIKE '%$searchTerm%';");
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
