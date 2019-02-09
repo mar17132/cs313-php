@@ -42,8 +42,6 @@ function search($searchType,$searchTerm,$dbconnect)
             break;
     }
 
-    print_r($searchArray);
-
     return $searchArray;
 }
 
