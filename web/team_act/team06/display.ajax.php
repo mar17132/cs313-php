@@ -79,5 +79,7 @@ $javascripObj = "]}";
 
 echo $javascripObj;
 
+echo "test";
+
 ?>
 
