@@ -44,11 +44,6 @@ foreach($topics as $topic)
 {
     $db->query("INSERT INTO Scriptures_to_Topic(Scriptures_id,Topic_id)
                 VALUES($scripturID,$topic);");
-
-   // $db->query("INSERT INTO Scriptures(Scriptures_id,Topic_id)
-      //          VALUES(
-       //                (SELECT ID FROM Scriptures WHERE content = $content),
-        //               $topic);");
 }
 
 
@@ -88,7 +83,7 @@ foreach($topics as $topic)
                                 FROM Scriptures_to_Topic
                                 JION Scriptures
                                 ON Scriptures_to_Topic.Scriptures_id = Scriptures.ID
-                                WHERE Scriptures_to_Topic.Topic_id = $row ;") as $scriptur)
+                                WHERE Scriptures_to_Topic.Topic_id = $row[id];") as $scriptur)
             {
                 echo "<p>";
                 //scripture
