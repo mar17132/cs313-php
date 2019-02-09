@@ -8,7 +8,7 @@
 <?php include "header-docs.php"; ?>
 
         <div class="content">
-            <h3>Upcoming Patches</h3>
+            <h3>Patche Cycles</h3>
             <div class="table-div">
                 <ul class="table-row">
                     <li class="table-cell">
