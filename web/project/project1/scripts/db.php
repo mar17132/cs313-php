@@ -27,6 +27,8 @@ catch (PDOException $ex)
 function search($searchType,$searchTerm)
 {
     $searchArray = "";
+    echo $searchType;
+    echo $searchTerm;
 
     switch($searchType)
     {
@@ -45,6 +47,8 @@ function search($searchType,$searchTerm)
             array_push($searchArray['computer'],searchComputer($searchTerm));
             break;
     }
+
+    print_r($searchArray);
 
     return $searchArray;
 }
