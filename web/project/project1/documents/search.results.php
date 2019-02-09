@@ -24,7 +24,7 @@
 
                     if($key == "computer")
                     {
-                        $linkpage = "server.php?serverID=";
+                        $linkpage = "servers.php?serverID=";
                     }
                     else
                     {
