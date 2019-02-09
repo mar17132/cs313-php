@@ -1,11 +1,11 @@
 <?php
 
-$book = $_POST['book'];
+/*$book = $_POST['book'];
 $chaper = $_POST['chapter'];
 $verse = $_POST['verse'];
 $content = $_POST['content'];
 $topics = $_POST['topic'];
-
+*/
 
 
 $db;
@@ -31,7 +31,7 @@ catch (PDOException $ex)
   die();
 }
 
-
+/*
 //insert new scripture
 $db->query("INSERT INTO Scriptures(book,chapter,verse,content)
             VALUES('$book','$chaper','$verse','$content');");
@@ -44,7 +44,7 @@ foreach($topics as $topic)
 {
     $db->query("INSERT INTO Scriptures_to_Topic(Scriptures_id,Topic_id)
                 VALUES($scripturID,$topic);");
-}
+}*/
 
 
 $javascripObj = "{'topics':[";
