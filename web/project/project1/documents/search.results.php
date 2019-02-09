@@ -13,14 +13,18 @@
 
             <?php
 
-            $result = search($_POST['searchtype'],$_POST['searchTerm']);
+            $resultArray = search($_POST['searchtype'],$_POST['searchTerm']);
 
-            print_r($result);
+            print_r($resultArray);
+
+            echo "\r\ncount=".count($resultArray);
+            echo "\r\n".$resultArray;
 
 
-            if(count($result) > 0)
+
+            if(count($resultArray) > 0)
             {
-                foreach($result as $key => $row)
+                foreach($resultArray as $key => $row)
                 {
                     echo "<ul class='table-results-row'>";
 
