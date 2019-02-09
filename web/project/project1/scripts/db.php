@@ -31,7 +31,6 @@ function search($searchType,$searchTerm,$dbconnect)
     switch($searchType)
     {
         case "computer":
-            echo "test1";
             $searchArray['computer'] = searchComputer($dbconnect,$searchTerm);
             break;
         case "patch":
@@ -42,6 +41,9 @@ function search($searchType,$searchTerm,$dbconnect)
             $searchArray['patch'] = searchPatch($dbconnect,$searchTerm);
             break;
     }
+
+    print_r($searchArray);
+    echo "test4<br/>";
 
     return $searchArray;
 }
