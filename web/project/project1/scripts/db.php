@@ -59,7 +59,8 @@ function searchComputer($searchTerm)
     echo "test2";
     $statement = $db->query("SELECT * FROM Computers WHERE Name LIKE '%$searchTerm%'
                             OR IP LIKE '%$searchTerm%';");
-    var_dump($statement);
+
+    echo "test4";
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     print_r($result);
