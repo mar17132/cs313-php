@@ -27,8 +27,6 @@ catch (PDOException $ex)
 function search($searchType,$searchTerm,$dbconnect)
 {
     $searchArray = "";
-    echo $searchType;
-    echo $searchTerm;
 
     switch($searchType)
     {
@@ -37,18 +35,13 @@ function search($searchType,$searchTerm,$dbconnect)
             $searchArray['computer'] = searchComputer($dbconnect,$searchTerm);
             break;
         case "patch":
-            $searchArray['patch'] = array();
-            array_push($searchArray['patch'],searchPatch($searchTerm));
+            $searchArray['patch'] = searchPatch($dbconnect,$searchTerm);
             break;
         case "any":
-            $searchArray['computer'] = array();
-            $searchArray['patch'] = array();
-            array_push($searchArray['computer'],searchPatch($searchTerm));
-            array_push($searchArray['computer'],searchComputer($searchTerm));
+            $searchArray['computer'] = searchComputer($dbconnect,$searchTerm);
+            $searchArray['patch'] = searchPatch($dbconnect,$searchTerm);
             break;
     }
-
-    print_r($searchArray);
 
     return $searchArray;
 }
@@ -56,14 +49,9 @@ function search($searchType,$searchTerm,$dbconnect)
 
 function searchComputer($dbconnect,$searchTerm)
 {
-    echo "test2";
-    echo empty($dbconnect)? "True":"false";
-    $statement = $dbconnect->query("SELECT * FROM Computers WHERE Name LIKE '%$searchTerm%' OR IP LIKE '%$searchTerm%';");
-
-    echo "test4";
+    $statement = $dbconnect->query("SELECT * FROM Computers WHERE Name
+                     LIKE '%$searchTerm%' OR IP LIKE '%$searchTerm%';");
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-    print_r($result);
 
     if(count($result) > 0)
     {
@@ -74,10 +62,10 @@ function searchComputer($dbconnect,$searchTerm)
 }
 
 
-function searchPatch($searchTerm)
+function searchPatch($dbconnect,$searchTerm)
 {
-    $statement = $db->query("SELECT * FROM PatchCycle WHERE Name LIKE '%$searchTerm%'
-                            OR Note LIKE '%$searchTerm%';");
+    $statement = $dbconnect->query("SELECT * FROM PatchCycle WHERE Name
+                    LIKE '%$searchTerm%' OR Note LIKE '%$searchTerm%';");
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     if(count($result) > 0)
