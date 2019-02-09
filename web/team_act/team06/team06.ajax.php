@@ -47,7 +47,7 @@ catch (PDOException $ex)
     <body>
         <h1>Add a Scripture</h1>
 
-        <form method="post" action="display.php">
+        <form >
 
             <label>Book</label>
             <input type="text" name="book" />
@@ -83,7 +83,7 @@ catch (PDOException $ex)
             ?>
             </ul>
             <br/>
-            <input type="submit" value="add scripture"/>
+            <input id="submit" type="submit" value="add scripture"/>
         </form>
 
         <div id="show">
@@ -119,7 +119,7 @@ catch (PDOException $ex)
             }
 
 
-            function getScripturs(str)
+            function getScripturs()
             {
 
                 var xmlhttp = new XMLHttpRequest();
@@ -133,6 +133,8 @@ catch (PDOException $ex)
                 xmlhttp.send();
 
             }
+
+            getScripturs();
 
         </script>
 
