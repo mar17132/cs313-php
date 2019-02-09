@@ -1,49 +1,12 @@
 <?php
 
-include "../scripts/db.php";
+
 
 ?>
 
 
 
-<!DOCTYPE HTML>
-
-<html>
-    <head>
-        <title>Computer Patching</title>
-        <link rel="stylesheet" href="../styles/menu.css"/>
-        <link rel="stylesheet" href="../styles/body.css"/>
-        <link rel="stylesheet" href="../styles/table.css"/>
-    </head>
-    <body>
-        <div class="header">
-            <h1>Patching</h1>
-
-            <div class="menu-div">
-                <ul class="menu-ul">
-                    <li class="menu-li">
-                        <a class="menu-a">
-                            Home
-                        </a>
-                    </li>
-                    <li class="menu-li">
-                        <a class="menu-a">
-                            Patching
-                        </a>
-                    </li>
-                    <li class="menu-li">
-                        <a class="menu-a">
-                            Servers
-                        </a>
-                    </li>
-                    <li class="menu-li">
-                        <a class="menu-a">
-                            Calenader
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+<?php include "header-docs.php"; ?>
 
         <div class="content">
 
