@@ -50,8 +50,8 @@ function search($searchType,$searchTerm)
 
 function searchComputer($searchTerm)
 {
-    $statement = $db->query("SELECT * FROM Computers WHERE Name ='%$searchTerm%'
-                            OR IP = '%$searchTerm%';");
+    $statement = $db->query("SELECT * FROM Computers WHERE Name LIKE '%$searchTerm%'
+                            OR IP LIKE '%$searchTerm%';");
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     if(count($result) > 0)
@@ -65,8 +65,8 @@ function searchComputer($searchTerm)
 
 function searchPatch($searchTerm)
 {
-    $statement = $db->query("SELECT * FROM PatchCycle WHERE Name ='%$searchTerm%'
-                            OR Note = '%$searchTerm%';");
+    $statement = $db->query("SELECT * FROM PatchCycle WHERE Name LIKE '%$searchTerm%'
+                            OR Note LIKE '%$searchTerm%';");
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     if(count($result) > 0)

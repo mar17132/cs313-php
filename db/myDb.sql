@@ -215,6 +215,7 @@ JOIN PatchCycle ON PatchSchedlue.PatchCycle_ID = PatchCycle.ID
 ORDER BY PatchSchedlue.patchdate;
 
 
+SELECT * FROM Computers WHERE Name ='%1%' OR IP = '%1%';
 
 
 
