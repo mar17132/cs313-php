@@ -36,17 +36,19 @@ catch (PDOException $ex)
 $db->query("INSERT INTO Scriptures(book,chapter,verse,content)
             VALUES('$book','$chaper','$verse','$content');");
 
-$scripturID = $db->lastInsertId('Scriptures_id_seq');
+//$scripturID = $db->lastInsertId('Scriptures_id_seq');
 
 //insert Scriptures_to_Topic
 
 foreach($topics as $topic)
 {
-    //$db->query("INSERT INTO Scriptures(Scriptures_id,Topic_id)
-      //          VALUES('$scripturID',$topic);");
-
-    $db->query("INSERT INTO Scriptures(Scriptures_id,Topic_id)
+    $db->query("INSERT INTO Scriptures_to_Topic(Scriptures_id,Topic_id)
                 VALUES($scripturID,$topic);");
+
+   // $db->query("INSERT INTO Scriptures(Scriptures_id,Topic_id)
+      //          VALUES(
+       //                (SELECT ID FROM Scriptures WHERE content = $content),
+        //               $topic);");
 }
 
 
