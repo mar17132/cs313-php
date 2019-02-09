@@ -26,7 +26,7 @@ catch (PDOException $ex)
 
 function search($searchType,$searchTerm,$dbconnect)
 {
-    $searchArray = "";
+    $searchArray = array();
 
     switch($searchType)
     {
