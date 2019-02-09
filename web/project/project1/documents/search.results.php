@@ -17,14 +17,13 @@
 
             print_r($resultArray);
 
-            echo "\r\ncount=".count($resultArray);
-            echo "\r\n".$resultArray;
+            echo "test3";
 
 
 
             if(count($resultArray) > 0)
             {
-                foreach($resultArray as $key => $row)
+               /* foreach($resultArray as $key => $row)
                 {
                     echo "<ul class='table-results-row'>";
 
@@ -46,10 +45,10 @@
                   /*  echo "<li class='table-cell'>
                          <div class='table-cell-content'>";
                     echo "No current Patch Cycles";
-                    echo "</div></li>";*/
+                    echo "</div></li>";
 
                     echo "</ul>";
-                }
+                }*/
             }
             else
             {
