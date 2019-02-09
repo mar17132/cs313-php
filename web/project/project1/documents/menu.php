@@ -18,7 +18,7 @@
             </a>
         </li>
         <li class="menu-li">
-            <a class="menu-a" href="<?php echo $baseURL.$location."/documents/server.php"; ?>">
+            <a class="menu-a" href="<?php echo $baseURL.$location."/documents/servers.php"; ?>">
                 Servers
             </a>
         </li>
