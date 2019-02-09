@@ -61,7 +61,7 @@
                     //Notes
                     echo "<li class='table-cell'>";
                     echo "<div class='table-cell-content'>";
-                    echo $row[notes];
+                    echo empty($row[notes]) ? "&nbsp;" : $row[notes] ;
                     echo "</div>";
                     echo "</li>\r\n";
 
