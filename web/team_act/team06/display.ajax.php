@@ -55,7 +55,7 @@ $resultsCount = count($results);
 
 foreach($results as $key => $row)
 {
-    $javascripObj .= "{'topic':$row,";
+    $javascripObj .= "{'topic':$row,[";
 
     foreach($db->query("SELECT Scriptures_to_Topic.Scriptures_id,
                         Scriptures.book,Scriptures.chapter,
