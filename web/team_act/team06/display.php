@@ -42,8 +42,11 @@ $scripturID = $db->lastInsertId('Scriptures_id_seq');
 
 foreach($topics as $topic)
 {
+    //$db->query("INSERT INTO Scriptures(Scriptures_id,Topic_id)
+      //          VALUES('$scripturID',$topic);");
+
     $db->query("INSERT INTO Scriptures(Scriptures_id,Topic_id)
-                VALUES('$scripturID',$topic);");
+                VALUES($scripturID,$topic);");
 }
 
 
