@@ -36,7 +36,7 @@ catch (PDOException $ex)
 $db->query("INSERT INTO Scriptures(book,chapter,verse,content)
             VALUES('$book','$chaper','$verse','$content');");
 
-//$scripturID = $db->lastInsertId('Scriptures_id_seq');
+$scripturID = $db->lastInsertId('Scriptures_id_seq');
 
 //insert Scriptures_to_Topic
 
