@@ -38,7 +38,7 @@
                         //Name
                         echo "<li class='table-results-cell'>";
                         echo "<div class='table-cell-results-content'>";
-                        echo "<a href='".$baseURL.$location."/documents/".$linkpage."$searchedResluts[id]'";
+                        echo "<a href='".$baseURL.$location."/documents/".$linkpage."$searchedResluts[id]'>";
                         echo $searchedResluts[name];
                         echo "</a></div>";
                         echo "</li>\r\n";
