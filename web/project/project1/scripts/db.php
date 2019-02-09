@@ -45,6 +45,8 @@ function search($searchType,$searchTerm)
             array_push($searchArray['computer'],searchComputer($searchTerm));
             break;
     }
+
+    return $searchArray;
 }
 
 
