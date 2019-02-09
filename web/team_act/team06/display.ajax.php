@@ -75,7 +75,7 @@ foreach($results as $key => $row)
     }
 }
 
-$javascripObj = "]}";
+$javascripObj .= "]}";
 
 echo $javascripObj;
 
