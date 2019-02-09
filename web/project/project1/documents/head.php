@@ -21,6 +21,7 @@ include_once "scripts/db.php";
         <link rel="stylesheet" href="<?php echo $baseURL.$location."/styles/menu.css"; ?>" />
         <link rel="stylesheet" href="<?php echo $baseURL.$location."/styles/table.css"; ?>" />
         <link rel="stylesheet" href="<?php echo $baseURL.$location."/styles/iframe.css"; ?>" />
+        <link rel="stylesheet" href="<?php echo $baseURL.$location."/styles/search-results.css"; ?>" />
         <script src="<?php echo $baseURL."/scripts/jquery/jquery-3.3.1.min.js"; ?>" ></script>
         <script src="<?php echo $baseURL.$location."/scripts/shopping.js"; ?>"></script>
     </head>

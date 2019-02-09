@@ -9,18 +9,42 @@
 <?php include "header-docs.php"; ?>
 
         <div class="content">
+            <h3>Search</h3>
+            <form method="post" action="search.results.php">
+                 <table>
+                    <tr>
+                        <td>
+                            <label>
+                                Seach Type:
+                            </label>
+                        </td>
+                        <td>
+                            <select id="searchtype" name="searchtype">
+                                <option value="any">ANY</option>
+                                <option value="computer">Computer</option>
+                                <option value="patch">Patch</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Search Term</label>
+                        </td>
+                        <td>
+                            <input name="searchTerm" type="text"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
 
+                        </td>
+                        <td>
+                            <input type="submit" value="Search"/>
+                        </td>
+                    </tr>
+                </table>
+            </form>
 
-            <!-- Table elements
-            <div class="table-div">
-                <ul class="table-row">
-                    <li class="table-cell">
-                        <div class="table-cell-head-content">
-                            1
-                        </div>
-                    </li>
-                </ul>
-            </div>-->
 
         </div>
 

@@ -23,6 +23,60 @@ catch (PDOException $ex)
   die();
 }
 
+
+function search($searchType,$searchTerm)
+{
+    $searchArray = "";
+
+    switch($searchType)
+    {
+        case "computer":
+            $searchArray['computer'] = array();
+            array_push($searchArray['computer'],searchComputer($searchTerm));
+            break;
+        case "patch":
+            $searchArray['patch'] = array();
+            array_push($searchArray['patch'],searchPatch($searchTerm));
+            break;
+        case "any":
+            $searchArray['computer'] = array();
+            $searchArray['patch'] = array();
+            array_push($searchArray['computer'],searchPatch($searchTerm));
+            array_push($searchArray['computer'],searchComputer($searchTerm));
+            break;
+    }
+}
+
+
+function searchComputer($searchTerm)
+{
+    $statement = $db->query("SELECT * FROM Computers WHERE Name ='%$searchTerm%'
+                            OR IP = '%$searchTerm%';");
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    if(count($result) > 0)
+    {
+        return $result;
+    }
+
+    return;
+}
+
+
+function searchPatch($searchTerm)
+{
+    $statement = $db->query("SELECT * FROM PatchCycle WHERE Name ='%$searchTerm%'
+                            OR Note = '%$searchTerm%';");
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    if(count($result) > 0)
+    {
+        return $result;
+    }
+
+    return;
+}
+
 ?>
 
 
