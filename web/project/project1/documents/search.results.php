@@ -13,7 +13,7 @@
 
             <?php
 
-            $resultArray = search($_POST['searchtype'],$_POST['searchTerm']);
+            $resultArray = search($_POST['searchtype'],$_POST['searchTerm'],$db);
 
             print_r($resultArray);
 

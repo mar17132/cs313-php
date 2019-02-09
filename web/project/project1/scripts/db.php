@@ -24,7 +24,7 @@ catch (PDOException $ex)
 }
 
 
-function search($searchType,$searchTerm)
+function search($searchType,$searchTerm,$dbconnect)
 {
     $searchArray = "";
     echo $searchType;
@@ -34,7 +34,7 @@ function search($searchType,$searchTerm)
     {
         case "computer":
             echo "test1";
-            $searchArray['computer'] = searchComputer($searchTerm);
+            $searchArray['computer'] = searchComputer($dbconnect,$searchTerm);
             break;
         case "patch":
             $searchArray['patch'] = array();
@@ -54,11 +54,11 @@ function search($searchType,$searchTerm)
 }
 
 
-function searchComputer($searchTerm)
+function searchComputer($dbconnect,$searchTerm)
 {
     echo "test2";
-    echo empty($db)? "True":"false";
-    $statement = $db->query("SELECT * FROM Computers WHERE Name LIKE '%$searchTerm%' OR IP LIKE '%$searchTerm%';");
+    echo empty($dbconnect)? "True":"false";
+    $statement = $dbconnect->query("SELECT * FROM Computers WHERE Name LIKE '%$searchTerm%' OR IP LIKE '%$searchTerm%';");
 
     echo "test4";
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
