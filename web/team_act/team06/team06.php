@@ -78,6 +78,8 @@ catch (PDOException $ex)
 
             ?>
             </ul>
+            <br/>
+            <input type="submit" value="add scripture"/>
         </form>
 
     </body>
