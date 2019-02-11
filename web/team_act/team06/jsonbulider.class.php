@@ -391,13 +391,18 @@ $contentData->setJsonDataValue("this is somintheing");
 
 
 echo $jsonMainObj->bulidString();
-
-print_r($jsonMainObj->getJsonArray);
+echo "<br/><br/>";
+print_r($jsonMainObj->getJsonArray());
 
 echo "<br/><br/>";
-var_dump($jsonMainObj->getJsonArray);
+var_dump($jsonMainObj->getJsonArray());
 
 
+echo "<br/><br/>";
+print_r($topicObj->getJsonArrayValue());
+
+echo "<br/><br/>";
+var_dump($topicObj->getJsonArrayValue());
 echo "test";
 
 ?>
