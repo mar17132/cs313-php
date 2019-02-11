@@ -374,6 +374,8 @@ $bookData = $topicObj->addJsonObjData();
 $bookData->setJsonDataName("book");
 $bookData->setJsonDataValue("mybook");
 echo "test6";
+echo "<br/><br/>";
+print_r($jsonTopicsArray->getJsonArrayValue());
 //chapter
 $chaperData = $topicObj->addJsonObjData();
 $chaperData->setJsonDataName("chapter");
