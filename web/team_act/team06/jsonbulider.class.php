@@ -392,6 +392,12 @@ $contentData->setJsonDataValue("this is somintheing");
 
 echo $jsonMainObj->bulidString();
 
+print_r($jsonMainObj->getJsonArray);
+
+echo "<br/><br/>";
+var_dump($jsonMainObj->getJsonArray);
+
+
 echo "test";
 
 ?>
