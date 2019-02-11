@@ -35,7 +35,7 @@ class jsonBulider
     {
         $newArray = new jsonArrayBulider();
         array_push($this->jsonArray, $newArray);
-        print_r($this->jsonArray);
+        var_dump($this->jsonArray);
         return $newArray;
     }
 
@@ -359,9 +359,6 @@ $jsonMainObj = new jsonBulider();
 echo "test3";
 $jsonTopicsArray = $jsonMainObj->addJsonArray();
 echo "test4";
-echo get_class($jsonTopicsArray);
-echo gettype($jsonTopicsArray);
-var_dump($jsonTopicsArray);
 $jsonTopicsArray->setJsonArrayName("test");
 echo "test4.5";
 $topicObj = $jsonTopicsArray->addJsonObj();
