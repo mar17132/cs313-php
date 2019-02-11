@@ -252,6 +252,7 @@ class jsonArrayBulider
 
     public function addJsonObj()
     {
+        echo "test99";
         $newObj = new jsonObjBulider();
         array_push($this->jsonArrayValue,$newObj);
         return $newObj;
@@ -377,7 +378,7 @@ echo "test6";
 echo "<br/><br/>";
 print_r($jsonTopicsArray->getJsonArrayValue());
 //chapter
-$chaperData = $topicObj->addJsonObjData();
+/*$chaperData = $topicObj->addJsonObjData();
 $chaperData->setJsonDataName("chapter");
 $chaperData->setJsonDataValue(5);
 
@@ -389,7 +390,7 @@ $verseData->setJsonDataValue(25);
  //content
 $contentData = $topicObj->addJsonObjData();
 $contentData->setJsonDataName("content");
-$contentData->setJsonDataValue("this is somintheing");
+$contentData->setJsonDataValue("this is somintheing");*/
 
 
 echo $jsonMainObj->bulidString();
