@@ -13,33 +13,33 @@ class jsonBulider
     private $jsonArray;
 
 
-    public getJsonArray()
+    public function getJsonArray()
     {
         return $this->jsonArray;
     }
 
 
-    public getJsonString()
+    public function getJsonString()
     {
         return $this->jsonString;
     }
 
 
-    public addJsonObj()
+    public function addJsonObj()
     {
         array_push($this->jsonArray, new jsonObjBulider());
         return $this->jsonArray[cout($this->jsonArray) - 1];
     }
 
 
-    public addJsonArray()
+    public function addJsonArray()
     {
         array_push($this->jsonArray, new jsonArrayBulider());
         return $this->jsonArray[cout($this->jsonArray) - 1];
     }
 
 
-    public addJsonData()
+    public function addJsonData()
     {
         array_push($this->jsonArray, new jsonDataBulider());
         return $this->jsonArray[cout($this->jsonArray) - 1];
@@ -47,7 +47,7 @@ class jsonBulider
 
 
     //bulid json string
-    public bulidString()
+    public function bulidString()
     {
         $this->objString .= "{";
 
@@ -91,52 +91,52 @@ class jsonObjBulider
     private $objString;
 
 
-    public setJsonObjName($objName)
+    public function setJsonObjName($objName)
     {
         $this->jsonObjName = $objName;
     }
 
 
-    public getJsonObjName()
+    public function getJsonObjName()
     {
         return $this->jsonObjName;
     }
 
 
-    public getJsonObjValue()
+    public function getJsonObjValue()
     {
         return $this->jsonObjValue;
     }
 
 
-    public setInArray($value)
+    public function setInArray($value)
     {
         $this->inArray = $value;
     }
 
 
-    public isInArray()
+    public function isInArray()
     {
         return $this->inArray;
     }
 
 
     //data that can be added
-    public addJsonObj($newValue)
+    public function addJsonObj($newValue)
     {
         array_push($this->jsonObjArrayValue,new jsonObjBulider());
         return $this->jsonObjArrayValue[count($this->jsonObjArrayValue) - 1];
     }
 
 
-    public addJsonObjArray()
+    public function addJsonObjArray()
     {
         array_push($this->jsonObjArrayValue,new jsonArrayBulider());
         return $this->jsonObjArrayValue[count($this->jsonObjArrayValue) - 1];
     }
 
 
-    public addJsonObjData()
+    public function addJsonObjData()
     {
         array_push($this->jsonObjArrayValue,new jsonDataBulider());
         return $this->jsonObjArrayValue[count($this->jsonObjArrayValue) - 1];
@@ -145,7 +145,7 @@ class jsonObjBulider
 
 
     //bulid obj string
-    public bulidString()
+    public function bulidString()
     {
         $this->objString .= "{";
 
@@ -194,44 +194,44 @@ class jsonArrayBulider
     private $objString = "";
 
 
-    public setJsonArrayName($name)
+    public function setJsonArrayName($name)
     {
         $this->jsonArrayName = $name;
     }
 
 
-    public getJsonArrayName()
+    public function getJsonArrayName()
     {
         return $this->jsonArrayName;
     }
 
 
-    public getJsonArrayValue()
+    public function getJsonArrayValue()
     {
         $this->jsonArrayValue;
     }
 
 
-    public setInternalArray($inArray)
+    public function setInternalArray($inArray)
     {
         $this->internalArray = $inArray;
     }
 
 
-    public isInnerArray()
+    public function isInnerArray()
     {
         return $this->internalArray;
     }
 
 
-    public getObjString()
+    public function getObjString()
     {
         return $this->objString;
     }
 
 
     //data that can be added
-    public addArrayValue($newValue)
+    public function addArrayValue($newValue)
     {
         if(gettype($newValue) == "array")
         {
@@ -245,14 +245,14 @@ class jsonArrayBulider
     }
 
 
-    public addJsonObj()
+    public function addJsonObj()
     {
         array_push($this->jsonObjArrayValue,new jsonObjBulider());
         return $this->jsonObjArrayValue[count($this->jsonObjArrayValue) - 1];
     }
 
 
-    public addJsonObjArray()
+    public function addJsonObjArray()
     {
         array_push($this->jsonObjArrayValue,new jsonArrayBulider());
         $this->jsonObjArrayValue[count($this->jsonObjArrayValue) - 1]->setInternalArray(true);
@@ -261,7 +261,7 @@ class jsonArrayBulider
 
 
     //bulid array string
-    public bulidString()
+    public function bulidString()
     {
         if(!$this->isInnerArray())
         {
@@ -312,38 +312,38 @@ class jsonDataBulider
     private $jsonDataValue;
     private $objString = "";
 
-    public setJsonDataName($name)
+    public function setJsonDataName($name)
     {
         $this->jsonDataName = $name;
     }
 
 
-    public setJsonDataValue($value)
+    public function setJsonDataValue($value)
     {
         $this->jsonDataValue = $value;
     }
 
 
-    public getJsonDataName()
+    public function getJsonDataName()
     {
         return $this->jsonDataName;
     }
 
 
-    public getJsonDataValue()
+    public function getJsonDataValue()
     {
         return $this->jsonDataValue;
     }
 
 
-    public getObjString()
+    public function getObjString()
     {
         return $this->objString;
     }
 
 
     //data string build
-    public buildString()
+    public function buildString()
     {
         $this->objString .= doubleQuoteWrap($this->jsonDataName).":";
         $this->objString .= is_string($this->jsonDataValue) ?
