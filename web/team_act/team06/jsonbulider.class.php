@@ -255,6 +255,7 @@ class jsonArrayBulider
         echo "test99";
         $newObj = new jsonObjBulider();
         array_push($this->jsonArrayValue,$newObj);
+        print_r($this->jsonArrayValue);
         return $newObj;
     }
 
