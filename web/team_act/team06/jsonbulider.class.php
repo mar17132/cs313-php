@@ -356,7 +356,7 @@ class jsonDataBulider
 
 $jsonMainObj = new jsonBulider();
 echo "test3";
-$jsonTopicsArray = $jsonMainObj->addJsonArray();
+/*$jsonTopicsArray = $jsonMainObj->addJsonArray();
 echo "test4";
 $jsonTopicsArray->setJsonObjName("test");
 $topicObj = $jsonTopicsArray->addJsonObj();
@@ -382,7 +382,7 @@ $contentData->setJsonDataName("content");
 $contentData->setJsonDataValue("this is somintheing");
 
 
-echo $jsonMainObj->bulidString();
+echo $jsonMainObj->bulidString();*/
 
 echo "test";
 
