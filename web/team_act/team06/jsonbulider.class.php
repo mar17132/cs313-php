@@ -26,8 +26,9 @@ class jsonBulider
 
     public function addJsonObj()
     {
-        array_push($this->jsonArray, new jsonObjBulider());
-        return $this->jsonArray[count($this->jsonArray) - 1];
+        $newObj = new jsonObjBulider();
+        array_push($this->jsonArray, $newObj);
+        return $newObj;
     }
 
 
@@ -41,8 +42,9 @@ class jsonBulider
 
     public function addJsonData()
     {
-        array_push($this->jsonArray, new jsonDataBulider());
-        return $this->jsonArray[count($this->jsonArray) - 1];
+        $newData = new jsonDataBulider();
+        array_push($this->jsonArray, $newData);
+        return $newData;
     }
 
 
@@ -124,22 +126,25 @@ class jsonObjBulider
     //data that can be added
     public function addJsonObj($newValue)
     {
-        array_push($this->jsonObjArrayValue,new jsonObjBulider());
-        return $this->jsonObjArrayValue[count($this->jsonObjArrayValue) - 1];
+        $newObj = new jsonObjBulider();
+        array_push($this->jsonObjArrayValue,$newObj);
+        return $newObj;
     }
 
 
     public function addJsonObjArray()
     {
-        array_push($this->jsonObjArrayValue,new jsonArrayBulider());
-        return $this->jsonObjArrayValue[count($this->jsonObjArrayValue) - 1];
+        $newArray = new jsonArrayBulider();
+        array_push($this->jsonObjArrayValue,$newArray);
+        return $newArray;
     }
 
 
     public function addJsonObjData()
     {
-        array_push($this->jsonObjArrayValue,new jsonDataBulider());
-        return $this->jsonObjArrayValue[count($this->jsonObjArrayValue) - 1];
+        $newData = new jsonDataBulider();
+        array_push($this->jsonObjArrayValue,$newData);
+        return $newData;
     }
 
 
@@ -247,16 +252,18 @@ class jsonArrayBulider
 
     public function addJsonObj()
     {
-        array_push($this->jsonObjArrayValue,new jsonObjBulider());
-        return $this->jsonObjArrayValue[count($this->jsonObjArrayValue) - 1];
+        $newObj = new jsonObjBulider();
+        array_push($this->jsonObjArrayValue,$newObj);
+        return $newObj;
     }
 
 
     public function addJsonObjArray()
     {
-        array_push($this->jsonObjArrayValue,new jsonArrayBulider());
-        $this->jsonObjArrayValue[count($this->jsonObjArrayValue) - 1]->setInternalArray(true);
-        return $this->jsonObjArrayValue[count($this->jsonObjArrayValue) - 1];
+        $newArray = new jsonArrayBulider();
+        array_push($this->jsonObjArrayValue,$newArray);
+        $newArray->setInternalArray(true);
+        return $newArray;
     }
 
 
