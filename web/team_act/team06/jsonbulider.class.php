@@ -358,6 +358,8 @@ echo "test3";
 $jsonTopicsArray = $jsonMainObj->addJsonArray();
 echo "test4";
 echo get_class($jsonTopicsArray);
+echo gettype($jsonTopicsArray);
+var_dump($jsonTopicsArray);
 $jsonTopicsArray->setJsonArrayName("test");
 echo "test4.5";
 $topicObj = $jsonTopicsArray->addJsonObj();
