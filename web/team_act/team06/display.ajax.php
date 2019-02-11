@@ -7,6 +7,7 @@ $content = $_POST['content'];
 $topics = $_POST['topic'];
 */
 
+include jsonbulider.class.php;
 
 $db;
 
@@ -47,7 +48,12 @@ foreach($topics as $topic)
 }*/
 
 
-$javascripObj = "{'topics':[";
+//$javascripObj = "{'topics':[";
+$jsonMainObj = new jsonBulider();
+
+//$jsonTopicsArray = $jsonMainObj.addJsonArray();
+
+//$jsonTopicsArray.setJsonObjName("topics");
 
 $statement = $db->query("SELECT * FROM Topic;");
 $results = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -55,7 +61,12 @@ $resultsCount = count($results);
 
 foreach($results as $key => $row)
 {
-    $javascripObj .= "{'topic':$row,[";
+    $jsonTopicsArray = $jsonMainObj->addJsonArray();
+
+    $jsonTopicsArray->setJsonObjName($row[name]);
+    $topicObj = $jsonTopicsArray->addJsonObj();
+
+    //$javascripObj .= "{'topic':$row,[";
 
     foreach($db->query("SELECT Scriptures_to_Topic.Scriptures_id,
                         Scriptures.book,Scriptures.chapter,
@@ -65,19 +76,39 @@ foreach($results as $key => $row)
                         ON Scriptures_to_Topic.Scriptures_id = Scriptures.ID
                         WHERE Scriptures_to_Topic.Topic_id = $row[id];") as $scriptur)
     {
-        $javascripObj .= "'book':$scriptur[book],'chapter':$scriptur[chapter],";
-        $javascripObj .= "'verse':$scriptur[verse],'content':$scriptur[content]}";
+        //book
+        $bookData = $topicObj->addJsonObjData();
+        $bookData->setJsonDataName("book");
+        $bookData->setJsonDataValue($scriptur[book]);
+
+        //chapter
+        $chaperData = $topicObj->addJsonObjData();
+        $chaperData->setJsonDataName("chapter");
+        $chaperData->setJsonDataValue($scriptur[chapter]);
+
+        //verse
+        $verseData = $topicObj->addJsonObjData();
+        $verseData->setJsonDataName("verse");
+        $verseData->setJsonDataValue($scriptur[verse]);
+
+         //content
+        $contentData = $topicObj->addJsonObjData();
+        $contentData->setJsonDataName("content");
+        $contentData->setJsonDataValue($scriptur[content]);
+
+        //$javascripObj .= "'book':$scriptur[book],'chapter':$scriptur[chapter],";
+        //$javascripObj .= "'verse':$scriptur[verse],'content':$scriptur[content]}";
     }
 
-    if($key < ($resultsCount - 1))
+    /*if($key < ($resultsCount - 1))
     {
-        $javascripObj .= ",";
-    }
+        //$javascripObj .= ",";
+    }*/
 }
 
-$javascripObj .= "]}";
+//$javascripObj .= "]}";
 
-echo $javascripObj;
+echo $jsonMainObj->bulidString();
 
 echo "test";
 
