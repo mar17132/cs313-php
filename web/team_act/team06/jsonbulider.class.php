@@ -353,7 +353,34 @@ class jsonDataBulider
 
 }
 
+$jsonMainObj = new jsonBulider();
+
+$jsonTopicsArray = $jsonMainObj->addJsonArray();
+
+$jsonTopicsArray->setJsonObjName("test");
+$topicObj = $jsonTopicsArray->addJsonObj();
+
+//book
+$bookData = $topicObj->addJsonObjData();
+$bookData->setJsonDataName("book");
+$bookData->setJsonDataValue("mybook");
+
+//chapter
+$chaperData = $topicObj->addJsonObjData();
+$chaperData->setJsonDataName("chapter");
+$chaperData->setJsonDataValue(5);
+
+//verse
+$verseData = $topicObj->addJsonObjData();
+$verseData->setJsonDataName("verse");
+$verseData->setJsonDataValue(25);
+
+ //content
+$contentData = $topicObj->addJsonObjData();
+$contentData->setJsonDataName("content");
+$contentData->setJsonDataValue("this is somintheing");
 
 
+echo $jsonMainObj->bulidString();
 
 ?>
