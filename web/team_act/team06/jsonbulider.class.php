@@ -253,7 +253,7 @@ class jsonArrayBulider
     public function addJsonObj()
     {
         $newObj = new jsonObjBulider();
-        array_push($this->jsonObjArrayValue,$newObj);
+        array_push($this->jsonArrayValue,$newObj);
         return $newObj;
     }
 
@@ -261,7 +261,7 @@ class jsonArrayBulider
     public function addJsonObjArray()
     {
         $newArray = new jsonArrayBulider();
-        array_push($this->jsonObjArrayValue,$newArray);
+        array_push($this->jsonArrayValue,$newArray);
         $newArray->setInternalArray(true);
         return $newArray;
     }
