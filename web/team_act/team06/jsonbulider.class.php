@@ -8,6 +8,7 @@ function doubleQuoteWrap($wrapString)
 
 class jsonBulider
 {
+    echo "test1";
     private $jsonString = "";
     private $jsonArray;
 
@@ -354,17 +355,17 @@ class jsonDataBulider
 }
 
 $jsonMainObj = new jsonBulider();
-
+echo "test3";
 $jsonTopicsArray = $jsonMainObj->addJsonArray();
-
+echo "test4";
 $jsonTopicsArray->setJsonObjName("test");
 $topicObj = $jsonTopicsArray->addJsonObj();
-
+echo "test5";
 //book
 $bookData = $topicObj->addJsonObjData();
 $bookData->setJsonDataName("book");
 $bookData->setJsonDataValue("mybook");
-
+echo "test6";
 //chapter
 $chaperData = $topicObj->addJsonObjData();
 $chaperData->setJsonDataName("chapter");
@@ -382,5 +383,7 @@ $contentData->setJsonDataValue("this is somintheing");
 
 
 echo $jsonMainObj->bulidString();
+
+echo "test";
 
 ?>
