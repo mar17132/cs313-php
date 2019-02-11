@@ -33,8 +33,9 @@ class jsonBulider
 
     public function addJsonArray()
     {
-        array_push($this->jsonArray, new jsonArrayBulider());
-        return $this->jsonArray[count($this->jsonArray) - 1];
+        $newArray = new jsonArrayBulider();
+        array_push($this->jsonArray, $newArray);
+        return $newArray;
     }
 
 
