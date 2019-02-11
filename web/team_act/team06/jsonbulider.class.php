@@ -358,6 +358,7 @@ echo "test3";
 $jsonTopicsArray = $jsonMainObj->addJsonArray();
 echo "test4";
 $jsonTopicsArray->setJsonArrayName("test");
+echo "test4.5";
 $topicObj = $jsonTopicsArray->addJsonObj();
 echo "test5";
 //book
