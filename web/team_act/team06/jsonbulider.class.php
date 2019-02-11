@@ -27,23 +27,21 @@ class jsonBulider
     public function addJsonObj()
     {
         array_push($this->jsonArray, new jsonObjBulider());
-        return $this->jsonArray[cout($this->jsonArray) - 1];
+        return $this->jsonArray[count($this->jsonArray) - 1];
     }
 
 
     public function addJsonArray()
     {
-        echo "test8";
         array_push($this->jsonArray, new jsonArrayBulider());
-        echo "test9";
-        return $this->jsonArray[cout($this->jsonArray) - 1];
+        return $this->jsonArray[count($this->jsonArray) - 1];
     }
 
 
     public function addJsonData()
     {
         array_push($this->jsonArray, new jsonDataBulider());
-        return $this->jsonArray[cout($this->jsonArray) - 1];
+        return $this->jsonArray[count($this->jsonArray) - 1];
     }
 
 
