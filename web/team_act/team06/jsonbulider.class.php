@@ -187,7 +187,7 @@ class jsonObjBulider
 
 class jsonArrayBulider
 {
-    private $jsonArrayName;
+    private $jsonArrayName = "";
     private $jsonArrayValue;
     private $internalArray = false;
     private $objString = "";
@@ -357,6 +357,7 @@ $jsonMainObj = new jsonBulider();
 echo "test3";
 $jsonTopicsArray = $jsonMainObj->addJsonArray();
 echo "test4";
+echo get_class($jsonTopicsArray);
 $jsonTopicsArray->setJsonArrayName("test");
 echo "test4.5";
 $topicObj = $jsonTopicsArray->addJsonObj();
