@@ -9,7 +9,7 @@ function doubleQuoteWrap($wrapString)
 class jsonBulider
 {
     private $jsonString = "";
-    private $jsonArray;
+    private $jsonArray = array();
 
 
     public function getJsonArray()
@@ -36,6 +36,7 @@ class jsonBulider
         $newArray = new jsonArrayBulider();
         array_push($this->jsonArray, $newArray);
         var_dump($this->jsonArray);
+        print_r($this->jsonArray);
         return $newArray;
     }
 
