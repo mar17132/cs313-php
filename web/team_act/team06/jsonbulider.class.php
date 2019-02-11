@@ -35,8 +35,6 @@ class jsonBulider
     {
         $newArray = new jsonArrayBulider();
         array_push($this->jsonArray, $newArray);
-        var_dump($this->jsonArray);
-        print_r($this->jsonArray);
         return $newArray;
     }
 
@@ -87,10 +85,10 @@ class jsonBulider
 
 class jsonObjBulider
 {
-    private $jsonObjName;
-    private $jsonObjArrayValue;
+    private $jsonObjName = "";
+    private $jsonObjArrayValue  = array();
     private $inArray = false;
-    private $objString;
+    private $objString = "";
 
 
     public function setJsonObjName($objName)
@@ -191,7 +189,7 @@ class jsonObjBulider
 class jsonArrayBulider
 {
     private $jsonArrayName = "";
-    private $jsonArrayValue;
+    private $jsonArrayValue  = array();
     private $internalArray = false;
     private $objString = "";
 
