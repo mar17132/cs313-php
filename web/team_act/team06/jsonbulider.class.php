@@ -357,7 +357,7 @@ $jsonMainObj = new jsonBulider();
 echo "test3";
 $jsonTopicsArray = $jsonMainObj->addJsonArray();
 echo "test4";
-$jsonTopicsArray->setJsonObjName("test");
+$jsonTopicsArray->setJsonArrayName("test");
 $topicObj = $jsonTopicsArray->addJsonObj();
 echo "test5";
 //book
