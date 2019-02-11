@@ -35,6 +35,7 @@ class jsonBulider
     {
         $newArray = new jsonArrayBulider();
         array_push($this->jsonArray, $newArray);
+        print_r($this->jsonArray);
         return $newArray;
     }
 
