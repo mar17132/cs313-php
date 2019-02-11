@@ -213,7 +213,7 @@ class jsonArrayBulider
 
     public function getJsonArrayValue()
     {
-        $this->jsonArrayValue;
+        return $this->jsonArrayValue;
     }
 
 
