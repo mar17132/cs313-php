@@ -354,7 +354,7 @@ class jsonDataBulider
 
 }
 
-$jsonMainObj = new jsonBulider();
+//$jsonMainObj = new jsonBulider();
 echo "test3";
 /*$jsonTopicsArray = $jsonMainObj->addJsonArray();
 echo "test4";
