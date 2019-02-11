@@ -8,7 +8,6 @@ function doubleQuoteWrap($wrapString)
 
 class jsonBulider
 {
-    echo "test1";
     private $jsonString = "";
     private $jsonArray;
 
@@ -265,7 +264,7 @@ class jsonArrayBulider
     {
         if(!$this->isInnerArray())
         {
-            $this-objString .= doubleQuoteWrap($this->jsonArrayName).":";
+            $this->objString .= doubleQuoteWrap($this->jsonArrayName).":";
         }
 
         $this->objString .= "[";
