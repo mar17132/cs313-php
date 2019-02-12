@@ -57,11 +57,11 @@ $jsonMainObj = new jsonBulider();
 
 $statement = $db->query("SELECT * FROM Topic;");
 $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-print_r($results);
 $resultsCount = count($results);
 
 foreach($results as $key => $row)
 {
+    print_r($row);
     $jsonTopicsArray = $jsonMainObj->addJsonArray();
     //$jsonTopicsArray->setJsonObjName($row[name]);
     //$topicObj = $jsonTopicsArray->addJsonObj();
