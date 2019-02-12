@@ -63,6 +63,7 @@ class jsonBulider
             }
             elseif($getClass == "jsonArrayBulider")
             {
+                echo "test1";
                 $this->objString .= $array->bulidString();
             }
             elseif($getClass == "jsonDataBulider")
@@ -160,7 +161,7 @@ class jsonObjBulider
 
             if($getClass == "jsonObjBulider")
             {
-                if(!isInArray())
+                if(!$array->isInArray())
                 {
                     $this->objString .= doubleQuoteWrap($array->getJsonObjName());
                     $this->objString .= ":";
@@ -252,10 +253,8 @@ class jsonArrayBulider
 
     public function addJsonObj()
     {
-        echo "test99";
         $newObj = new jsonObjBulider();
         array_push($this->jsonArrayValue,$newObj);
-        print_r($this->jsonArrayValue);
         return $newObj;
     }
 
@@ -364,20 +363,16 @@ class jsonDataBulider
 }
 
 $jsonMainObj = new jsonBulider();
-echo "test3";
+
 $jsonTopicsArray = $jsonMainObj->addJsonArray();
-echo "test4";
 $jsonTopicsArray->setJsonArrayName("test");
-echo "test4.5";
+
 $topicObj = $jsonTopicsArray->addJsonObj();
-echo "test5";
+
 //book
 $bookData = $topicObj->addJsonObjData();
 $bookData->setJsonDataName("book");
 $bookData->setJsonDataValue("mybook");
-echo "test6";
-echo "<br/><br/>";
-print_r($jsonTopicsArray->getJsonArrayValue());
 //chapter
 /*$chaperData = $topicObj->addJsonObjData();
 $chaperData->setJsonDataName("chapter");
