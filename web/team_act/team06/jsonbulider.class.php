@@ -53,7 +53,7 @@ class jsonBulider
     {
         $this->objString .= "{";
 
-        foreach($this->jsonObjArrayValue as $key => $array)
+        foreach($this->jsonArray as $key => $array)
         {
             $getClass = get_class($array);
 
