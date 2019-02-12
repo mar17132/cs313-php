@@ -61,15 +61,13 @@ $resultsCount = count($results);
 
 foreach($results as $key => $row)
 {
-    print_r($row);
-    echo $row[name];
     $jsonTopicsArray = $jsonMainObj->addJsonArray();
-    //$jsonTopicsArray->setJsonObjName($row[name]);
-    //$topicObj = $jsonTopicsArray->addJsonObj();
+    $jsonTopicsArray->setJsonArrayName($row[name]);
+    $topicObj = $jsonTopicsArray->addJsonObj();
 
     //$javascripObj .= "{'topic':$row,[";
 
-   /* foreach($db->query("SELECT Scriptures_to_Topic.Scriptures_id,
+    foreach($db->query("SELECT Scriptures_to_Topic.Scriptures_id,
                         Scriptures.book,Scriptures.chapter,
                         Scriptures.verse,Scriptures.content
                         FROM Scriptures_to_Topic
@@ -99,7 +97,7 @@ foreach($results as $key => $row)
 
         //$javascripObj .= "'book':$scriptur[book],'chapter':$scriptur[chapter],";
         //$javascripObj .= "'verse':$scriptur[verse],'content':$scriptur[content]}";
-    }*/
+    }
 
     /*if($key < ($resultsCount - 1))
     {
