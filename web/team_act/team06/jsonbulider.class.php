@@ -155,6 +155,7 @@ class jsonObjBulider
     //bulid obj string
     public function bulidString()
     {
+        echo "test2";
         $this->objString .= "{";
 
         foreach($this->jsonObjArrayValue as $key => $array)
@@ -163,6 +164,7 @@ class jsonObjBulider
 
             if($getClass == "jsonObjBulider")
             {
+                echo "test3";
                 if(!$array->isInArray())
                 {
                     $this->objString .= doubleQuoteWrap($array->getJsonObjName());
@@ -170,6 +172,7 @@ class jsonObjBulider
                 }
 
                 $this->objString .= $array->bulidString();
+                echo "test4";
             }
             elseif($getClass == "jsonArrayBulider")
             {
