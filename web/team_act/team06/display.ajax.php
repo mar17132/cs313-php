@@ -59,7 +59,7 @@ $statement = $db->query("SELECT * FROM Topic;");
 $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 $resultsCount = count($results);
 
-foreach($results as $key => $row)
+/*foreach($results as $key => $row)
 {
     $jsonTopicsArray = $jsonMainObj->addJsonArray();
     $jsonTopicsArray->setJsonObjName($row[name]);
@@ -102,12 +102,12 @@ foreach($results as $key => $row)
     /*if($key < ($resultsCount - 1))
     {
         //$javascripObj .= ",";
-    }*/
+    }
 }
 
 //$javascripObj .= "]}";
 
-echo $jsonMainObj->bulidString();
+echo $jsonMainObj->bulidString();*/
 
 echo "test";
 
