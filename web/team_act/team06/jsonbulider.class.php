@@ -57,6 +57,8 @@ class jsonBulider
         {
             $getClass = get_class($array);
 
+            echo $getClass;
+
             if($getClass == "jsonObjBulider")
             {
                 $this->objString .= $array->bulidString();
