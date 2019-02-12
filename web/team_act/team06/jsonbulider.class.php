@@ -161,6 +161,7 @@ class jsonObjBulider
         foreach($this->jsonObjArrayValue as $key => $array)
         {
             $getClass = get_class($array);
+            echo $getClass;
 
             if($getClass == "jsonObjBulider")
             {
@@ -180,6 +181,7 @@ class jsonObjBulider
             }
             elseif($getClass == "jsonDataBulider")
             {
+                echo "test6";
                 $this->objString .= $array->bulidString();
             }
 
