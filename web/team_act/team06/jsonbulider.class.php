@@ -358,7 +358,7 @@ class jsonDataBulider
 
 
     //data string build
-    public function buildString()
+    public function bulidString()
     {
         $this->objString .= doubleQuoteWrap($this->jsonDataName).":";
         $this->objString .= is_string($this->jsonDataValue) ?
