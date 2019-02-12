@@ -57,15 +57,12 @@ class jsonBulider
         {
             $getClass = get_class($array);
 
-            echo $getClass;
-
             if($getClass == "jsonObjBulider")
             {
                 $this->objString .= $array->bulidString();
             }
             elseif($getClass == "jsonArrayBulider")
             {
-                echo "test1";
                 $this->objString .= $array->bulidString();
             }
             elseif($getClass == "jsonDataBulider")
@@ -155,7 +152,6 @@ class jsonObjBulider
     //bulid obj string
     public function bulidString()
     {
-        echo "test2";
         $this->objString .= "{";
 
         foreach($this->jsonObjArrayValue as $key => $array)
@@ -165,7 +161,6 @@ class jsonObjBulider
 
             if($getClass == "jsonObjBulider")
             {
-                echo "test3";
                 if(!$array->isInArray())
                 {
                     $this->objString .= doubleQuoteWrap($array->getJsonObjName());
@@ -173,7 +168,6 @@ class jsonObjBulider
                 }
 
                 $this->objString .= $array->bulidString();
-                echo "test4";
             }
             elseif($getClass == "jsonArrayBulider")
             {
@@ -181,7 +175,6 @@ class jsonObjBulider
             }
             elseif($getClass == "jsonDataBulider")
             {
-                echo "test6";
                 $this->objString .= $array->bulidString();
             }
 
@@ -381,7 +374,7 @@ $bookData = $topicObj->addJsonObjData();
 $bookData->setJsonDataName("book");
 $bookData->setJsonDataValue("mybook");
 //chapter
-/*$chaperData = $topicObj->addJsonObjData();
+$chaperData = $topicObj->addJsonObjData();
 $chaperData->setJsonDataName("chapter");
 $chaperData->setJsonDataValue(5);
 
@@ -393,7 +386,7 @@ $verseData->setJsonDataValue(25);
  //content
 $contentData = $topicObj->addJsonObjData();
 $contentData->setJsonDataName("content");
-$contentData->setJsonDataValue("this is somintheing");*/
+$contentData->setJsonDataValue("this is somintheing");
 
 
 echo $jsonMainObj->bulidString();
