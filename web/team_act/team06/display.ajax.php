@@ -62,7 +62,6 @@ $resultsCount = count($results);
 foreach($results as $key => $row)
 {
     $jsonTopicsArray = $jsonMainObj->addJsonArray();
-
     $jsonTopicsArray->setJsonObjName($row[name]);
     $topicObj = $jsonTopicsArray->addJsonObj();
 
