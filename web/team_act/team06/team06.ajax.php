@@ -105,7 +105,7 @@ catch (PDOException $ex)
                     childElm.appendTo(parentElm);
                     parentElm.text("&quot;" + value.content + "&quot;");
 
-                    parentElm.appendTo(elemID);
+                    parentElm.appendTo(elemId);
 
                 });
 
