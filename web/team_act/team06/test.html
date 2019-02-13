@@ -1,29 +1,6 @@
-<?php
 
-$db;
 
-try
-{
-    $dbUrl = getenv('DATABASE_URL');
-    $dbOpts = parse_url($dbUrl);
 
-    $dbHost = $dbOpts["host"];
-    $dbPort = $dbOpts["port"];
-    $dbUser = $dbOpts["user"];
-    $dbPassword = $dbOpts["pass"];
-    $dbName = ltrim($dbOpts["path"],'/');
-
-    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
-
-?>
 
 
 <!DOCTYPE HTML>
@@ -67,20 +44,7 @@ catch (PDOException $ex)
 
             <ul>
                 <li>Select Topics</li>
-            <?php
 
-              foreach($db->query('SELECT * FROM Topic;') as $row)
-                {
-
-                    echo "<li>";
-                    //scripture
-                    echo "<input type='checkbox' name='topic[]' value='".$row[id]."'/>";
-                    echo $row[name];
-                    echo "</li>";
-
-                }
-
-            ?>
             </ul>
             <br/>
             <input id="submit" type="submit" value="add scripture"/>
@@ -94,54 +58,14 @@ catch (PDOException $ex)
 
             showDiv = $("#show");
 
-            function showScriptures(elemId, scriptureArray)
-            {
-
-                $.each(scriptureArray,function(index,value){
-                    parentElm = $("p");
-                    childElm = $("span");
-                    childElm.addClass('scripture');
-                    childElm.text(value.book + " " + value.chapter + ":" + value.verse + " - ");
-                    parentElm.appendTo(childElm);
-                    parentElm.text("&quot;" + value.content + "&quot;");
-
-                    elemId.appendTo(parentElm);
-
-                });
-
-            }
-
-
             function showTopic(elemID,topic)
             {
                 parentElm = $("h2");
-                parentElm.text(topic);
+                parentElm.append(document.createTextNode(topic));
                 parentElm.appendTo(elemID);
             }
 
 
-            function getScripturs()
-            {
-
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200)
-                    {
-                        document.getElementById("show").innerHTML = this.responseText;
-                        jsonString = JSON.parse(this.responseText);
-
-                        for(x in jsonString)
-                        {
-                            showTopic(showDiv,x);
-                            showScriptures(showDiv,jsonString[x]);
-                        }
-
-                    }
-                };
-                xmlhttp.open("GET", "display.ajax.php", true);
-                xmlhttp.send();
-
-            }
 showTopic(showDiv,"topic");
 
         </script>

@@ -98,8 +98,8 @@ catch (PDOException $ex)
             {
 
                 $.each(scriptureArray,function(index,value){
-                    parentElm = $("p");
-                    childElm = $("span");
+                    parentElm = $("<p></p>");
+                    childElm = $("<span></span>");
                     childElm.addClass('scripture');
                     childElm.text(value.book + " " + value.chapter + ":" + value.verse + " - ");
                     childElm.appendTo(parentElm);
@@ -114,7 +114,7 @@ catch (PDOException $ex)
 
             function showTopic(elemID,topic)
             {
-                parentElm = $("h2");
+                parentElm = $("<h2></h2>");
                 parentElm.text(topic);
                 parentElm.appendTo(elemID);
             }
