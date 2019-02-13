@@ -70,7 +70,7 @@ class jsonBulider
                 $this->objString .= $array->bulidString();
             }
 
-            if($key < (count($this->jsonObjArrayValue) - 1))
+            if($key < (count($this->jsonArray) - 1))
             {
                 $this->objString .= ",";
             }

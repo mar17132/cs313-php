@@ -92,6 +92,8 @@ catch (PDOException $ex)
 
         <script type="text/javascript" >
 
+            showDiv = $("#show");
+
             function showScriptures(elemId, scriptureArray)
             {
 
@@ -127,6 +129,14 @@ catch (PDOException $ex)
                     if (this.readyState == 4 && this.status == 200)
                     {
                         document.getElementById("show").innerHTML = this.responseText;
+                        jsonString = JSON.parse(this.responseText);
+
+                        for(x in jsonString)
+                        {
+                            showTopic(showDiv,x);
+                            showScriptures(showDiv,jsonString[x]);
+                        }
+
                     }
                 };
                 xmlhttp.open("GET", "display.ajax.php", true);

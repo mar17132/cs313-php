@@ -63,7 +63,7 @@ foreach($results as $key => $row)
 {
     $jsonTopicsArray = $jsonMainObj->addJsonArray();
     $jsonTopicsArray->setJsonArrayName($row[name]);
-    $topicObj = $jsonTopicsArray->addJsonObj();
+
 
     //$javascripObj .= "{'topic':$row,[";
 
@@ -75,6 +75,8 @@ foreach($results as $key => $row)
                         ON Scriptures_to_Topic.Scriptures_id = Scriptures.ID
                         WHERE Scriptures_to_Topic.Topic_id = $row[id];") as $scriptur)
     {
+        $topicObj = $jsonTopicsArray->addJsonObj();
+
         //book
         $bookData = $topicObj->addJsonObjData();
         $bookData->setJsonDataName("book");
