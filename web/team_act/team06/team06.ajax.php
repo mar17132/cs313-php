@@ -92,7 +92,7 @@ catch (PDOException $ex)
 
         <script type="text/javascript" >
 
-            showDiv = $("#show");
+            var showDiv = $("#show");
 
             function showScriptures(elemId, scriptureArray)
             {
