@@ -102,10 +102,10 @@ catch (PDOException $ex)
                     childElm = $("span");
                     childElm.addClass('scripture');
                     childElm.text(value.book + " " + value.chapter + ":" + value.verse + " - ");
-                    childElm.appendTo(parentElm);
+                    parentElm.appendTo(childElm);
                     parentElm.text("&quot;" + value.content + "&quot;");
 
-                    parentElm.appendTo(elemID);
+                    elemId.appendTo(parentElm);
 
                 });
 
@@ -142,8 +142,7 @@ catch (PDOException $ex)
                 xmlhttp.send();
 
             }
-
-            getScripturs();
+showTopic(showDiv,"topic");
 
         </script>
 
