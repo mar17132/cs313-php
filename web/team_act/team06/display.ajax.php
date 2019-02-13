@@ -111,7 +111,5 @@ foreach($results as $key => $row)
 
 echo $jsonMainObj->bulidString();
 
-echo "test";
-
 ?>
 
