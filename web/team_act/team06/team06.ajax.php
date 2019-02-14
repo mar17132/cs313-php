@@ -105,7 +105,7 @@ catch (PDOException $ex)
             var verseTxt = $("#verse");
             var topicsArray = $(".topics");
 
-            newTopicChck.on("change")function(){
+            newTopicChck.on("change",function(){
                 if($(this).is(":checked"))
                 {
                     newTopicTxt.prop('disabled',false);
