@@ -168,11 +168,11 @@ catch (PDOException $ex)
                 });
 
                 $.post("display.ajax.php",{
-                        "book":'"'+bookTxt+'"',
-                        "chapter":'"'+chapterTxt+'"',
-                        "verse":'"'+verseTxt+'"',
-                        "topicnew":'"'+newTopic+'"',
-                        "topics[]":newArray
+                        book:bookTxt,
+                        chapter:chapterTxt,
+                        verse:verseTxt,
+                        topicnew:newTopic,
+                        topics[]:newArray
                       });
             }
 
