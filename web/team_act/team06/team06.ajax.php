@@ -160,12 +160,12 @@ catch (PDOException $ex)
                     {
                         if($(this).attr('id') != "newTopic")
                         {
-                            //newTopic = newTopicTxt.val();
+                            newTopic = newTopicTxt.val();
                             newString += ",topicnew:" + newTopic;
                         }
                         else
                         {
-                            //newArray.push($(this).val());
+                            newArray.push($(this).val());
                             arrayString += $(this).val() + ",";
 
                         }
@@ -175,14 +175,14 @@ catch (PDOException $ex)
                     newString += arrayString;
                 });
 
-                /*$.post("display.ajax.php",{
-                        book:bookTxt,
-                        chapter:chapterTxt,
-                        verse:verseTxt,
-                        topicnew:newTopic,
+                $.post("display.ajax.php",{
+                        book:bookTxt.val(),
+                        chapter:chapterTxt.val(),
+                        verse:verseTxt.val(),
+                        topicnew:newTopic.val(),
                         'topics[]':newArray
-                      });*/
-                $.post("display.ajax.php",newString);
+                      });
+                //$.post("display.ajax.php",newString);
             }
 
 
