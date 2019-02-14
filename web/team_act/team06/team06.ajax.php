@@ -157,7 +157,7 @@ catch (PDOException $ex)
                     {
                         if($(this).attr('id') != "newTopic")
                         {
-
+                            newTopic = newTopicTxt.val();
                         }
                         else
                         {
@@ -167,13 +167,13 @@ catch (PDOException $ex)
                     }
                 });
 
-                /*$.post("display.ajax.php",{
-                        book:bookTxt,
-                        chapter:chapterTxt,
-                        verse:verseTxt,
-                        topicnew:newTopic,
-                        topics[]:newTopicArray
-                      });*/
+                $.post("display.ajax.php",{
+                        "book":'"'+bookTxt+'"',
+                        "chapter":'"'+chapterTxt+'"',
+                        "verse":'"'+verseTxt+'"',
+                        "topicnew":'"'+newTopic+'"',
+                        "topics[]":newTopicArray
+                      });
             }
 
 
