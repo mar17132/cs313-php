@@ -87,7 +87,7 @@ catch (PDOException $ex)
                </li>
             </ul>
             <br/>
-            <input id="submit" type="button" onclick="update()" value="add scripture"/>
+            <input id="submit" type="button" onclick="updateScript()" value="add scripture"/>
         </form>
 
         <div id="show">
