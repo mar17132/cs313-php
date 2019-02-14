@@ -152,8 +152,8 @@ catch (PDOException $ex)
                 newArray = new Array();
                 newTopic = "null";
                 arrayString = "";
-                newString = "book:" + bookTxt + ",chapter:" + chapterTxt;
-                newString += ",verse:" + verseTxt;
+                newString = "book:" + bookTxt.val() + ",chapter:" + chapterTxt.val();
+                newString += ",verse:" + verseTxt.val();
 
                 topicsArray.each(function(){
                     if($(this).is(":checked"))
