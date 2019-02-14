@@ -175,14 +175,14 @@ catch (PDOException $ex)
                     newString += arrayString;
                 });
 
-                $.post("display.ajax.php",{
+                /*$.post("display.ajax.php",{
                         book:bookTxt.val(),
                         chapter:chapterTxt.val(),
                         verse:verseTxt.val(),
                         topicnew:newTopic,
                         'topics[]':newArray
-                      });
-                //$.post("display.ajax.php",newString);
+                      });*/
+                $.post("display.ajax.php",newString);
                 getScripturs();
             }
 
