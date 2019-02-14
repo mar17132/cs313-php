@@ -172,12 +172,12 @@ catch (PDOException $ex)
                         chapter:chapterTxt,
                         verse:verseTxt,
                         topicnew:newTopic,
-                        topics:newArray
+                        'topics[]':newArray
                       });
             }
 
 
-            function getScripturs(str = "")
+            function getScripturs()
             {
 
                 var xmlhttp = new XMLHttpRequest();
@@ -196,7 +196,7 @@ deleteAllChild (showDiv);
 
                     }
                 };
-                xmlhttp.open("GET", "display.ajax.php" + str, true);
+                xmlhttp.open("GET", "display.ajax.php", true);
                 xmlhttp.send();
 
             }
