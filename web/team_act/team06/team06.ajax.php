@@ -50,15 +50,15 @@ catch (PDOException $ex)
         <form >
 
             <label>Book</label>
-            <input type="text" name="book" />
+            <input type="text" name="book" id="book"/>
             <br/>
 
             <label>Chapter</label>
-            <input type="text" name="chapter"/>
+            <input type="text" name="chapter" id="chapter"/>
             <br/>
 
             <label>Verse</label>
-            <input type="text" name="verse"/>
+            <input type="text" name="verse" id="verse"/>
             <br/>
 
             <label>Content</label>
@@ -74,16 +74,20 @@ catch (PDOException $ex)
 
                     echo "<li>";
                     //scripture
-                    echo "<input type='checkbox' name='topic[]' value='".$row[id]."'/>";
+                    echo "<input type='checkbox' class='topics' name='topic[]' id='$row[name]' value='".$row[id]."'/>";
                     echo $row[name];
                     echo "</li>";
 
                 }
 
             ?>
+               <li>
+                    <input type="checkbox" id="newTopic" class="topics" value="newTopic" />
+                    <input type="text" disabled="disabled" id="newTopicTxt" />
+               </li>
             </ul>
             <br/>
-            <input id="submit" type="submit" value="add scripture"/>
+            <input id="submit" type="button" onclick="update()" value="add scripture"/>
         </form>
 
         <div id="show">
@@ -93,6 +97,24 @@ catch (PDOException $ex)
         <script type="text/javascript" >
 
             var showDiv = $("#show");
+            var newTopicTxt = $("#newTopicTxt");
+            var newTopicChck = $("#newTopic");
+
+            var bookTxt = $("#book");
+            var chapterTxt = $("#chapter");
+            var verseTxt = $("#verse");
+            var topicsArray = $(".topics");
+
+            newTopicChck.on("change")function(){
+                if($(this).is(":checked"))
+                {
+                    newTopicTxt.prop('disabled',false);
+                }
+                else
+                {
+                    newTopicTxt.prop('disabled',true);
+                }
+            };
 
             function showScriptures(elemId, scriptureArray)
             {
@@ -119,16 +141,52 @@ catch (PDOException $ex)
                 parentElm.appendTo(elemID);
             }
 
+            function deleteAllChild(elem)
+            {
+                elem.empty();
 
-            function getScripturs()
+            }
+
+            function updateScript()
+            {
+                newArray = new Array();
+                newTopic = "null";
+
+                topicsArray.each(function(){
+                    if($(this).is(":checked"))
+                    {
+                        if($(this).attr('id') != "newTopic")
+                        {
+
+                        }
+                        else
+                        {
+                            newArray.push($(this).val());
+                        }
+
+                    }
+                });
+
+                $.post("display.ajax.php",{
+                        book:bookTxt,
+                        chapter:chapterTxt,
+                        verse:verseTxt,
+                        topics[]:newTopicArray,
+                        topicnew:newTopic
+                      });
+            }
+
+
+            function getScripturs(str = "")
             {
 
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200)
                     {
-                        document.getElementById("show").innerHTML = this.responseText;
+                        //document.getElementById("show").innerHTML = this.responseText;
                         jsonString = JSON.parse(this.responseText);
+deleteAllChild (showDiv);
 
                         for(x in jsonString)
                         {
@@ -138,7 +196,7 @@ catch (PDOException $ex)
 
                     }
                 };
-                xmlhttp.open("GET", "display.ajax.php", true);
+                xmlhttp.open("GET", "display.ajax.php" + str, true);
                 xmlhttp.send();
 
             }
