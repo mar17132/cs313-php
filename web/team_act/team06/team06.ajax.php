@@ -125,7 +125,7 @@ catch (PDOException $ex)
                     childElm.addClass('scripture');
                     childElm.text(value.book + " " + value.chapter + ":" + value.verse + " - ");
                     childElm.appendTo(parentElm);
-                    parentElm.text("&quot;" + value.content + "&quot;");
+                    parentElm.html("&quot;" + value.content + "&quot;");
 
                     parentElm.appendTo(elemId);
 
