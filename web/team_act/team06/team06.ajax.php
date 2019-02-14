@@ -151,29 +151,38 @@ catch (PDOException $ex)
             {
                 newArray = new Array();
                 newTopic = "null";
+                arrayString = "";
+                newString = "book:" + bookTxt + ",chapter:" + chapterTxt;
+                newString += ",verse:" + verseTxt;
 
                 topicsArray.each(function(){
                     if($(this).is(":checked"))
                     {
                         if($(this).attr('id') != "newTopic")
                         {
-                            newTopic = newTopicTxt.val();
+                            //newTopic = newTopicTxt.val();
+                            newString += ",topicnew:" + newTopic;
                         }
                         else
                         {
-                            newArray.push($(this).val());
+                            //newArray.push($(this).val());
+                            arrayString += $(this).val() + ",";
+
                         }
 
                     }
+
+                    newString += arrayString;
                 });
 
-                $.post("display.ajax.php",{
+                /*$.post("display.ajax.php",{
                         book:bookTxt,
                         chapter:chapterTxt,
                         verse:verseTxt,
                         topicnew:newTopic,
                         'topics[]':newArray
-                      });
+                      });*/
+                $.post("display.ajax.php",newString);
             }
 
 
