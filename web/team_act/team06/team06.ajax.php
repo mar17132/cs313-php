@@ -179,7 +179,7 @@ catch (PDOException $ex)
                         book:bookTxt.val(),
                         chapter:chapterTxt.val(),
                         verse:verseTxt.val(),
-                        topicnew:newTopic.val(),
+                        topicnew:newTopic,
                         'topics[]':newArray
                       });
                 //$.post("display.ajax.php",newString);
