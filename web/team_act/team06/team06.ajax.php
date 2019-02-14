@@ -114,7 +114,7 @@ catch (PDOException $ex)
                 {
                     newTopicTxt.prop('disabled',true);
                 }
-            };
+            });
 
             function showScriptures(elemId, scriptureArray)
             {
