@@ -171,8 +171,8 @@ catch (PDOException $ex)
                         book:bookTxt,
                         chapter:chapterTxt,
                         verse:verseTxt,
-                        topics[]:newTopicArray,
-                        topicnew:newTopic
+                        topicnew:newTopic,
+                        topics[]:newTopicArray
                       });
             }
 
