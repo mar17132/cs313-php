@@ -183,6 +183,7 @@ catch (PDOException $ex)
                         'topics[]':newArray
                       });
                 //$.post("display.ajax.php",newString);
+                getScripturs();
             }
 
 
