@@ -172,7 +172,7 @@ catch (PDOException $ex)
                         "chapter":'"'+chapterTxt+'"',
                         "verse":'"'+verseTxt+'"',
                         "topicnew":'"'+newTopic+'"',
-                        "topics[]":newTopicArray
+                        "topics[]":newArray
                       });
             }
 
