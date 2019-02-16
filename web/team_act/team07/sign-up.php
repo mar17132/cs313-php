@@ -42,6 +42,8 @@ if(count($_POST) > 0)
            $db->query("INSERT INTO Users7(name,pass)
                      VALUES('".$_POST['usernameTxt']."','".
                       password_hash($_POST['passTxt'],PASSWORD_DEFAULT)."')");
+
+           header('Location:sign-in.php');
        }
        else
        {
@@ -78,6 +80,7 @@ function checkInput()
 <html>
     <head>
         <title>Sign up</title>
+        <script src="../../scripts/jquery/jquery-3.3.1.min.js"></script>
     </head>
     <body>
         <form action="sign-up.php" method="post">
