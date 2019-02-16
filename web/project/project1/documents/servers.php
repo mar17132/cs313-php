@@ -81,7 +81,7 @@
                     //Select
                     echo "<li class='table-cell'>";
                     echo "<div class='table-cell-content'>";
-                    echo "<input type='checkbox' class='selectValueChk' value='";
+                    echo "<input type='checkbox' name='serverid' class='selectValueChk' value='";
                     echo $row[id];
                     echo "'/>";
                     echo "</div>";

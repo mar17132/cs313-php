@@ -11,7 +11,7 @@ $patchArray;
 if(count($_POST) > 0)
 {
   $pageTitle = "Edit Server";
-  $serverID = $_POST["id"];
+  $serverID = $_POST["serverid"];
 }
 else
 {
