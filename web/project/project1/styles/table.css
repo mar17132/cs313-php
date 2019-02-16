@@ -58,3 +58,10 @@
     font-size: 1.1em;
 }
 
+
+a.addContent{
+    text-decoration: none;
+    outline: none;
+    display: block;
+}
+

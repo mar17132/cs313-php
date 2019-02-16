@@ -12,9 +12,14 @@
 
             <div class="table-div">
                 <ul class="table-row">
+                        li class="table-cell">
+                        <div class="table-cell-content">
+                           &nbsp;
+                        </div>
+                    </li>
                     <li class="table-cell">
                         <div class="table-cell-content">
-                           <a href="addserver.php">
+                           <a href="addserver.php" class="addContent">
                                 <input type="button" value="Add Server" />
                             </a>
                         </div>
