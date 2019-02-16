@@ -218,6 +218,10 @@ ORDER BY PatchSchedlue.patchdate;
 SELECT * FROM Computers WHERE Name ='%1%' OR IP = '%1%';
 
 
-
+SELECT PatchCycle.ID, PatchCycle.Name
+FROM PatchCycle
+JOIN PatchSchedlue ON PatchCycle.ID = PatchSchedlue.PatchCycle_ID
+JOIN Patching ON PatchSchedlue.PatchCycle_ID = Patching.ID
+WHERE Patching.Computers_id ='$serverID';
 
 
