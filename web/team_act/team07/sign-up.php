@@ -33,7 +33,7 @@ if(isset($_SESSION['userID']))
 
 $errorMess = "";
 $passwordError = false;
-$userError = false:
+$userError = false;
 
 if(count($_POST) > 0)
 {
