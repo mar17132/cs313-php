@@ -9,7 +9,7 @@
 
         <div class="content">
             <h3>Computers</h3>
-
+<form method="post" action="addserver.php">
             <div class="table-div">
                 <ul class="table-row">
                     <li class="table-cell">
@@ -26,9 +26,9 @@
                     </li>
                     <li class="table-cell">
                         <div class="table-cell-content">
-                           <form method="post" action="addserver.php">
+
                                 <input type="submit" class="contentButtons"  value="Edit Server" />
-                            </form>
+
                         </div>
                     </li>
                 </ul>
@@ -132,6 +132,7 @@
             </div>-->
 
             </div>
+    </form>
         </div>
 
         <div class="footer" >
