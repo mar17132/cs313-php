@@ -32,7 +32,7 @@ if(isset($_SESSION['userID']))
 
 
 $errorMess = "";
-$passwordError = null;
+$passwordError = false;
 
 if(count($_POST) > 0)
 {
@@ -108,7 +108,7 @@ function checkInput()
             <input type="text" id="usernameTxt" name="usernameTxt"/>
             <span>
                 <?php
-                echo empty($_POST['usernameTxt']) ? "*" : "";
+                echo (empty($_POST['usernameTxt'])) ? "*" : "";
                 ?>
             </span>
             <br/><br/>
@@ -117,7 +117,7 @@ function checkInput()
             <input type="password" id="passTxt" name="passTxt" />
             <span>
                 <?php
-                echo ($passwordError || empty($errorMess)) ? "*" : "";
+                echo ($passwordError || empty($errorMess)) ? "" : "*";
                 ?>
             </span>
             <br/><br/>
@@ -126,7 +126,7 @@ function checkInput()
             <input type="password" id="passConTxt" name="passConTxt" />
             <span>
                 <?php
-                echo ($passwordError || empty($errorMess)) ? "*" : "";
+                echo ($passwordError || empty($errorMess)) ? "" : "*";
                 ?>
             </span>
             <br/><br/>
