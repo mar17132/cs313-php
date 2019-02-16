@@ -73,6 +73,11 @@ if(count($_POST) > 0)
 <html>
     <head>
         <title>Sign in</title>
+        <style>
+            p,span{
+                color: red;
+            }
+        </style>
     </head>
     <body>
         <form action="sign-in.php" method="post">
@@ -83,10 +88,20 @@ if(count($_POST) > 0)
             </p>
             <label>username</label><br/>
             <input type="text" id="usernameTxt" name="usernameTxt"/>
+            <span>
+                <?php
+                echo empty($errorMess) ? "*" : "";
+                ?>
+            </span>
             <br/><br/>
 
             <label>password</label><br/>
             <input type="password" id="passTxt" name="passTxt" />
+            <span>
+                <?php
+                echo empty($errorMess) ? "*" : "";
+                ?>
+            </span>
             <br/><br/>
 
             <input type="submit" value="Sign In" />

@@ -32,6 +32,7 @@ if(isset($_SESSION['userID']))
 
 
 $errorMess = "";
+$passwordError = null;
 
 if(count($_POST) > 0)
 {
@@ -39,15 +40,24 @@ if(count($_POST) > 0)
     {
        if($_POST['passTxt'] == $_POST['passConTxt'])
        {
-           $db->query("INSERT INTO Users7(name,pass)
-                     VALUES('".$_POST['usernameTxt']."','".
-                      password_hash($_POST['passTxt'],PASSWORD_DEFAULT)."');");
+           if(preg_match('/(([0-9]{1,})*[a-zA-Z]){7,}/',$_POST['passTxt']))
+           {
+               $db->query("INSERT INTO Users7(name,pass)
+                         VALUES('".$_POST['usernameTxt']."','".
+                          password_hash($_POST['passTxt'],PASSWORD_DEFAULT)."');");
 
-           header('Location:sign-in.php');
+               header('Location:sign-in.php');
+           }
+           else
+           {
+               $errorMess = "Password not valid";
+               $passwordError = true;
+           }
        }
        else
        {
            $errorMess = "Passwords don't match";
+           $passwordError = true;
        }
     }
     else
@@ -80,6 +90,11 @@ function checkInput()
 <html>
     <head>
         <title>Sign up</title>
+        <style>
+            p,span{
+                color: red;
+            }
+        </style>
         <script src="../../scripts/jquery/jquery-3.3.1.min.js"></script>
     </head>
     <body>
@@ -91,14 +106,29 @@ function checkInput()
             </p>
             <label>username</label><br/>
             <input type="text" id="usernameTxt" name="usernameTxt"/>
+            <span>
+                <?php
+                echo empty($_POST['usernameTxt']) ? "*" : "";
+                ?>
+            </span>
             <br/><br/>
 
             <label>password</label><br/>
             <input type="password" id="passTxt" name="passTxt" />
+            <span>
+                <?php
+                echo ($passwordError || empty($errorMess)) ? "*" : "";
+                ?>
+            </span>
             <br/><br/>
 
             <label>password Confirm</label><br/>
             <input type="password" id="passConTxt" name="passConTxt" />
+            <span>
+                <?php
+                echo ($passwordError || empty($errorMess)) ? "*" : "";
+                ?>
+            </span>
             <br/><br/>
 
             <input type="submit" value="Sign Up" />
