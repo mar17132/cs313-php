@@ -148,7 +148,7 @@
 
             selectChk.on("click",function(){
 
-                disabledAllCheck(selectChk);
+                disableAllCheck(selectChk);
                 $(this).prop("disabled",false);
 
             });
