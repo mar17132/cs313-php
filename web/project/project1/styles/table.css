@@ -65,3 +65,6 @@ a.addContent{
     display: block;
 }
 
+.selectValueChk{
+    display: inline-block;
+}
