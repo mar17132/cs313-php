@@ -41,7 +41,7 @@ if(count($_POST) > 0)
        {
            $db->query("INSERT INTO Users7(name,pass)
                      VALUES('".$_POST['usernameTxt']."','".
-                      password_hash($_POST['passTxt'],PASSWORD_DEFAULT)."')");
+                      password_hash($_POST['passTxt'],PASSWORD_DEFAULT)."');");
 
            header('Location:sign-in.php');
        }
