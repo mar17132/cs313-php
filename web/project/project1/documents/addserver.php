@@ -25,13 +25,13 @@ if(isset($serverID))
     $serverArray = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     //patch
-    $statementPatch = $db->query("SELECT PatchCycle.ID, PatchCycle.Name
-                                  FROM PatchCycle
-                                  JOIN PatchSchedlue ON
-                                  PatchCycle.ID = PatchSchedlue.PatchCycle_ID
-                                  JOIN Patching ON
-                                  PatchSchedlue.PatchCycle_ID = Patching.ID
-                                  WHERE Patching.Computers_id = '$serverID';");
+    $statementPatch = $db->query("SELECT DISTINCT PatchCycle.ID, PatchCycle.Name
+                                FROM Patching
+                                JOIN PatchSchedlue
+                                ON PatchSchedlue.ID = Patching.PatchSchedlue_id
+                                JOIN PatchCycle
+                                ON PatchCycle.ID = PatchSchedlue.PatchCycle_ID
+                                WHERE Patching.Computers_id ='$serverID';");
     $patchArray = $statementPatch->fetchAll(PDO::FETCH_ASSOC);
 }
 
