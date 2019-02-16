@@ -45,6 +45,7 @@ if(count($_POST) > 0)
 
     $statement = $db->query("SELECT * FROM Users7 WHERE name='".$_POST[usernameTxt]."';");
     $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+    print_r($results);
 
     if(count($results) > 0)
     {
