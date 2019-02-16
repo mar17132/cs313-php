@@ -31,10 +31,17 @@ if(count($_POST) > 0)
     unset($_SESSION['userID']);
 }
 
+$userName ="";
 
 if(!isset($_SESSION['userID']))
 {
     header('Location:sign-in.php');
+}
+else
+{
+    $statement = $db->query("SELECT * FROM Users7 WHERE ID='".$_SESSION['userID']."';");
+    $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $userName = $results[0][name];
 }
 
 
@@ -49,7 +56,10 @@ if(!isset($_SESSION['userID']))
         <title>Team 7</title>
     </head>
     <body>
-        <h1>Welcome</h1>
+        <h1>
+            Welcome
+            <?php echo $userName; ?>
+        </h1>
 
         <form method="post" action="welcome.php">
             <input type="hidden" value="logoff" name="logoff"/>
