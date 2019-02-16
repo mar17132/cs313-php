@@ -31,12 +31,12 @@ if(isset($serverID))
                                   PatchCycle.ID = PatchSchedlue.PatchCycle_ID
                                   JOIN Patching ON
                                   PatchSchedlue.PatchCycle_ID = Patching.ID
-                                  WHERE Patching.Computers_id ='$serverID';");
+                                  WHERE Patching.Computers_id = '$serverID';");
     $patchArray = $statementPatch->fetchAll(PDO::FETCH_ASSOC);
 }
 
 print_r($patchArray);
-
+echo $serverID;
 ?>
 
 
