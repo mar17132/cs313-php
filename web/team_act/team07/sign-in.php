@@ -39,9 +39,10 @@ if(isset($_SESSION['userID']))
 
 $errorMess = "";
 
-/*if(count($_POST) > 0)
+if(count($_POST) > 0)
 {
-    $statement = $db->query("SELECT * FROM Users7 WHERE name='".$_POST['usernameTxt'].";");
+    print_r($_POST);
+  /*  $statement = $db->query("SELECT * FROM Users7 WHERE name='".$_POST['usernameTxt'].";");
     $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     if(count($results) > 0)
@@ -60,8 +61,8 @@ $errorMess = "";
     {
         $errorMess ="Username or Password is incorrect";
     }
-
-}*/
+*/
+}
 
 ?>
 
@@ -70,7 +71,7 @@ $errorMess = "";
 
 <html>
     <head>
-        <title></title>
+        <title>Sign in</title>
     </head>
     <body>
         <form action="sign-in.php" method="post">

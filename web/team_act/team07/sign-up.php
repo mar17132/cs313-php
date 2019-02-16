@@ -77,7 +77,7 @@ function checkInput()
 
 <html>
     <head>
-        <title></title>
+        <title>Sign up</title>
     </head>
     <body>
         <form action="sign-up.php" method="post">
