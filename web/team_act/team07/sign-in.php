@@ -41,17 +41,16 @@ $errorMess = "";
 
 if(count($_POST) > 0)
 {
-    print_r($_POST);
 
     $statement = $db->query("SELECT * FROM Users7 WHERE name='".$_POST[usernameTxt]."';");
     $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-    print_r($results);
+
 
     if(count($results) > 0)
     {
-        if(password_verify($_POST['passTxt'],$results[pass]))
+        if(password_verify($_POST['passTxt'],$results[0][pass]))
         {
-            $_SESSION['userID']=$results[id];
+            $_SESSION['userID']=$results[0][id];
             header('Location:welcome.php');
         }
         else
