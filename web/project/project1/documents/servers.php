@@ -12,7 +12,7 @@
 
             <div class="table-div">
                 <ul class="table-row">
-                        li class="table-cell">
+                    <li class="table-cell">
                         <div class="table-cell-content">
                            &nbsp;
                         </div>
@@ -27,7 +27,7 @@
                     <li class="table-cell">
                         <div class="table-cell-content">
                            <form method="post" action="addserver.php">
-                                <input type="submit" value="Add Server" />
+                                <input type="submit" value="Edit Server" />
                             </form>
                         </div>
                     </li>
