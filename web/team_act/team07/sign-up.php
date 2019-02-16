@@ -142,7 +142,7 @@ function checkInput()
             var passTxt = $("#passTxt");
             var passConTxt = $("#passConTxt");
             var submitBtn = $("#submit");
-            var reg = new RegExp("(([0-9]{1,})*[a-zA-Z]){7,}","g");
+            var reg = /(([0-9]{1,})*[a-zA-Z]){7,}/g;
 
             passConTxt.on("change",function(){
                 if(passTxt.val() == $(this).val())
