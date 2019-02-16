@@ -33,6 +33,7 @@ if(isset($_SESSION['userID']))
 
 $errorMess = "";
 $passwordError = false;
+$userError = false:
 
 if(count($_POST) > 0)
 {
@@ -63,6 +64,8 @@ if(count($_POST) > 0)
     else
     {
         $errorMess = "Please input all feilds";
+        $userError = true;
+        $passwordError = true;
     }
 }
 
@@ -108,7 +111,7 @@ function checkInput()
             <input type="text" id="usernameTxt" name="usernameTxt"/>
             <span>
                 <?php
-                echo (empty($_POST['usernameTxt'])) ? "*" : "";
+                echo ($userError) ? "*" : "";
                 ?>
             </span>
             <br/><br/>
@@ -117,7 +120,7 @@ function checkInput()
             <input type="password" id="passTxt" name="passTxt" />
             <span>
                 <?php
-                echo ($passwordError || empty($errorMess)) ? "" : "*";
+                echo ($passwordError) ? "*" : "";
                 ?>
             </span>
             <br/><br/>
@@ -126,7 +129,7 @@ function checkInput()
             <input type="password" id="passConTxt" name="passConTxt" />
             <span>
                 <?php
-                echo ($passwordError || empty($errorMess)) ? "" : "*";
+                echo ($passwordError) ? "*" : "";
                 ?>
             </span>
             <br/><br/>
