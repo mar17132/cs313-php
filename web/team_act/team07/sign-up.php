@@ -134,8 +134,47 @@ function checkInput()
             </span>
             <br/><br/>
 
-            <input type="submit" value="Sign Up" />
+            <input type="submit" id="submit" value="Sign Up" disabled="disabled" />
         </form>
+
+        <script type="text/javascript">
+
+            var passTxt = $("#passTxt");
+            var passConTxt = $("#passConTxt");
+            var submitBtn = $("#submit");
+            var reg = new RegExp("/(([0-9]{1,})*[a-zA-Z]){7,}/g");
+
+            passConTxt.on("change",function(){
+                if(passTxt.val() == $(this).val())
+                {
+                    if(reg.test($(this).val()))
+                    {
+                        submitBtn.prop('disabled',false);
+                    }
+                    else
+                    {
+                        submitBtn.prop('disabled',true);
+                    }
+
+                }
+            });
+
+
+            passTxt.on("change",function(){
+                if(passConTxt.val() == $(this).val())
+                {
+                    if(reg.test($(this).val()))
+                    {
+                        submitBtn.prop('disabled',false);
+                    }
+                    else
+                    {
+                        submitBtn.prop('disabled',true);
+                    }
+                }
+            });
+
+        </script>
     </body>
 </html>
 
