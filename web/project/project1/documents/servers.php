@@ -11,7 +11,7 @@
             <h3>Computers</h3>
 
             <div class="table-div">
-                <ul class="table-row">
+                <!--<ul class="table-row">
                     <li class="table-cell">
                         <div class="table-cell-content">
                            <input type="button" value="Add Server" />
@@ -31,12 +31,13 @@
                             </form>
                         </div>
                     </li>
-                </ul>
+                </ul>-->
                 <ul class="table-row">
                      <li class="table-cell">
                         <div class="table-cell-head-content">
                             Select
                         </div>
+                         &nbsp;
                     </li>
                     <li class="table-cell">
                         <div class="table-cell-head-content">
