@@ -8,10 +8,10 @@ $serverArray;
 $patchArray;
 
 
-if(isset($_GET['type']))
+if(count($_POST) > 0)
 {
   $pageTitle = "Edit Server";
-  $serverID = $_GET["id"];
+  $serverID = $_POST["id"];
 }
 else
 {
