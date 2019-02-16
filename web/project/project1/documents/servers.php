@@ -37,7 +37,6 @@
                         <div class="table-cell-head-content">
                             Select
                         </div>
-                         &nbsp;
                     </li>
                     <li class="table-cell">
                         <div class="table-cell-head-content">
