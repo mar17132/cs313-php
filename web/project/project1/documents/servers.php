@@ -14,7 +14,7 @@
                 <ul class="table-row">
                     <li class="table-cell">
                         <div class="table-cell-content">
-                           &nbsp;
+                           <input type="button" value="Add Server" />
                         </div>
                     </li>
                     <li class="table-cell">
