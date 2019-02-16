@@ -41,11 +41,12 @@ $errorMess = "";
 
 if(count($_POST) > 0)
 {
-    print_r($_POST);
-  /*  $statement = $db->query("SELECT * FROM Users7 WHERE name='".$_POST['usernameTxt'].";");
-    $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-    if(count($results) > 0)
+    $statement = $db->query("SELECT * FROM Users7 WHERE name='".$_POST['usernameTxt'].";");
+    $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+print_r($results);
+    echo count($results);
+   /* if(count($results) > 0)
     {
         if(password_verify($_POST['passTxt'],$results[pass]))
         {
@@ -60,8 +61,8 @@ if(count($_POST) > 0)
     else
     {
         $errorMess ="Username or Password is incorrect";
-    }
-*/
+    }*/
+
 }
 
 ?>
