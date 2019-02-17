@@ -28,7 +28,7 @@ if(count($_POST) > 0)
                     {
                         $statement = $db->query("SELECT * FROM Patching WHERE
                                                Computers_id ='".$_POST["serverID"]."'
-                                               PatchSchedlue_id ='$row[id]';");
+                                               AND PatchSchedlue_id ='$row[id]';");
                         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
                         if(count($results) == 0)
