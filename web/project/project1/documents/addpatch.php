@@ -78,6 +78,7 @@ if(count($_POST) > 0)
     }
     else
     {
+        echo "test";
         $pageTitle = "Edit Patch";
         $patchID = $_POST["patchID"];
         echo $patchID;

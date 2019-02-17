@@ -27,7 +27,7 @@
                     <li class="table-cell">
                         <div class="table-cell-content">
 
-                                <input type="submit" class="contentButtons"  value="Edit Patch" />
+                        <input type="submit" class="contentButtons"  value="Edit Patch" />
 
                         </div>
                     </li>
