@@ -36,6 +36,11 @@
                 <ul class="table-row">
                     <li class="table-cell">
                         <div class="table-cell-head-content">
+                            Select
+                        </div>
+                    </li>
+                    <li class="table-cell">
+                        <div class="table-cell-head-content">
                             Name
                         </div>
                     </li>
