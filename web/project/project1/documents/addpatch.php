@@ -115,7 +115,7 @@ if(isset($patchID))
 
         <div class="content">
             <h3><?php echo $pageTitle; ?></h3>
-            <form method="post" action="addserver.php">
+            <form method="post" action="addpatch.php">
                 <ul>
                     <li>
                         <label>Patch Name</label>
