@@ -118,7 +118,7 @@ if(isset($patchID))
             <form method="post" action="addserver.php">
                 <ul>
                     <li>
-                        <label>Server Name</label>
+                        <label>Patch Name</label>
                     </li>
                     <li>
                         <input type="text" id="patchnameTxt" name="patchnameTxt"
@@ -132,7 +132,7 @@ if(isset($patchID))
                                     ?>" />
                     </li>
                     <li>
-                        <label>IP Address</label>
+                        <label>Notes</label>
                     </li>
                     <li>
                         <input type="text" id="patchnotesTxt" name="patchnotesTxt"
