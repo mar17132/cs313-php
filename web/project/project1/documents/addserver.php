@@ -20,9 +20,9 @@ if(count($_POST) > 0)
                           IP='".$_POST['ipaddressTxt']."'
                           WHERE ID='".$_POST["serverID"]."';");
 
-               // $statement = $db->query("SELECT * FROM Computers WHERE ID='$serverID';");
-               // $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-                foreach($db->query("SELECT * FROM PatchCycle;") as $row)
+                $statementPatchCycle = $db->query("SELECT * FROM PatchCycle;");
+                $resultsPatchCycle = $statementPatchCycle->fetchAll(PDO::FETCH_ASSOC);
+                foreach($resultsPatchCycle as $row)
                 {
                     if(in_array($row[id],$_POST["patches"]))
                     {
@@ -184,7 +184,7 @@ if(isset($serverID))
                 else
                 {
                     echo "<input type='hidden' name='addType' value='add' />";
-                    echo "<input type='submit' name='update' value='Update' />";
+                    echo "<input type='submit' name='update' value='Add' />";
                 }
                 ?>
             </form>
