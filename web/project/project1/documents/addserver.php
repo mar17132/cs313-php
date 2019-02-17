@@ -48,11 +48,9 @@ if(count($_POST) > 0)
 
                         if(count($results) == 0)
                         {
-                            $db->query("DELETE FROM
-                                      Patching
-                                      WHERE
-                                      PatchSchedlue_id ='$row[id]'
-                                      AND Computers_id = '".$_POST["serverID"]."');");
+                            $db->query("DELETE FROM Patching WHERE
+                            PatchSchedlue_id ='$row[id]'
+                            AND Computers_id = '".$_POST["serverID"]."';");
                         }
                     }
                 }
