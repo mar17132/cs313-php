@@ -46,7 +46,7 @@ if(count($_POST) > 0)
                                        AND PatchSchedlue_id ='$row[id]';");
                         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-                        if(count($results) == 0)
+                        if(count($results) != 0)
                         {
                             $db->query("DELETE FROM Patching WHERE
                             PatchSchedlue_id ='$row[id]'
@@ -59,7 +59,7 @@ if(count($_POST) > 0)
                 break;
             case "delete":
                 $db->query("DELETE FROM Patching WHERE
-                  AND Computers_id = '".$_POST["serverID"]."');");
+                  Computers_id = '".$_POST["serverID"]."');");
                 $db->query("DELETE FROM Computers WHERE ID='".$_POST["serverID"]."';");
                 header("Location:servers.php");
                 break;
