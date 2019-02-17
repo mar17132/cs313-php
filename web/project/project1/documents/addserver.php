@@ -56,7 +56,6 @@ if(count($_POST) > 0)
                         }
                     }
                 }
-                }
                // $db->query();
                 header("Location:servers.php");
                 break;
