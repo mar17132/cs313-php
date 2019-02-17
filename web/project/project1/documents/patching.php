@@ -19,7 +19,7 @@
                     </li>
                     <li class="table-cell">
                         <div class="table-cell-content">
-                           <a href="addserver.php" class="addContent">
+                           <a href="addpatch.php" class="addContent">
                                 <input type="button" class="contentButtons"  value="Add Patch" />
                             </a>
                         </div>
