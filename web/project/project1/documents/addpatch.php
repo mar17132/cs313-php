@@ -63,9 +63,8 @@ if(count($_POST) > 0)
                 header("Location:patching.php");
                 break;*/
             case "add":
-                $db->query("INSERT INTO PatchCycle(Name,Notes)
-                        VALUES('".$_POST['patchnameTxt']."','".
-                           $_POST['patchnotesTxt']."';");
+                $db->query("INSERT INTO PatchCycle(Name,Note)
+                VALUES('".$_POST['patchnameTxt']."','".$_POST['patchnotesTxt']."');");
 
                 /*$newpatchID = $db->lastInsertId('Computers_id_seq');
                 foreach($_POST["patches"] as $newPatch)
