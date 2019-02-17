@@ -58,8 +58,7 @@ if(count($_POST) > 0)
                 header("Location:servers.php");
                 break;
             case "delete":
-                $db->query("DELETE FROM Patching WHERE
-                  Computers_id = '".$_POST["serverID"]."');");
+                $db->query("DELETE FROM Patching WHERE Computers_id = '".$_POST["serverID"]."';");
                 $db->query("DELETE FROM Computers WHERE ID='".$_POST["serverID"]."';");
                 header("Location:servers.php");
                 break;
