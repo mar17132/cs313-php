@@ -65,7 +65,7 @@ if(count($_POST) > 0)
             case "add":
                 $db->query("INSERT INTO PatchCycle(Name,Notes)
                         VALUES('".$_POST['patchnameTxt']."','".
-                           $_POST['patchnotesTxt']."');");
+                           $_POST['patchnotesTxt']."';");
 
                 /*$newpatchID = $db->lastInsertId('Computers_id_seq');
                 foreach($_POST["patches"] as $newPatch)
