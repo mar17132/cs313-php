@@ -35,7 +35,7 @@ if(count($_POST) > 0)
                         {
                             $db->query("INSERT INTO
                                       Patching(Computers_id,PatchSchedlue_id)
-                                      VALUES('$row[id]','".$_POST["serverID"]."');");
+                                      VALUES($row[id],".$_POST["serverID"].");");
                         }
 
                     }
