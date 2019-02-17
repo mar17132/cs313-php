@@ -9,7 +9,30 @@
 
         <div class="content">
             <h3>Patche Cycles</h3>
+            <form method="post" action="addpatch.php">
             <div class="table-div">
+                <ul class="table-row">
+                    <li class="table-cell">
+                        <div class="table-cell-content">
+                           <input type="button" class="contentButtons buttonVisible" />
+                        </div>
+                    </li>
+                    <li class="table-cell">
+                        <div class="table-cell-content">
+                           <a href="addserver.php" class="addContent">
+                                <input type="button" class="contentButtons"  value="Add Patch" />
+                            </a>
+                        </div>
+                    </li>
+                    <li class="table-cell">
+                        <div class="table-cell-content">
+
+                                <input type="submit" class="contentButtons"  value="Edit Patch" />
+
+                        </div>
+                    </li>
+                </ul>
+
                 <ul class="table-row">
                     <li class="table-cell">
                         <div class="table-cell-head-content">
@@ -50,6 +73,15 @@
                 foreach($result as $row)
                 {
                     echo "<ul class='table-row'>";
+
+                                        //Select
+                    echo "<li class='table-cell'>";
+                    echo "<div class='table-cell-content'>";
+                    echo "<input type='checkbox' name='patchid' class='selectValueChk' value='";
+                    echo $row[id];
+                    echo "'/>";
+                    echo "</div>";
+                    echo "</li>\r\n";
 
                     //Name
                     echo "<li class='table-cell'>";
@@ -96,11 +128,42 @@
             </div>-->
 
             </div>
+        </form>
         </div>
 
         <div class="footer">
 
         </div>
+        <script>
+            var selectChk = $(".selectValueChk");
+
+            function disableAllCheck(elem)
+            {
+                elem.prop("disabled",true);
+            }
+
+            function enableAllCheck(elem)
+            {
+                elem.prop("disabled",false);
+            }
+
+            selectChk.on("click",function(){
+
+
+                if($(this).is(":checked"))
+                {
+                    disableAllCheck(selectChk);
+                    $(this).prop("disabled",false);
+                }
+                else
+                {
+                    enableAllCheck(selectChk);
+                }
+
+
+            });
+
+        </script>
     </body>
 </html>
 
