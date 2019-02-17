@@ -10,8 +10,83 @@ $patchArray;
 
 if(count($_POST) > 0)
 {
-  $pageTitle = "Edit Server";
-  $serverID = $_POST["serverid"];
+    if(isset($_POST['addType']))
+    {
+        switch($_POST['addType'])
+        {
+            case "update":
+                $db->query("UPDATE Computers
+                          SET Name='".$_POST['servernameTxt']."',
+                          IP='".$_POST['ipaddressTxt']."'
+                          WHERE ID='".$_POST["serverID"]."';");
+
+               // $statement = $db->query("SELECT * FROM Computers WHERE ID='$serverID';");
+               // $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+                foreach($db->query("SELECT * FROM PatchCycle;") as $row)
+                {
+                    if(in_array($row[id],$_POST["patches"]))
+                    {
+                        $statement = $db->query("SELECT * FROM Patching WHERE
+                                               Computers_id ='".$_POST["serverID"]."'
+                                               PatchSchedlue_id ='$row[id]';");
+                        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+                        if(count($results) == 0)
+                        {
+                            $db->query("INSERT INTO
+                                      Patching(Computers_id,PatchSchedlue_id)
+                                      VALUES('$row[id]','".$_POST["serverID"]."');");
+                        }
+
+                    }
+                    else
+                    {
+                        $statement = $db->query("SELECT * FROM Patching WHERE
+                                       Computers_id ='".$_POST["serverID"]."'
+                                       PatchSchedlue_id ='$row[id]';");
+                        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+                        if(count($results) == 0)
+                        {
+                            $db->query("DELETE FROM
+                                      Patching
+                                      WHERE
+                                      PatchSchedlue_id ='$row[id]'
+                                      AND Computers_id = '".$_POST["serverID"]."');");
+                        }
+                    }
+                }
+                }
+               // $db->query();
+                header("Location:servers.php");
+                break;
+            case "delete":
+                $db->query("DELETE FROM Patching WHERE
+                  AND Computers_id = '".$_POST["serverID"]."');");
+                $db->query("DELETE FROM Computers WHERE ID='".$_POST["serverID"]."';");
+                header("Location:servers.php");
+                break;
+            case "add":
+                $db->query("INSERT INTO Computers(Name,IP)
+                        VALUES('".$_POST['servernameTxt']."','".
+                           $_POST['ipaddressTxt']."');");
+
+                $newServerID = $db->lastInsertId('Computers_id_seq');
+                foreach($_POST["patches"] as $newPatch)
+                {
+                    $db->query("INSERT INTO Patching(Computers_id,PatchSchedlue_id)
+                                VALUES($newServerID,$newPatch);");
+                }
+                header("Location:servers.php");
+                break;
+        }
+    }
+    else
+    {
+        $pageTitle = "Edit Server";
+        $serverID = $_POST["serverid"];
+    }
+
 }
 else
 {
@@ -35,8 +110,7 @@ if(isset($serverID))
     $patchArray = $statementPatch->fetchAll(PDO::FETCH_ASSOC);
 }
 
-print_r($patchArray);
-echo $serverID;
+
 ?>
 
 
@@ -45,7 +119,7 @@ echo $serverID;
 
         <div class="content">
             <h3><?php echo $pageTitle; ?></h3>
-            <form method="post" action="servers.php">
+            <form method="post" action="addserver.php">
                 <ul>
                     <li>
                         <label>Server Name</label>
@@ -99,8 +173,32 @@ echo $serverID;
                             </ul>
                         </div>
                     </li>
+
                 </ul>
+
+                <?php
+                if(isset($serverID))
+                {
+                    echo "<input type='hidden' name='addType' value='update' />";
+                    echo "<input type='submit' name='update' value='Update' />";
+                }
+                else
+                {
+                    echo "<input type='hidden' name='addType' value='add' />";
+                    echo "<input type='submit' name='update' value='Update' />";
+                }
+                ?>
             </form>
+            <?php
+
+                if(isset($serverID))
+                {
+               echo "<form action='addserver.php' method='post'>
+                    <input type='hidden'' name='serverID' value='$serverID'/>
+                    <input type='submit' name='addType' value='delete' />
+                    </form>";
+                }
+                ?>
         </div>
 
         <div class="footer">
