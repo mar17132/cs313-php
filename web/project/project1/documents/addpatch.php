@@ -17,7 +17,7 @@ if(count($_POST) > 0)
             case "update":
                 $db->query("UPDATE PatchCycle
                           SET Name='".$_POST['patchnameTxt']."',
-                          Notes='".$_POST['patchnotesTxt']."'
+                          Note='".$_POST['patchnotesTxt']."'
                           WHERE ID='".$_POST["patchID"]."';");
 
                 /*$statementPatchCycle = $db->query("SELECT * FROM PatchCycle;");
