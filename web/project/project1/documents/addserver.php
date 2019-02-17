@@ -156,7 +156,7 @@ if(isset($serverID))
                                     {
                                         foreach($patchArray as $patch)
                                         {
-                                            if(in_array($row[id],$patch))
+                                            if($row[id] == $patch[id])
                                             {
                                                 echo "checked='checked'";
                                             }
