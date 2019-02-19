@@ -14,15 +14,15 @@ var daysInWeek = 7;
 
 function jsonCalendarObj(searchMonth, searchYear)
 {
-    urlString = "";
+    urlString = "https://enigmatic-lowlands-70024.herokuapp.com/project/project1/";
 
     if(searchMonth != null && searchYear != null)
     {
-        urlString = "getCalendarEvent.php?month=" + searchMonth + "&year=" + searchYear;
+        urlString += "scripts/getCalendarEvent.php?month=" + searchMonth + "&year=" + searchYear;
     }
     else
     {
-        urlString = "getCalendarEvent.php";
+        urlString += "scripts/getCalendarEvent.php";
     }
 
     var xmlhttp = new XMLHttpRequest();
