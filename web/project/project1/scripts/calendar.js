@@ -79,8 +79,13 @@ function bulidCalenderDayElm(dayNum)
     if(appointmentObj != "null" && appointmentObj != null)
     {
         $.each(appointmentObj.patchdates,function(index,value){
-            newAappointment = $("<a>" + value.name + "</a>");
-            newAappointment.appendTo(newDivContent);
+            if(value.month == showingMonth && value.year == showingYear &&
+              value.day == dayNum)
+            {
+                newAappointment = $("<a>" + value.name + "</a>");
+                newAappointment.appendTo(newDivContent);
+            }
+
         });
     }
 
@@ -405,7 +410,7 @@ $(document).ready(function(){
 
         removeKeep(calendarElm,1);
 
-        appointmentObj = jsonCalendarObj(showingMonth, showingYear);
+        appointmentObj = jsonCalendarObj((showingMonth + 1), showingYear);
 
         bulidCalendar();
     });
@@ -425,12 +430,12 @@ $(document).ready(function(){
 
         removeKeep(calendarElm,1);
 
-        appointmentObj = jsonCalendarObj(showingMonth, showingYear);
+        appointmentObj = jsonCalendarObj((showingMonth + 1), showingYear);
 
         bulidCalendar();
     });
 
-    appointmentObj = jsonCalendarObj(showingMonth, showingYear);
+    appointmentObj = jsonCalendarObj((showingMonth + 1), showingYear);
 
     bulidCalendar();
 
