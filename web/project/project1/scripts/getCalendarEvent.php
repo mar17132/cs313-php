@@ -85,8 +85,8 @@ if($resultsCount > 0)
         $monthData->setJsonDataValue($row['month']);
     }
 
-    echo "<script type='text/javascript'>var jsonPHPString = ".
-          $jsonMainObj->bulidString()."</script>";
+    echo "<script type='text/javascript'>var jsonPHPString = '".
+          $jsonMainObj->bulidString()."'; </script>";
 }
 else
 {
