@@ -67,15 +67,13 @@ function addAppointment(element)
         jsonObj = JSON.parse(appointmentObj.responseText);
         $.each(jsonObj.patchdates,function(index,value){
             element.each(function(){
-                if($(this).text() == value.day)
+
+                if(value.month == (showingMonth + 1) &&
+                value.year == showingYear &&
+                value.day == $(this).text())
                 {
-                    if(value.month == (showingMonth + 1) &&
-                       value.year == showingYear &&
-                    value.day == dayNum)
-                    {
-                        newAappointment = $("<a>" + value.name + "</a>");
-                        newAappointment.appendTo($(this).parent());
-                    }
+                    newAappointment = $("<a>" + value.name + "</a>");
+                    newAappointment.appendTo($(this).parent());
                 }
 
             });
