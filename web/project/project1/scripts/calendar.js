@@ -18,15 +18,15 @@ function jsonCalendarObj(searchMonth, searchYear)
 {
     returnObj = false;
 
-    urlString = "https://enigmatic-lowlands-70024.herokuapp.com/project/project1/";
+    urlString = "scripts/";
 
     if(searchMonth != null && searchYear != null)
     {
-        urlString += "scripts/getCalendarEvent.php?month=" + searchMonth + "&year=" + searchYear;
+        urlString += "getCalendarEvent.php?month=" + searchMonth + "&year=" + searchYear;
     }
     else
     {
-        urlString += "scripts/getCalendarEvent.php";
+        urlString += "getCalendarEvent.php";
     }
 
     var xmlhttp = new XMLHttpRequest();
@@ -77,7 +77,7 @@ function bulidCalenderDayElm(dayNum)
 
     //add one to month to change it from 0-11 to 1-12
     appointmentObj = jsonCalendarObj((showingMonth + 1), showingYear);
-    if(appointmentObj != "null")
+    if(appointmentObj != "null" appointmentObj != null)
     {
         $.each(appointmentObj.patchdates,function(index,value){
             newAappointment = $("<a>" + value.name + "</a>");
