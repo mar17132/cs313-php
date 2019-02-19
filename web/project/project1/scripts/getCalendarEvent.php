@@ -23,8 +23,12 @@ if(isset($_GET['year']) && isset($_GET['month']))
 }
 else
 {
-    $queryString = "SELECT PatchSchedlue.ID AS scheduleID,PatchSchedlue.patchdate,
-                PatchSchedlue.patchtime,PatchCycle.Name,PatchCycle.ID AS patchID
+    $queryString = "SELECT PatchSchedlue.ID AS scheduleID,
+                EXTRACT(YEAR FROM PatchSchedlue.patchdate) AS YEAR,
+                EXTRACT(MONTH FROM PatchSchedlue.patchdate) AS MONTH,
+                EXTRACT(DAY FROM PatchSchedlue.patchdate) AS DAY,
+                PatchSchedlue.patchtime,PatchCycle.Name,
+                PatchCycle.ID AS patchID
                 FROM PatchSchedlue
                 JOIN PatchCycle ON PatchSchedlue.PatchCycle_ID = PatchCycle.ID
                 ORDER BY PatchSchedlue.patchdate;";
