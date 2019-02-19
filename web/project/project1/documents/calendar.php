@@ -7,108 +7,77 @@
 
 <?php include "header-docs.php"; ?>
 
-       <div class="content">
-            <h3>Scheduled Patches</h3>
-            <div class="table-div">
-                <ul class="table-row">
-                    <li class="table-cell">
-                        <div class="table-cell-head-content">
-                            Name
+        <div class="content">
+            <div class="calendar">
+                <div class="calendar-head" >
+                    <ul class="calendar-head-ul-row row">
+                        <li class="calendar-head-li-cell col">
+                            <div class="calendar-head-content" >
+                                <a class="calendar-buttons prev-calendar-btn">
+                                    <img src="images/arrow-left-01-512.png" alt="prev"/>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="calendar-head-li-cell col">
+                            <div class="calendar-head-content month-name" >
+                                <h1 class="month-name">
+
+                                </h1>
+                            </div>
+                        </li>
+                        <li class="calendar-head-li-cell col">
+                            <div class="calendar-head-content" >
+                               <a class="calendar-buttons next-calendar-btn">
+                                  <img src="images/arrow-right-01-512.png" alt="next"/>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="calendar-ul-row row" >
+                    <li class="calendar-li-cell col" >
+                        <div class="calendar-li-header-content week-days-name" >
+                            Sunday
                         </div>
                     </li>
-                    <li class="table-cell">
-                        <div class="table-cell-head-content">
-                            Date
+                    <li class="calendar-li-cell col" >
+                        <div class="calendar-li-header-content week-days-name" >
+                            Monday
                         </div>
                     </li>
-                    <li class="table-cell">
-                        <div class="table-cell-head-content">
-                            Time
+                    <li class="calendar-li-cell col" >
+                        <div class="calendar-li-header-content week-days-name" >
+                            Tuesday
                         </div>
                     </li>
-                    <!--<li class="table-cell">
-                        <div class="table-cell-head-content">
-                            Buttons
+                    <li class="calendar-li-cell col" >
+                        <div class="calendar-li-header-content week-days-name" >
+                            Wednesday
                         </div>
-                    </li>-->
-                </ul>
-
-            <?php
-
-
-            $statement = $db->query("SELECT PatchSchedlue.ID AS scheduleID,
-                                PatchSchedlue.patchdate,PatchSchedlue.patchtime,
-                                PatchCycle.Name,PatchCycle.ID AS patchID
-                                FROM PatchSchedlue
-                                JOIN PatchCycle ON
-                                PatchSchedlue.PatchCycle_ID = PatchCycle.ID
-                                ORDER BY PatchSchedlue.patchdate;");
-            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-
-            if(count($result) > 0)
-            {
-                foreach($result as $row)
-                {
-                    echo "<ul class='table-row'>";
-
-                    //Name
-                    echo "<li class='table-cell'>";
-                    echo "<div class='table-cell-content'>";
-                    echo $row[name];
-                    echo "</div>";
-                    echo "</li>\r\n";
-
-                    //Date
-                    echo "<li class='table-cell'>";
-                    echo "<div class='table-cell-content'>";
-                    echo $row[patchdate];
-                    echo "</div>";
-                    echo "</li>\r\n";
-
-                    //Time
-                    echo "<li class='table-cell'>";
-                    echo "<div class='table-cell-content'>";
-                    echo $row[patchtime];
-                    echo "</div>";
-                    echo "</li>\r\n";
-
-                    //Button
-                  /*  echo "<li class='table-cell'>
-                         <div class='table-cell-content'>";
-                    echo "No current Patch Cycles";
-                    echo "</div></li>";*/
-
-                    echo "</ul>";
-                }
-            }
-            else
-            {
-                echo "<ul class='table-row'><li class='table-cell'>
-                     <div class='table-cell-content'>";
-                echo "No current Patch Cycles";
-                echo "</div></li></ul>";
-            }
-
-            ?>
-
-            <!-- Table elements
-            <div class="table-div">
-                <ul class="table-row">
-                    <li class="table-cell">
-                        <div class="table-cell-head-content">
-                            1
+                    </li>
+                    <li class="calendar-li-cell col" >
+                        <div class="calendar-li-header-content week-days-name" >
+                            Thursday
+                        </div>
+                    </li>
+                    <li class="calendar-li-cell col" >
+                        <div class="calendar-li-header-content week-days-name" >
+                            Friday
+                        </div>
+                    </li>
+                    <li class="calendar-li-cell col" >
+                        <div class="calendar-li-header-content week-days-name" >
+                            Saturday
                         </div>
                     </li>
                 </ul>
-            </div>-->
-
             </div>
         </div>
-
         <div class="footer">
 
         </div>
+        <script src="scripts/calendar.js"></script>
+
     </body>
 </html>
 
