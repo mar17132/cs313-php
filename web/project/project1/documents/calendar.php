@@ -80,7 +80,7 @@
             var jsonPHPString = "<?php include "../scripts/getCalendarEvents.php";?>";
 
         </script>
-        <script src="scripts/calendar.js"></script>
+
 
     </body>
 </html>
