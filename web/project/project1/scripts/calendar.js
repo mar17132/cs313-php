@@ -64,7 +64,8 @@ function addAppointment(element)
     //add one to month to change it from 0-11 to 1-12
     if(appointmentObj != "null" && appointmentObj != null)
     {
-        $.each(appointmentObj.patchdates,function(index,value){
+        jsonObj = JSON.parse(appointmentObj.responseText);
+        $.each(jsonObj.patchdates,function(index,value){
             element.each(function(){
                 if($(this).text() == value.day)
                 {
