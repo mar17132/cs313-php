@@ -16,9 +16,9 @@ var appointmentObj; //this will contain the json from the db
 
 function jsonCalendarObj(searchMonth, searchYear)
 {
-    returnObj = false;
+    appointmentObj = false;
 
-    urlString = "scripts/";
+    urlString = "https://enigmatic-lowlands-70024.herokuapp.com/project/project1/scripts/";
 
     if(searchMonth != null && searchYear != null)
     {
@@ -35,19 +35,17 @@ function jsonCalendarObj(searchMonth, searchYear)
         {
             if(this.responseText != "null")
             {
-                returnObj = JSON.parse(this.responseText);
+                appointmentObj = JSON.parse(this.responseText);
             }
             else
             {
-                returnObj = "null";
+                appointmentObj = "null";
             }
         }
     };
 
     xmlhttp.open("GET", urlString, true);
     xmlhttp.send();
-
-    return returnObj;
 
 }
 
@@ -410,7 +408,7 @@ $(document).ready(function(){
 
         removeKeep(calendarElm,1);
 
-        appointmentObj = jsonCalendarObj((showingMonth + 1), showingYear);
+        jsonCalendarObj((showingMonth + 1), showingYear);
 
         bulidCalendar();
     });
@@ -430,12 +428,12 @@ $(document).ready(function(){
 
         removeKeep(calendarElm,1);
 
-        appointmentObj = jsonCalendarObj((showingMonth + 1), showingYear);
+        jsonCalendarObj((showingMonth + 1), showingYear);
 
         bulidCalendar();
     });
 
-    appointmentObj = jsonCalendarObj((showingMonth + 1), showingYear);
+    jsonCalendarObj((showingMonth + 1), showingYear);
 
     bulidCalendar();
 
