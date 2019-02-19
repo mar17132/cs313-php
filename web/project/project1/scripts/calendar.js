@@ -11,9 +11,13 @@ var monthsObj; //an object with varibles and function related to month
 var calendarElm;
 var daysInWeek = 7;
 
+var appointmentObj; //this will contain the json from the db
+
 
 function jsonCalendarObj(searchMonth, searchYear)
 {
+    returnObj = false;
+
     urlString = "https://enigmatic-lowlands-70024.herokuapp.com/project/project1/";
 
     if(searchMonth != null && searchYear != null)
@@ -29,12 +33,21 @@ function jsonCalendarObj(searchMonth, searchYear)
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200)
         {
-            return JSON.parse(this.responseText);
+            if(this.responseText != "null")
+            {
+                returnObj = JSON.parse(this.responseText);
+            }
+            else
+            {
+                returnObj = "null";
+            }
         }
     };
 
     xmlhttp.open("GET", urlString, true);
     xmlhttp.send();
+
+    return returnObj;
 
 }
 
@@ -64,7 +77,7 @@ function bulidCalenderDayElm(dayNum)
 
     //add one to month to change it from 0-11 to 1-12
     appointmentObj = jsonCalendarObj((showingMonth + 1), showingYear);
-    if(appointmentObj)
+    if(appointmentObj != "null")
     {
         $.each(appointments.patchdates,function(index,value){
             newAappointment = $("<a>" + value.name + "</a>");

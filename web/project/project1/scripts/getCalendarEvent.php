@@ -87,7 +87,10 @@ if($resultsCount > 0)
 
     echo $jsonMainObj->bulidString();
 }
-
+else
+{
+    echo "null";
+}
 
 ?>
 
