@@ -18,7 +18,7 @@ function jsonCalendarObj(searchMonth, searchYear)
 
     if(searchMonth != null && searchYear != null)
     {
-        urlString = "getCalendarEvent.php?month=" + searchMonth + "&year=" + searchMonth;
+        urlString = "getCalendarEvent.php?month=" + searchMonth + "&year=" + searchYear;
     }
     else
     {
