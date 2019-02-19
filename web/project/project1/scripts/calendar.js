@@ -38,8 +38,6 @@ function jsonCalendarObj(searchMonth, searchYear)
             return returnString;
         });
 
-    alert(appointmentObj);
-
    /* var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200)
@@ -59,6 +57,32 @@ function jsonCalendarObj(searchMonth, searchYear)
     xmlhttp.send();*/
 
 }
+
+
+function addAppointment(element)
+{
+    //add one to month to change it from 0-11 to 1-12
+    if(appointmentObj != "null" && appointmentObj != null)
+    {
+        $.each(appointmentObj.patchdates,function(index,value){
+            element.each(function(){
+                if($(this).text() == value.day)
+                {
+                    if(value.month == (showingMonth + 1) &&
+                       value.year == showingYear &&
+                    value.day == dayNum)
+                    {
+                        newAappointment = $("<a>" + value.name + "</a>");
+                        newAappointment.appendTo($(this).parent());
+                    }
+                }
+
+            });
+        });
+    }
+
+}
+
 
 function bulidCalenderDayElm(dayNum)
 {
@@ -83,7 +107,7 @@ function bulidCalenderDayElm(dayNum)
     }
 
     newSpanNum.appendTo(newDivContent);
-
+/*
     //add one to month to change it from 0-11 to 1-12
     if(appointmentObj != "null" && appointmentObj != null)
     {
@@ -96,7 +120,7 @@ function bulidCalenderDayElm(dayNum)
             }
 
         });
-    }
+    }*/
 
     newDivContent.appendTo(newLiCell);
 
@@ -446,9 +470,9 @@ $(document).ready(function(){
 
     jsonCalendarObj((showingMonth + 1), showingYear);
 
+    bulidCalendar();
 
-    setTimeout(bulidCalendar(),1250);
-
+    addAppointment($("span.date-number"));
 
 });
 
