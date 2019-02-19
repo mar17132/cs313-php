@@ -29,14 +29,14 @@ function jsonCalendarObj(searchMonth, searchYear)
         urlString += "getCalendarEvent.php";
     }
 
-    $.ajax({
-        method: "GET",
-        url:urlString,
-        cache:false,
-        dataType:"text"
-    }).done(function(returnString){
-        appointmentObj = returnString;
-    });
+   appointmentObj = $.ajax({
+            method: "GET",
+            url:urlString,
+            cache:false,
+            dataType:"text"
+        }).done(function(returnString){
+            return returnString;
+        });
 
     alert(appointmentObj);
 
