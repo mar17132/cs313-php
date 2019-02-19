@@ -79,7 +79,7 @@ function bulidCalenderDayElm(dayNum)
     appointmentObj = jsonCalendarObj((showingMonth + 1), showingYear);
     if(appointmentObj != "null")
     {
-        $.each(appointments.patchdates,function(index,value){
+        $.each(appointmentObj.patchdates,function(index,value){
             newAappointment = $("<a>" + value.name + "</a>");
             newAappointment.appendTo(newDivContent);
         });
