@@ -35,8 +35,10 @@ function jsonCalendarObj(searchMonth, searchYear)
         cache:false,
         dataType:"text"
     }).done(function(returnString){
-        alert(returnString);
+        appointmentObj = returnString;
     });
+
+    alert(appointmentObj);
 
    /* var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
