@@ -4,30 +4,6 @@
     --calendar-border: 1px solid black;
 }
 
-/* body Page*/
-
-body{
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    font-size: 1em;
-}
-
-
-.header{
-
-}
-
-
-.content{
-
-}
-
-.footer{
-
-}
-
-/* End body Page*/
 
 
 /* Calendar */
@@ -35,6 +11,10 @@ body{
 
 .calendar{
     width: 925px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 25px;
 }
 
 .calendar-ul-row{
