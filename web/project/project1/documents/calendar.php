@@ -14,7 +14,7 @@
                         <li class="calendar-head-li-cell col">
                             <div class="calendar-head-content" >
                                 <a class="calendar-buttons prev-calendar-btn">
-                                    <img src="images/arrow-left-01-512.png" alt="prev"/>
+                                    <img src="../images/arrow-left-01-512.png" alt="prev"/>
                                 </a>
                             </div>
                         </li>
@@ -28,7 +28,7 @@
                         <li class="calendar-head-li-cell col">
                             <div class="calendar-head-content" >
                                <a class="calendar-buttons next-calendar-btn">
-                                  <img src="images/arrow-right-01-512.png" alt="next"/>
+                                  <img src="../images/arrow-right-01-512.png" alt="next"/>
                                 </a>
                             </div>
                         </li>
