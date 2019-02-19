@@ -3,7 +3,7 @@
 
 ?>
 
-
+<?php include "../scripts/getCalendarEvent.php";?>
 
 <?php include "header-docs.php"; ?>
 
@@ -76,11 +76,6 @@
         <div class="footer">
 
         </div>
-        <script type="text/javascript">
-            var jsonPHPString = "<?php include "../scripts/getCalendarEvent.php";?>";
-
-        </script>
-
 
     </body>
 </html>
