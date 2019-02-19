@@ -3,7 +3,7 @@
 
 ?>
 
-<?php include "../scripts/getCalendarEvent.php";?>
+
 
 <?php include "header-docs.php"; ?>
 

@@ -26,6 +26,7 @@ include_once "scripts/db.php";
         <link rel="stylesheet" type="text/css" href="<?php echo $baseURL.$location."/styles/calendar.css";?>" />
         <script src="<?php echo $baseURL."/scripts/jquery/jquery-3.3.1.min.js"; ?>" ></script>
         <script src="<?php echo $baseURL."/scripts/bootstrap/4.2.1/js/bootstrap.bundle.min.js";?>" ></script>
+        <?php include "../scripts/getCalendarEvent.php";?>
         <script src="<?php echo $baseURL.$location."/scripts/calendar.js";?>"></script>
     </head>
 
