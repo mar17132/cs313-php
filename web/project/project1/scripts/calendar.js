@@ -77,7 +77,7 @@ function bulidCalenderDayElm(dayNum)
     if(appointmentObj != "null" && appointmentObj != null)
     {
         $.each(appointmentObj.patchdates,function(index,value){
-            if(value.month == showingMonth && value.year == showingYear &&
+            if(value.month == (showingMonth + 1) && value.year == showingYear &&
               value.day == dayNum)
             {
                 newAappointment = $("<a>" + value.name + "</a>");
