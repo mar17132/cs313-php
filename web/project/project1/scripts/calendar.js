@@ -433,9 +433,9 @@ $(document).ready(function(){
         bulidCalendar();
     });
 
-    jsonCalendarObj((showingMonth + 1), showingYear);
+    $.when(jsonCalendarObj((showingMonth + 1), showingYear)).then(bulidCalendar());
 
-    bulidCalendar();
+    //bulidCalendar();
 
 });
 

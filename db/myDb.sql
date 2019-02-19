@@ -101,6 +101,28 @@ VALUES(
 );
 
 
+INSERT INTO PatchSchedlue(PatchCycle_ID,PatchDate,PatchTime)
+VALUES(
+    (SELECT ID FROM PatchCycle WHERE Name = 'Patch3'),
+    '2019-02-26',
+    '07:00:00'
+);
+
+
+INSERT INTO PatchSchedlue(PatchCycle_ID,PatchDate,PatchTime)
+VALUES(
+    (SELECT ID FROM PatchCycle WHERE Name = 'Patch3'),
+    '2019-03-28',
+    '07:00:00'
+);
+
+INSERT INTO PatchSchedlue(PatchCycle_ID,PatchDate,PatchTime)
+VALUES(
+    (SELECT ID FROM PatchCycle WHERE Name = 'Patch1'),
+    '2019-03-15',
+    '07:00:00'
+);
+
 --Patching
 
 --Patch 1
@@ -111,6 +133,16 @@ VALUES(
      WHERE PatchSchedlue.PatchCycle_ID =(SELECT ID FROM
      PatchCycle WHERE Name = 'Patch1')
      AND PatchSchedlue.PatchDate = '2018-05-28')
+);
+
+
+INSERT INTO Patching(Computers_id,PatchSchedlue_id)
+VALUES(
+    (SELECT ID FROM Computers WHERE Name = 'Server1'),
+    (SELECT PatchSchedlue.ID FROM PatchSchedlue
+     WHERE PatchSchedlue.PatchCycle_ID =(SELECT ID FROM
+     PatchCycle WHERE Name = 'Patch1')
+     AND PatchSchedlue.PatchDate = '2019-03-15')
 );
 
 
@@ -171,6 +203,26 @@ VALUES(
      WHERE PatchSchedlue.PatchCycle_ID =(SELECT ID FROM
      PatchCycle WHERE Name = 'Patch3')
      AND PatchSchedlue.PatchDate = '2018-06-28')
+);
+
+
+INSERT INTO Patching(Computers_id,PatchSchedlue_id)
+VALUES(
+    (SELECT ID FROM Computers WHERE Name = 'Server1'),
+    (SELECT PatchSchedlue.ID FROM PatchSchedlue
+     WHERE PatchSchedlue.PatchCycle_ID =(SELECT ID FROM
+     PatchCycle WHERE Name = 'Patch3')
+     AND PatchSchedlue.PatchDate = '2019-02-26')
+);
+
+
+INSERT INTO Patching(Computers_id,PatchSchedlue_id)
+VALUES(
+    (SELECT ID FROM Computers WHERE Name = 'Server1'),
+    (SELECT PatchSchedlue.ID FROM PatchSchedlue
+     WHERE PatchSchedlue.PatchCycle_ID =(SELECT ID FROM
+     PatchCycle WHERE Name = 'Patch3')
+     AND PatchSchedlue.PatchDate = '2019-03-28')
 );
 
 
