@@ -76,6 +76,10 @@
         <div class="footer">
 
         </div>
+        <script type="text/javascript">
+            var jsonPHPString = <?php include "../scripts/getCalendarEvents.php";?>
+
+        </script>
         <script src="scripts/calendar.js"></script>
 
     </body>

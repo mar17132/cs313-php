@@ -106,9 +106,9 @@ function bulidCalenderDayElm(dayNum)
     }
 
     newSpanNum.appendTo(newDivContent);
-/*
+
     //add one to month to change it from 0-11 to 1-12
-    if(appointmentObj != "null" && appointmentObj != null)
+  /*  if(appointmentObj != "null" && appointmentObj != null)
     {
         $.each(appointmentObj.patchdates,function(index,value){
             if(value.month == (showingMonth + 1) && value.year == showingYear &&
@@ -120,6 +120,21 @@ function bulidCalenderDayElm(dayNum)
 
         });
     }*/
+
+    //add one to month to change it from 0-11 to 1-12
+    if(jsonPHPString)
+    {
+        appointmentObj = JSON.parse(jsonPHPString);
+        $.each(appointmentObj.patchdates,function(index,value){
+            if(value.month == (showingMonth + 1) && value.year == showingYear &&
+            value.day == dayNum)
+            {
+                newAappointment = $("<a>" + value.name + "</a>");
+                newAappointment.appendTo(newDivContent);
+            }
+
+        });
+    }
 
     newDivContent.appendTo(newLiCell);
 
@@ -442,7 +457,7 @@ $(document).ready(function(){
 
         removeKeep(calendarElm,1);
 
-        jsonCalendarObj((showingMonth + 1), showingYear);
+        //jsonCalendarObj((showingMonth + 1), showingYear);
 
         bulidCalendar();
     });
@@ -462,16 +477,15 @@ $(document).ready(function(){
 
         removeKeep(calendarElm,1);
 
-        jsonCalendarObj((showingMonth + 1), showingYear);
+        //jsonCalendarObj((showingMonth + 1), showingYear);
 
         bulidCalendar();
     });
 
-    jsonCalendarObj((showingMonth + 1), showingYear);
+    //jsonCalendarObj((showingMonth + 1), showingYear);
 
     bulidCalendar();
 
-    addAppointment($("span.date-number"));
 
 });
 
