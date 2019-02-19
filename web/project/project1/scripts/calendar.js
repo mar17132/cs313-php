@@ -437,9 +437,7 @@ $(document).ready(function(){
 
     //bulidCalendar();
     $.when($.get("https://enigmatic-lowlands-70024.herokuapp.com/project/project1/scripts/getCalendarEvent.php",
-                {month:"2",year:"2019"})).then(
-        bulidCalendar();
-    );
+                {month:"2",year:"2019"})).then(bulidCalendar());
 
 });
 
