@@ -57,7 +57,7 @@ if($resultsCount > 0)
          //scheduleID
         $scheduleIDData = $topicObj->addJsonObjData();
         $scheduleIDData->setJsonDataName("scheduleid");
-        $scheduleIDData->setJsonDataValue($row['scheduleID']);
+        $scheduleIDData->setJsonDataValue($row['scheduleid']);
 
         //time
         $timeData = $topicObj->addJsonObjData();
@@ -67,7 +67,7 @@ if($resultsCount > 0)
          //patchID
         $patchIDData = $topicObj->addJsonObjData();
         $patchIDData->setJsonDataName("patchid");
-        $patchIDData->setJsonDataValue($row['patchID']);
+        $patchIDData->setJsonDataValue($row['patchid']);
 
         //year
         $yearData = $topicObj->addJsonObjData();
