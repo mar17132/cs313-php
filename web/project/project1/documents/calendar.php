@@ -77,7 +77,7 @@
 
         </div>
         <script type="text/javascript">
-            var jsonPHPString = "<?php include "../scripts/getCalendarEvents.php";?>";
+            var jsonPHPString = "<?php include "../scripts/getCalendarEvent.php";?>";
 
         </script>
 
