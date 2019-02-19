@@ -29,7 +29,16 @@ function jsonCalendarObj(searchMonth, searchYear)
         urlString += "getCalendarEvent.php";
     }
 
-    var xmlhttp = new XMLHttpRequest();
+    $.ajax({
+        method: "GET",
+        url:urlString,
+        cache:false,
+        dataType:"text"
+    }).done(function(returnString){
+        alert(returnString);
+    });
+
+   /* var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200)
         {
@@ -45,7 +54,7 @@ function jsonCalendarObj(searchMonth, searchYear)
     };
 
     xmlhttp.open("GET", urlString, true);
-    xmlhttp.send();
+    xmlhttp.send();*/
 
 }
 
