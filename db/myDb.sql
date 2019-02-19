@@ -214,6 +214,18 @@ FROM PatchSchedlue
 JOIN PatchCycle ON PatchSchedlue.PatchCycle_ID = PatchCycle.ID
 ORDER BY PatchSchedlue.patchdate;
 
+--Display All patchcycles by date from a certain month and year
+SELECT PatchSchedlue.ID AS scheduleID,
+			EXTRACT(YEAR FROM PatchSchedlue.patchdate) AS YEAR,
+			EXTRACT(MONTH FROM PatchSchedlue.patchdate) AS MONTH,
+			EXTRACT(DAY FROM PatchSchedlue.patchdate) AS DAY,
+			PatchSchedlue.patchtime,PatchCycle.Name,
+			PatchCycle.ID AS patchID
+FROM PatchSchedlue
+JOIN PatchCycle ON PatchSchedlue.PatchCycle_ID = PatchCycle.ID
+WHERE EXTRACT(MONTH FROM PatchSchedlue.patchdate) = '05'
+AND EXTRACT(YEAR FROM PatchSchedlue.patchdate) ='2018';
+
 
 SELECT * FROM Computers WHERE Name ='%1%' OR IP = '%1%';
 
