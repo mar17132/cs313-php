@@ -67,7 +67,7 @@ if($resultsCount > 0)
          //patchID
         $patchIDData = $topicObj->addJsonObjData();
         $patchIDData->setJsonDataName("patchid");
-        $patchIDData->setJsonDataValue($row['$patchID']);
+        $patchIDData->setJsonDataValue($row['patchID']);
 
         //year
         $yearData = $topicObj->addJsonObjData();
