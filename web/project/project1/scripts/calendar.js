@@ -129,7 +129,8 @@ function bulidCalenderDayElm(dayNum)
             if(value.month == (showingMonth + 1) && value.year == showingYear &&
             value.day == dayNum)
             {
-                newAappointment = $("<a>" + value.name + "</a>");
+                newAappointment = $("<a class='patchappointment'>" + value.name + "</a>");
+                newAappointment.prop("href","patching.php?");
                 newAappointment.appendTo(newDivContent);
             }
 

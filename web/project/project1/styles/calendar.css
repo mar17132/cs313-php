@@ -73,6 +73,13 @@ span.date-number{
     width: 25px;
 }
 
+
+a.patchappointment{
+    text-decoration: none;
+    outline: none;
+    color: black;
+}
+
 /*calendar header*/
 .calendar-head{
 
