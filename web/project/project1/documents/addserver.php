@@ -115,7 +115,7 @@ if(isset($serverID))
 
         <div class="content">
             <div class="addContent-div">
-            <h3><?php echo $pageTitle; ?></h3>
+            <h3 class="pageName"><?php echo $pageTitle; ?></h3>
             <form method="post" action="addserver.php">
                 <ul class="addContent-ul">
                     <li class="addContent-li">
@@ -186,7 +186,7 @@ if(isset($serverID))
                 }
                 else
                 {
-                    echo "<div class=''>";
+                    echo "<div class='addContentBtn'>";
                     echo "<input type='hidden' name='addType' value='add' />";
                     echo "<input type='submit' class='addContentBtn ' name='update' value='Add' />";
                     echo "</div>";

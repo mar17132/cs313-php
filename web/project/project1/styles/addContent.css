@@ -1,7 +1,8 @@
 .addContent-div{
-    width: 200px;
+    width: 240px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 25px;
 }
 
 .addContent-ul{
@@ -20,7 +21,8 @@
 }
 
 div.addContentBtn{
-    display: inline-block;
+    display: inline;
+    margin-right: 25px;
 }
 
 
@@ -28,3 +30,7 @@ div.addContentBtn{
     margin-top: 25px;
 }
 
+
+.pageName{
+    margin-top: 25px;
+}
