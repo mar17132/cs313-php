@@ -175,29 +175,37 @@ if(isset($serverID))
 
                 </ul>
 
+                <div class="row" >
                 <?php
                 if(isset($serverID))
                 {
+                    echo "<div class='col'>";
                     echo "<input type='hidden' name='addType' value='update' />";
-                    echo "<input type='submit' name='update' value='Update' />";
+                    echo "<input type='submit' class='addContentBtn' name='update' value='Update' />";
+                    echo "</div>";
                 }
                 else
                 {
+                    echo "<div class='col'>";
                     echo "<input type='hidden' name='addType' value='add' />";
-                    echo "<input type='submit' name='update' value='Add' />";
+                    echo "<input type='submit' class='addContentBtn col' name='update' value='Add' />";
+                    echo "</div>";
                 }
                 ?>
-            </form>
+
             <?php
 
                 if(isset($serverID))
                 {
-               echo "<form action='addserver.php' method='post'>
-                    <input type='hidden'' name='serverID' value='$serverID'/>
-                    <input type='submit' name='addType' value='delete' />
-                    </form>";
+                   echo "<div class='col'>
+                        <form action='addserver.php' method='post'>
+                        <input type='hidden' name='serverID' value='$serverID'/>
+                        <input type='submit'  class='addContentBtn' name='addType' value='delete' />
+                        </form></div>";
                 }
                 ?>
+            </div>
+                </form>
             </div>
         </div>
 
