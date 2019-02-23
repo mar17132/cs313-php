@@ -38,7 +38,7 @@
                                     <input type='button' class='contentButtons'  value='Add Server' />
                                 </a>
                             </div>
-                        </li>";
+                        </li>\r\n";
                     }
 
                     ?>
@@ -65,7 +65,7 @@
                                 <div class='table-cell-head-content'>
                                     Select
                                 </div>
-                            </li>";
+                            </li>\r\n";
                     }
 
                     ?>
@@ -197,12 +197,12 @@
                         <div class='table-cell-content'>
                            <input type='button' class='contentButtons buttonVisible' />
                         </div>
-                    </li>
+                    </li>\r\n
                     <li class='table-cell col'>
                         <div class='table-cell-content'>
                         <input type='submit' class='contentButtons'  value='View Patch' />
                         </div>
-                    </li>
+                    </li>\r\n
                 </ul>";
 
                 echo " <ul class='table-row row'>
@@ -210,12 +210,12 @@
                         <div class='table-cell-head-content'>
                             Select
                         </div>
-                    </li>
+                    </li>\r\n
                     <li class='table-cell col'>
                         <div class='table-cell-head-content'>
                             Name
                         </div>
-                    </li>
+                    </li>\r\n
                 </ul>";
 
                 foreach($patchResults as $row)
