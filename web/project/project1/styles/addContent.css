@@ -1,5 +1,5 @@
 .addContent-div{
-    width: 600px;
+    width: 200px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -15,5 +15,16 @@
 
 }
 
+.addContentBtn{
 
+}
+
+div.addContentBtn{
+    display: inline-block;
+}
+
+
+.addContentBtn-wrap{
+    margin-top: 25px;
+}
 
