@@ -9,7 +9,7 @@
 <?php include "header-docs.php"; ?>
 
         <div class="content">
-            <h3>Search</h3>
+            <h3 class="pageName">Search</h3>
             <form method="post" action="search.results.php">
                  <table class="searchTable">
                     <tr>
