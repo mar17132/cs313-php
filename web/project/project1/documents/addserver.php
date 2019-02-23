@@ -114,13 +114,14 @@ if(isset($serverID))
 <?php include "header-docs.php"; ?>
 
         <div class="content">
+            <div class="addContent-div">
             <h3><?php echo $pageTitle; ?></h3>
             <form method="post" action="addserver.php">
-                <ul>
-                    <li>
+                <ul class="addContent-ul">
+                    <li class="addContent-li">
                         <label>Server Name</label>
                     </li>
-                    <li>
+                    <li class="addContent-li">
                         <input type="text" id="servernameTxt" name="servernameTxt"
                                value="<?php
                                        echo isset($serverArray)
@@ -131,25 +132,26 @@ if(isset($serverID))
                                     echo isset($serverID) ? $serverID : 'null';
                                     ?>" />
                     </li>
-                    <li>
+                    <li class="addContent-li">
                         <label>IP Address</label>
                     </li>
-                    <li>
+                    <li class="addContent-li">
                         <input type="text" id="ipaddressTxt" name="ipaddressTxt"
                                value="<?php
                                        echo isset($serverArray)
                                            ? $serverArray[0][ip] : "";
                                       ?>"/>
                     </li>
-                    <li>
+                    <li class="addContent-li">
                         <label>Patches</label>
                         <div>
-                            <ul>
+                            <ul class="addContent-ul">
                                 <?php
 
                                 foreach($db->query("SELECT * FROM PatchCycle;") as $row)
                                 {
-                                    echo "<input value='$row[id]'
+                                    echo "<li class='addContent-li' >"
+                                    echo "<input value='$row[id]'";
                                           name='patches[]' type='checkbox'";
                                     if(isset($patchArray))
                                     {
@@ -162,7 +164,8 @@ if(isset($serverID))
                                         }
                                     }
                                     echo "/>";
-                                    echo "<span>$row[name]</span><br/>";
+                                    echo "&nbsp;&nbsp;<span>$row[name]</span>";
+                                    echo "</li>";
                                 }
 
                                 ?>
@@ -195,6 +198,7 @@ if(isset($serverID))
                     </form>";
                 }
                 ?>
+            </div>
         </div>
 
         <div class="footer">

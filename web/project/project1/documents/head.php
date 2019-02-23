@@ -24,6 +24,7 @@ include_once "scripts/db.php";
         <link rel="stylesheet" href="<?php echo $baseURL.$location."/styles/search-results.css"; ?>" />
         <link rel="stylesheet" href="<?php echo $baseURL."/scripts/bootstrap/4.2.1/css/bootstrap.min.css";?>" />
         <link rel="stylesheet" type="text/css" href="<?php echo $baseURL.$location."/styles/calendar.css";?>" />
+        <link rel="stylesheet" type="text/css" href="<?php echo $baseURL.$location."/styles/addContent.css";?>" />
         <script src="<?php echo $baseURL."/scripts/jquery/jquery-3.3.1.min.js"; ?>" ></script>
         <script src="<?php echo $baseURL."/scripts/bootstrap/4.2.1/js/bootstrap.bundle.min.js";?>" ></script>
         <script src="<?php echo $baseURL.$location."/scripts/calendar.js";?>"></script>
