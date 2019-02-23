@@ -130,7 +130,7 @@ function bulidCalenderDayElm(dayNum)
             value.day == dayNum)
             {
                 newAappointment = $("<a class='patchappointment'>" + value.name + "</a>");
-                newAappointment.prop("href","patching.php?patchID=" + value.id);
+                newAappointment.prop("href","patching.php?patchID=" + value.patchid);
                 newAappointment.appendTo(newDivContent);
             }
 
