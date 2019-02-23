@@ -30,7 +30,7 @@
                         </div>
                     </li>
                     <?php
-                    if(!(isset($_GET['serverID']) || isset($_POST['serverID']))
+                    if(!(isset($_GET['serverID']) || isset($_POST['serverID'])))
                     {
                        echo "<li class='table-cell col'>
                             <div class='table-cell-content'>
@@ -58,7 +58,7 @@
 
                 <ul class="table-row row">
                 <?php
-                    if(!(isset($_GET['serverID']) || isset($_POST['serverID']))
+                    if(!(isset($_GET['serverID']) || isset($_POST['serverID'])))
                     {
                        echo "<ul class='table-row row'>
                              <li class='table-cell col'>
@@ -137,7 +137,7 @@
                 {
                     echo "<ul class='table-row row'>";
 
-                    if(!(isset($_GET['serverID']) || isset($_POST['serverID']))
+                    if(!(isset($_GET['serverID']) || isset($_POST['serverID'])))
                     {
                         //Select
                         echo "<li class='table-cell col'>";
