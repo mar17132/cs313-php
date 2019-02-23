@@ -14,7 +14,7 @@
                 <ul class="table-row row">
                     <li class="table-cell col">
                         <div class="table-cell-content">
-                            <a href="servers.php" class="addContent">
+                            <a href="servers.php" id="viewSelected" class="addContent">
                                 <input type="button" class="contentButtons"  value="View Server" />
                             </a>
                         </div>
@@ -227,6 +227,8 @@
 
         <script>
             var selectChk = $(".selectValueChk");
+            var viewSelected = $("#viewSelected");
+            var hrefViewSelected = $("#viewSelected").prop("href");
 
             function disableAllCheck(elem)
             {
@@ -245,10 +247,12 @@
                 {
                     disableAllCheck(selectChk);
                     $(this).prop("disabled",false);
+                    viewSelected.prop("href",hrefViewSelected + "?serverID=" + $(this).val());
                 }
                 else
                 {
                     enableAllCheck(selectChk);
+                    viewSelected.prop("href",hrefViewSelected);
                 }
 
 
