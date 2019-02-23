@@ -43,7 +43,7 @@
 
                     ?>
                    <li class="table-cell col <?php
-                              if(!(isset($_GET['serverID']) || isset($_POST['serverID'])))
+                              if(isset($_GET['serverID']) || isset($_POST['serverID']))
                               {
                                   echo "hidden";
                               }
@@ -75,7 +75,7 @@
 
                     ?>
                     <li class="table-cell col <?php
-                              if(!(isset($_GET['serverID']) || isset($_POST['serverID'])))
+                              if(isset($_GET['serverID']) || isset($_POST['serverID']))
                               {
                                   echo "hidden";
                               }
