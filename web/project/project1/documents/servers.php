@@ -14,7 +14,9 @@
                 <ul class="table-row row">
                     <li class="table-cell col">
                         <div class="table-cell-content">
-                           <input type="button" class="contentButtons buttonVisible" />
+                            <a href="servers.php" class="addContent">
+                                <input type="button" class="contentButtons"  value="View Server" />
+                            </a>
                         </div>
                     </li>
                     <li class="table-cell col">
@@ -26,9 +28,7 @@
                     </li>
                     <li class="table-cell col">
                         <div class="table-cell-content">
-
                                 <input type="submit" class="contentButtons"  value="Edit Server" />
-
                         </div>
                     </li>
                 </ul>
@@ -161,7 +161,7 @@
                     </li>
                     <li class='table-cell col'>
                         <div class='table-cell-content'>
-                        <input type='button' class='contentButtons'  value='View Patch' />
+                        <input type='submit' class='contentButtons'  value='View Patch' />
                         </div>
                     </li>
                 </ul>";
