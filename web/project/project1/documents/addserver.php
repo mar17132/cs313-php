@@ -150,8 +150,8 @@ if(isset($serverID))
 
                                 foreach($db->query("SELECT * FROM PatchCycle;") as $row)
                                 {
-                                    echo "<li class='addContent-li' >"
-                                    echo "<input value='$row[id]'";
+                                    echo "<li class='addContent-li' >";
+                                    echo "<input value='$row[id]'
                                           name='patches[]' type='checkbox'";
                                     if(isset($patchArray))
                                     {
