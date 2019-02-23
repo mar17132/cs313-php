@@ -16,9 +16,15 @@
                         <div class="table-cell-content">
 
                                 <?php
-                                if(isset($_GET['serverID']) || isset($_POST['serverID']))
+                                if(isset($_POST['serverID']))
                                 {
-                                   echo "<input type='button' class='contentButtons buttonVisible' />";
+                                   echo "<input type='button' class='contentButtons buttonVisible' />
+                                   <input type='hidden' value='".$_POST['serverID']."' name='serverID' />";
+                                }
+                                elseif(isset($_GET['serverID']))
+                                {
+                                   echo "<input type='button' class='contentButtons buttonVisible' />
+                                   <input type='hidden' value='".$_GET['serverID']."' name='serverID' />";
                                 }
                                 else
                                 {
@@ -29,19 +35,7 @@
                                 ?>
                         </div>
                     </li>
-                    <?php
-                  /*  if(!(isset($_GET['serverID']) || isset($_POST['serverID'])))
-                    {
-                       echo "<li class='table-cell col'>
-                            <div class='table-cell-content'>
-                               <a href='addserver.php' class='addContent'>
-                                    <input type='button' class='contentButtons'  value='Add Server' />
-                                </a>
-                            </div>
-                        </li>\r\n";
-                    }*/
 
-                    ?>
                    <li class="table-cell col <?php
                               if(isset($_GET['serverID']) || isset($_POST['serverID']))
                               {
@@ -62,18 +56,7 @@
                 </ul>
 
                 <ul class="table-row row">
-                <?php
-                 /*   if(!(isset($_GET['serverID']) || isset($_POST['serverID'])))
-                    {
-                       echo "<ul class='table-row row'>
-                             <li class='table-cell col'>
-                                <div class='table-cell-head-content'>
-                                    Select
-                                </div>
-                            </li>\r\n";
-                    }*/
 
-                    ?>
                     <li class="table-cell col <?php
                               if(isset($_GET['serverID']) || isset($_POST['serverID']))
                               {
