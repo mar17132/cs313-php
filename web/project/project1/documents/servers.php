@@ -14,9 +14,19 @@
                 <ul class="table-row row">
                     <li class="table-cell col">
                         <div class="table-cell-content">
-                            <a href="servers.php" id="viewSelected" class="addContent">
-                                <input type="button" class="contentButtons"  value="View Server" />
-                            </a>
+
+                                <?php
+                                if(isset($_GET['serverID']) || isset($_POST['serverID']))
+                                {
+                                    echo "<a href='servers.php' id='viewSelected' class='addContent'>
+                                    <input type='button' class='contentButtons' value='View Server' /></a>";
+                                }
+                                else
+                                {
+                                    echo "<input type='button' class='contentButtons buttonVisible' />";
+                                }
+
+                                ?>
                         </div>
                     </li>
                     <li class="table-cell col">
