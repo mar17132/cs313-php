@@ -24,7 +24,7 @@
                                 elseif(isset($_GET['serverID']))
                                 {
                                    echo "<input type='button' class='contentButtons buttonVisible' />
-                                   <input type='hidden' value='".$_GET['serverID']."' name='serverID' />";
+                                   <input type='hidden' value='".$_GET['serverID']."' name='serverid' />";
                                 }
                                 else
                                 {
