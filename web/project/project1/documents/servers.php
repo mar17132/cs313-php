@@ -30,7 +30,7 @@
                         </div>
                     </li>
                     <?php
-                    if(!(isset($_GET['serverID']) || isset($_POST['serverID'])))
+                  /*  if(!(isset($_GET['serverID']) || isset($_POST['serverID'])))
                     {
                        echo "<li class='table-cell col'>
                             <div class='table-cell-content'>
@@ -39,16 +39,21 @@
                                 </a>
                             </div>
                         </li>\r\n";
-                    }
+                    }*/
 
                     ?>
-                   <!-- <li class="table-cell col">
+                   <li class="table-cell col <?php
+                              if(!(isset($_GET['serverID']) || isset($_POST['serverID'])))
+                              {
+                                  echo "hidden";
+                              }
+                              ?> ">
                         <div class="table-cell-content">
                            <a href="addserver.php" class="addContent">
                                 <input type="button" class="contentButtons"  value="Add Server" />
                             </a>
                         </div>
-                    </li>-->
+                    </li>
                     <li class="table-cell col">
                         <div class="table-cell-content">
                                 <input type="submit" class="contentButtons"  value="Edit Server" />
@@ -58,7 +63,7 @@
 
                 <ul class="table-row row">
                 <?php
-                    if(!(isset($_GET['serverID']) || isset($_POST['serverID'])))
+                 /*   if(!(isset($_GET['serverID']) || isset($_POST['serverID'])))
                     {
                        echo "<ul class='table-row row'>
                              <li class='table-cell col'>
@@ -66,14 +71,19 @@
                                     Select
                                 </div>
                             </li>\r\n";
-                    }
+                    }*/
 
                     ?>
-                    <!-- <li class="table-cell col">
+                    <li class="table-cell col <?php
+                              if(!(isset($_GET['serverID']) || isset($_POST['serverID'])))
+                              {
+                                  echo "hidden";
+                              }
+                              ?>">
                         <div class="table-cell-head-content">
                             Select
                         </div>
-                    </li>-->
+                    </li>
                     <li class="table-cell col">
                         <div class="table-cell-head-content">
                             Name

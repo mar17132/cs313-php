@@ -84,3 +84,7 @@ a.addContent{
 .buttonVisible{
     visibility: hidden;
 }
+
+.hidden{
+    display: none;
+}
