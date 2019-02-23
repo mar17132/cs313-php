@@ -8,9 +8,9 @@
 <?php include "header-docs.php"; ?>
 
         <div class="content">
-            <h3>Computers</h3>
 <form method="post" action="addserver.php">
             <div class="table-div">
+                <h3>Computers</h3>
                 <ul class="table-row row">
                     <li class="table-cell col">
                         <div class="table-cell-content">
@@ -160,7 +160,7 @@
             if(count($patchResults) > 0)
             {
                 echo "<div class='table-div'>";
-                echo "<h1>Current Patch Cycles</h1>";
+                echo "<h3>Current Patch Cycles</h3>";
 
                 echo " <div class='table-div'>
                 <ul class='table-row row'>
