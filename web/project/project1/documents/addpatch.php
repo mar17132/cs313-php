@@ -91,19 +91,19 @@ else
 
 if(isset($patchID))
 {
-    //server
+    //patch
     $statement = $db->query("SELECT * FROM PatchCycle WHERE ID='$patchID';");
     $patchCyclesArray = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-    //patch
-   /* $statementPatch = $db->query("SELECT DISTINCT PatchCycle.ID, PatchCycle.Name
+    //server
+    $statementServer = $db->query("SELECT DISTINCT Computers.ID, Computers.Name
                                 FROM Patching
+                                JOIN Computers
+                                ON Computers.ID = Patching.Computers_id
                                 JOIN PatchSchedlue
                                 ON PatchSchedlue.ID = Patching.PatchSchedlue_id
-                                JOIN PatchCycle
-                                ON PatchCycle.ID = PatchSchedlue.PatchCycle_ID
-                                WHERE Patching.Computers_id ='$patchID';");
-    $patchArray = $statementPatch->fetchAll(PDO::FETCH_ASSOC);*/
+                                WHERE PatchSchedlue.PatchCycle_ID ='$patchID';");
+    $serverArray = $statementPatch->fetchAll(PDO::FETCH_ASSOC);
 }
 
 
@@ -114,59 +114,114 @@ if(isset($patchID))
 <?php include "header-docs.php"; ?>
 
         <div class="content">
-            <h3><?php echo $pageTitle; ?></h3>
+            <h3 class="pageName"><?php echo $pageTitle; ?></h3>
             <form method="post" action="addpatch.php">
-                <ul>
-                    <li>
+                <ul class="addContent-ul">
+                    <li class="addContent-li">
                         <label>Patch Name</label>
                     </li>
-                    <li>
+                    <li class="addContent-li">
                         <input type="text" id="patchnameTxt" name="patchnameTxt"
                                value="<?php
                                        echo isset($patchCyclesArray)
-                                           ? $patchCyclesArray[0][name] : "";
+                                           ? $patchCyclesArray[0]['name'] : "";
                                       ?>"/>
                         <input type="hidden" id="patchID" name="patchID"
                             value="<?php
                                     echo isset($patchID) ? $patchID : 'null';
                                     ?>" />
                     </li>
-                    <li>
+                    <li class="addContent-li">
                         <label>Notes</label>
                     </li>
-                    <li>
+                    <li class="addContent-li">
                         <input type="text" id="patchnotesTxt" name="patchnotesTxt"
                                value="<?php
                                        echo isset($patchCyclesArray)
-                                           ? $patchCyclesArray[0][notes] : "";
+                                           ? $patchCyclesArray[0]['note'] : "";
                                       ?>"/>
                     </li>
+                    <li class="addContent-li">
+                        <input type="text" placeholder="YYYY-MM-DD" id="patchDateTxt"
+                               name="patchDateTxt"
+                               value="<?php
+                                       echo isset($patchCyclesArray)
+                                           ? $patchCyclesArray[0]['patchdate'] : "";
+                                      ?>"/>
+                    </li>
+                    <li class="addContent-li">
+                        <input type="text" placeholder="HH:MM:SS" id="patchDateTxt"
+                               name="patchDateTxt"
+                               value="<?php
+                                       echo isset($patchCyclesArray)
+                                           ? $patchCyclesArray[0]['patchtime'] : "";
+                                      ?>"/>
+                    </li>
+                    <li class="addContent-li">
+                        <label>Patches</label>
+                        <div>
+                            <ul class="addContent-ul">
+                                <?php
 
+                                foreach($db->query("SELECT * FROM Computer;") as $row)
+                                {
+                                    echo "<li class='addContent-li' >";
+                                    echo "<input value='$row[id]'
+                                          name='patches[]' type='checkbox'";
+                                    if(isset($serverArray))
+                                    {
+                                        foreach($serverArray as $server)
+                                        {
+                                            if($row[id] == $server[id])
+                                            {
+                                                echo "checked='checked'";
+                                            }
+                                        }
+                                    }
+                                    echo "/>";
+                                    echo "&nbsp;&nbsp;<span>$row[name]</span>";
+                                    echo "</li>";
+                                }
+
+                                ?>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
+
+                <div class="addContentBtn-wrap" >
 
                 <?php
                 if(isset($patchID))
                 {
+                    echo "<div class='addContentBtn '>";
                     echo "<input type='hidden' name='addType' value='update' />";
-                    echo "<input type='submit' name='update' value='Update' />";
+                    echo "<input type='submit' class='addContentBtn ' name='update' value='Update' />";
+                    echo "</div>";
                 }
                 else
                 {
+                    echo "<div class='addContentBtn '>";
                     echo "<input type='hidden' name='addType' value='add' />";
-                    echo "<input type='submit' name='update' value='Add' />";
+                    echo "<input type='submit' class='addContentBtn ' name='update' value='Add' />";
+                    echo "</div>";
                 }
                 ?>
-            </form>
-            <?php
 
-               /* if(isset($patchID))
+                <?php
+
+                if(isset($patchID))
                 {
-               echo "<form action='addserver.php' method='post'>
-                    <input type='hidden'' name='patchID' value='$patchID'/>
-                    <input type='submit' name='addType' value='delete' />
-                    </form>";
-                }*/
+                    echo "<div class='addContentBtn '>
+                    <form action='addserver.php' method='post'>
+                    <input type='hidden' class='addContentBtn' name='patchID' value='$patchID'/>
+                    <input type='submit'  name='addType' value='delete' />
+                    </form></div>";
+                }
+
                 ?>
+                </div>
+            </form>
         </div>
 
         <div class="footer">

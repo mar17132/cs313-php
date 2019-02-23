@@ -289,3 +289,9 @@ JOIN PatchCycle ON PatchCycle.ID = PatchSchedlue.PatchCycle_ID
 WHERE Patching.Computers_id ='$serverID';
 
 
+SELECT DISTINCT Computers.ID, Computers.Name
+FROM Patching
+JOIN Computers ON Computers.ID = Patching.Computers_id
+JOIN PatchSchedlue ON PatchSchedlue.ID = Patching.PatchSchedlue_id
+WHERE PatchSchedlue.PatchCycle_ID ='$patchID';
+
