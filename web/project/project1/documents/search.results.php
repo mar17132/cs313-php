@@ -8,7 +8,7 @@
 <?php include "header-docs.php"; ?>
 
         <div class="content">
-            <h3>Search Results</h3>
+            <h3 class="pageName">Search Results</h3>
             <div class="table-results-div">
 
             <?php
