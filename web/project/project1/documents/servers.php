@@ -57,10 +57,10 @@
 
             <?php
 
-            $statement = "";
-            $result = "";
-            $patchStatement = "";
-            $patchResults = "";
+            $statement = null;
+            $result = null;
+            $patchStatement = null;
+            $patchResults = null;
 
             if(isset($_GET['serverID']))
             {
