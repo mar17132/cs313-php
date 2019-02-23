@@ -66,6 +66,11 @@
                 $statement = $db->query("SELECT * FROM PatchCycle WHERE ID ='".$_GET['patchID']."';");
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
             }
+            elseif(isset($_POST['patchID']))
+            {
+                $statement = $db->query("SELECT * FROM PatchCycle WHERE ID ='".$_POST['patchID']."';");
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+            }
             else
             {
                 $statement = $db->query("SELECT * FROM PatchCycle;");

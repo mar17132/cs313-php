@@ -59,11 +59,34 @@
 
             $statement = "";
             $result = "";
+            $patchStatement = "";
+            $patchResults = "";
 
             if(isset($_GET['serverID']))
             {
                 $statement = $db->query("SELECT * FROM Computers WHERE ID ='".$_GET['serverID']."';");
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+                $patchStatement = $db->query("SELECT DISTINCT PatchCycle.ID, PatchCycle.Name
+                                    FROM Patching
+                                    JOIN PatchSchedlue ON
+                                    PatchSchedlue.ID = Patching.PatchSchedlue_id
+                                    JOIN PatchCycle ON
+                                    PatchCycle.ID = PatchSchedlue.PatchCycle_ID
+                                    WHERE Patching.Computers_id ='".$_GET['serverID']."';");
+                $patchResults = $patchStatement->fetchAll(PDO::FETCH_ASSOC);
+            }
+            elseif(isset($_POST['serverID']))
+            {
+                $statement = $db->query("SELECT * FROM Computers WHERE ID ='".$_POST['serverID']."';");
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+                $patchStatement = $db->query("SELECT DISTINCT PatchCycle.ID, PatchCycle.Name
+                                    FROM Patching
+                                    JOIN PatchSchedlue ON
+                                    PatchSchedlue.ID = Patching.PatchSchedlue_id
+                                    JOIN PatchCycle ON
+                                    PatchCycle.ID = PatchSchedlue.PatchCycle_ID
+                                    WHERE Patching.Computers_id ='".$_POST['serverID']."';");
+                $patchResults = $patchStatement->fetchAll(PDO::FETCH_ASSOC);
             }
             else
             {
@@ -117,6 +140,69 @@
                 echo "No current Patch Cycles";
                 echo "</div></li></ul>";
             }
+            ?>
+
+            </div>
+             </form>
+
+            <form method="post" action="patching.php">
+            <?php
+            if(count($patchResults) > 0)
+            {
+                echo "<div class='table-div'>";
+                echo "<h1>Current Patch Cycles</h1>";
+
+                echo " <div class='table-div'>
+                <ul class='table-row row'>
+                    <li class='table-cell col'>
+                        <div class='table-cell-content'>
+                           <input type='button' class='contentButtons buttonVisible' />
+                        </div>
+                    </li>
+                    <li class='table-cell col'>
+                        <div class='table-cell-content'>
+                        <input type='button' class='contentButtons'  value='View Patch' />
+                        </div>
+                    </li>
+                </ul>";
+
+                echo " <ul class='table-row row'>
+                    <li class='table-cell col'>
+                        <div class='table-cell-head-content'>
+                            Select
+                        </div>
+                    </li>
+                    <li class='table-cell col'>
+                        <div class='table-cell-head-content'>
+                            Name
+                        </div>
+                    </li>
+                </ul>";
+
+                foreach($patchResults as $row)
+                {
+                    echo "<ul class='table-row row'>";
+
+                    //Select
+                    echo "<li class='table-cell col'>";
+                    echo "<div class='table-cell-content'>";
+                    echo "<input type='checkbox' name='patchID' class='selectValueChk' value='";
+                    echo $row[id];
+                    echo "'/>";
+                    echo "</div>";
+                    echo "</li>\r\n";
+
+                    //Name
+                    echo "<li class='table-cell col'>";
+                    echo "<div class='table-cell-content'>";
+                    echo $row[name];
+                    echo "</div>";
+                    echo "</li>\r\n";
+
+                    echo "</ul>";
+                }
+                echo "</div>";
+            }
 
             ?>
 
@@ -131,7 +217,7 @@
                 </ul>
             </div>-->
 
-            </div>
+
     </form>
         </div>
 
