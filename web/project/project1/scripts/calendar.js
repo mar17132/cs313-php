@@ -122,7 +122,7 @@ function bulidCalenderDayElm(dayNum)
     }*/
 
     //add one to month to change it from 0-11 to 1-12
-    if(jsonPHPString)
+    if(jsonPHPString != null)
     {
         appointmentObj = JSON.parse(jsonPHPString);
         $.each(appointmentObj.patchdates,function(index,value){
@@ -130,7 +130,7 @@ function bulidCalenderDayElm(dayNum)
             value.day == dayNum)
             {
                 newAappointment = $("<a class='patchappointment'>" + value.name + "</a>");
-                newAappointment.prop("href","patching.php?");
+                newAappointment.prop("href","patching.php?patchID=" + value.id);
                 newAappointment.appendTo(newDivContent);
             }
 

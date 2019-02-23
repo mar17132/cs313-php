@@ -77,7 +77,9 @@ span.date-number{
 a.patchappointment{
     text-decoration: none;
     outline: none;
-    color: black;
+    color: darkblue;
+    display: block;
+    padding: 10px;
 }
 
 /*calendar header*/
