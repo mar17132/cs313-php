@@ -69,6 +69,12 @@ a.addContent{
     display: block;
 }
 
+a.addContent:hover{
+    text-decoration: none;
+    outline: none;
+    display: block;
+}
+
 .selectValueChk{
     margin: 5px;
 }
