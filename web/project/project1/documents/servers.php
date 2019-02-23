@@ -16,14 +16,14 @@
                         <div class="table-cell-content">
 
                                 <?php
-                                if(!isset($_GET['serverID']) || !isset($_POST['serverID']))
+                                if(isset($_GET['serverID']) || isset($_POST['serverID']))
                                 {
-                                    echo "<a href='servers.php' id='viewSelected' class='addContent'>
-                                    <input type='button' class='contentButtons' value='View Server' /></a>";
+                                   echo "<input type='button' class='contentButtons buttonVisible' />";
                                 }
                                 else
                                 {
-                                    echo "<input type='button' class='contentButtons buttonVisible' />";
+                                    echo "<a href='servers.php' id='viewSelected' class='addContent'>
+                                    <input type='button' class='contentButtons' value='View Server' /></a>";
                                 }
 
                                 ?>
