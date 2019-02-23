@@ -29,25 +29,51 @@
                                 ?>
                         </div>
                     </li>
-                    <li class="table-cell col">
+                    <?php
+                    if(!(isset($_GET['serverID']) || isset($_POST['serverID']))
+                    {
+                       echo "<li class='table-cell col'>
+                            <div class='table-cell-content'>
+                               <a href='addserver.php' class='addContent'>
+                                    <input type='button' class='contentButtons'  value='Add Server' />
+                                </a>
+                            </div>
+                        </li>";
+                    }
+
+                    ?>
+                   <!-- <li class="table-cell col">
                         <div class="table-cell-content">
                            <a href="addserver.php" class="addContent">
                                 <input type="button" class="contentButtons"  value="Add Server" />
                             </a>
                         </div>
-                    </li>
+                    </li>-->
                     <li class="table-cell col">
                         <div class="table-cell-content">
                                 <input type="submit" class="contentButtons"  value="Edit Server" />
                         </div>
                     </li>
                 </ul>
+
                 <ul class="table-row row">
-                     <li class="table-cell col">
+                <?php
+                    if(!(isset($_GET['serverID']) || isset($_POST['serverID']))
+                    {
+                       echo "<ul class='table-row row'>
+                             <li class='table-cell col'>
+                                <div class='table-cell-head-content'>
+                                    Select
+                                </div>
+                            </li>";
+                    }
+
+                    ?>
+                    <!-- <li class="table-cell col">
                         <div class="table-cell-head-content">
                             Select
                         </div>
-                    </li>
+                    </li>-->
                     <li class="table-cell col">
                         <div class="table-cell-head-content">
                             Name
@@ -111,14 +137,17 @@
                 {
                     echo "<ul class='table-row row'>";
 
-                    //Select
-                    echo "<li class='table-cell col'>";
-                    echo "<div class='table-cell-content'>";
-                    echo "<input type='checkbox' name='serverid' class='selectValueChk' value='";
-                    echo $row[id];
-                    echo "'/>";
-                    echo "</div>";
-                    echo "</li>\r\n";
+                    if(!(isset($_GET['serverID']) || isset($_POST['serverID']))
+                    {
+                        //Select
+                        echo "<li class='table-cell col'>";
+                        echo "<div class='table-cell-content'>";
+                        echo "<input type='checkbox' name='serverid' class='selectValueChk' value='";
+                        echo $row[id];
+                        echo "'/>";
+                        echo "</div>";
+                        echo "</li>\r\n";
+                    }
 
                     //Name
                     echo "<li class='table-cell col'>";
