@@ -44,6 +44,8 @@ if(count($_POST) > 0)
 
                     foreach($resultsPatching as $serverPatch)
                     {
+                        echo $id['computers_id'];
+                        print_r($id);
                         echo "test5";
                         if(in_array($id['computers_id'],$_POST["servers"]))
                         {
