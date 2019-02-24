@@ -32,7 +32,7 @@ selectChk.on("click",function(){
 });
 
 
-dateTxt.on('change',function(){
+dateTxt.on("change",function(){
     reg = /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/
 
     if(reg.test($(this).val()))
@@ -54,7 +54,7 @@ dateTxt.on('change',function(){
 });
 
 
-timeTxt.on('input',function(){
+timeTxt.on("keyup",function(){
 
     reg = /^[0-9]{2}:[0-9]{2}:[0-9]{2}$/
 
