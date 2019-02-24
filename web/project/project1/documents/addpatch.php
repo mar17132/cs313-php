@@ -45,13 +45,12 @@ if(count($_POST) > 0)
                     foreach($resultsPatching as $serverPatch)
                     {
                         echo $id['computers_id'];
-                        print_r($id);
                         echo "test5";
                         if(in_array($serverPatch['id'],$_POST["servers"]))
                         {
 echo "test6";
                             $statement = $db->query("SELECT * FROM Patching WHERE
-                            PatchSchedlue_id ='".$_POST["patchID"]."'
+                            PatchSchedlue_id ='".$id["id"]."'
                             AND Computers_id='".$serverPatch[id]."';");
                             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
@@ -59,7 +58,7 @@ echo "test6";
                             {
                                 $db->query("INSERT INTO
                                 Patching(Computers_id,PatchSchedlue_id)
-                                VALUES($serverPatch[id],".$_POST["patchID"].");");
+                                VALUES($serverPatch[id],".$id["id"].");");
                             }
                         }
                         else
@@ -67,14 +66,14 @@ echo "test6";
                             echo "test9";
                             $statement = $db->query("SELECT * FROM Patching WHERE
                             PatchSchedlue_id ='".$_POST["patchID"]."'
-                            AND Computers_id='$serverPatch[id]';");
+                            AND Computers_id='".$id["id"]."';");
                             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
                             if(count($results) != 0)
                             {
                                 $db->query("DELETE FROM Patching WHERE
                                 Computers_id='$serverPatch[id]'
-                                AND PatchSchedlue_id = '".$_POST["patchID"]."';");
+                                AND PatchSchedlue_id = '".$id["id"]."';");
                             }
                         }
 
