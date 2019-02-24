@@ -39,7 +39,7 @@ if(count($_POST) > 0)
                 foreach($newPatchSchID as $id)
                 {
                     $statementPatching = $db->query("SELECT * FROM Computers;");
-                    $resultsPatching= $statementPatchCycle->fetchAll(PDO::FETCH_ASSOC);
+                    $resultsPatching= $statementPatching->fetchAll(PDO::FETCH_ASSOC);
 
                     foreach($resultsPatching as $serverPatch)
                     {
