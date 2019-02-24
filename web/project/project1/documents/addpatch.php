@@ -80,7 +80,7 @@ echo "test6";
                     }
                 }
 
-                header("Location:patching.php");
+              //  header("Location:patching.php");
                 break;
             case "delete":
 
