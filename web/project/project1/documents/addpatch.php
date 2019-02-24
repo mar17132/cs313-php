@@ -92,7 +92,12 @@ else
 if(isset($patchID))
 {
     //patch
-    $statement = $db->query("SELECT * FROM PatchCycle WHERE ID='$patchID';");
+    $statement = $db->query("SELECT PatchCycle.ID, PatchCycle.Name, PatchCycle.Note,
+                            PatchSchedlue.PatchDate,PatchSchedlue.PatchTime
+                            FROM PatchCycle
+                            JOIN PatchSchedlue ON
+                            PatchSchedlue.PatchCycle_ID = PatchCycle.ID
+                            WHERE PatchCycle.ID='$patchID';");
     $patchCyclesArray = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     //server

@@ -295,3 +295,11 @@ JOIN Computers ON Computers.ID = Patching.Computers_id
 JOIN PatchSchedlue ON PatchSchedlue.ID = Patching.PatchSchedlue_id
 WHERE PatchSchedlue.PatchCycle_ID ='$patchID';
 
+
+SELECT PatchCycle.ID, PatchCycle.Name, PatchCycle.Note,
+PatchSchedlue.PatchDate,PatchSchedlue.PatchTime
+FROM PatchCycle
+JOIN PatchSchedlue ON PatchSchedlue.PatchCycle_ID = PatchCycle.ID
+WHERE PatchCycle.ID='$patchID';
+
+
