@@ -38,14 +38,16 @@ if(count($_POST) > 0)
                 //patching
                 foreach($newPatchSchID as $id)
                 {
+                    echo "test1";
                     $statementPatching = $db->query("SELECT * FROM Computers;");
                     $resultsPatching= $statementPatching->fetchAll(PDO::FETCH_ASSOC);
 
                     foreach($resultsPatching as $serverPatch)
                     {
+                        echo "test5";
                         if(in_array($id['computers_id'],$_POST["servers"]))
                         {
-
+echo "test6";
                             $statement = $db->query("SELECT * FROM Patching WHERE
                             PatchSchedlue_id ='".$_POST["patchID"]."'
                             AND Computers_id='".$serverPatch[id]."';");
@@ -57,22 +59,24 @@ if(count($_POST) > 0)
                                 Patching(Computers_id,PatchSchedlue_id)
                                 VALUES($serverPatch[id],".$_POST["patchID"].");");
                             }
-                            else
-                            {
-                                $statement = $db->query("SELECT * FROM Patching WHERE
-                                PatchSchedlue_id ='".$_POST["patchID"]."'
-                                AND Computers_id='$serverPatch[id]';");
-                                $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-                                if(count($results) != 0)
-                                {
-                                    $db->query("DELETE FROM Patching WHERE
-                                    Computers_id='$serverPatch[id]'
-                                    AND PatchSchedlue_id = '".$_POST["patchID"]."';");
-                                }
-                            }
-
                         }
+                        else
+                        {
+                            echo "test9";
+                            $statement = $db->query("SELECT * FROM Patching WHERE
+                            PatchSchedlue_id ='".$_POST["patchID"]."'
+                            AND Computers_id='$serverPatch[id]';");
+                            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+                            if(count($results) != 0)
+                            {
+                                $db->query("DELETE FROM Patching WHERE
+                                Computers_id='$serverPatch[id]'
+                                AND PatchSchedlue_id = '".$_POST["patchID"]."';");
+                            }
+                        }
+
+
                     }
                 }
 
