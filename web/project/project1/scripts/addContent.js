@@ -44,7 +44,7 @@ $(document).ready(function(){
         else
         {
             $(this).addClass("error");
-            dateBool = false;
+            nameBool = false;
             addContentBtn.prop('disabled',true);
         }
     });
