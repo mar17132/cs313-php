@@ -36,14 +36,14 @@ $(document).ready(function(){
             $(this).removeClass("error");
             if(dateBool == true && timeBool == true)
             {
-                addContentBtn.attr('disabled',true);
+                addContentBtn.prop('disabled',false);
             }
         }
         else
         {
             $(this).addClass("error");
             dateBool = false;
-            addContentBtn.attr('disabled',false);
+            addContentBtn.prop('disabled',true);
         }
 
     });
