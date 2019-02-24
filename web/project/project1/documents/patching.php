@@ -291,7 +291,7 @@
                     //Select
                     echo "<li class='table-cell col'>";
                     echo "<div class='table-cell-content'>";
-                    echo "<input type='checkbox' name='serverid' class='selectValueChk' value='";
+                    echo "<input type='checkbox' name='serverID' class='selectValueChk' value='";
                     echo $row[id];
                     echo "'/>";
                     echo "</div>";
