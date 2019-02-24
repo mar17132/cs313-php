@@ -6,6 +6,9 @@ var patchname;
 var nameBool;
 var timeBool;
 var dateBool;
+var viewSelected;
+var hrefViewSelected;
+var getVar;
 
 function disableAllCheck(elem)
 {
@@ -26,6 +29,8 @@ $(document).ready(function(){
     dateTxt = $("#patchDateTxt");
     timeTxt = $("#patchTimeTxt");
     patchname = $("#patchnameTxt");
+    viewSelected = $("#viewSelected");
+    hrefViewSelected = $("#viewSelected").prop("href");
     timeBool = false;
     dateBool = false;
     nameBool = false;
@@ -101,10 +106,12 @@ $(document).ready(function(){
         {
             disableAllCheck(selectChk);
             $(this).prop("disabled",false);
+            viewSelected.prop("href",hrefViewSelected + "?" + getVar + "=" + $(this).val());
         }
         else
         {
             enableAllCheck(selectChk);
+            viewSelected.prop("href",hrefViewSelected);
         }
 
 

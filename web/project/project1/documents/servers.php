@@ -258,37 +258,7 @@
         </div>
 
         <script>
-            var selectChk = $(".selectValueChk");
-            var viewSelected = $("#viewSelected");
-            var hrefViewSelected = $("#viewSelected").prop("href");
-
-            function disableAllCheck(elem)
-            {
-                elem.prop("disabled",true);
-            }
-
-            function enableAllCheck(elem)
-            {
-                elem.prop("disabled",false);
-            }
-
-            selectChk.on("click",function(){
-
-
-                if($(this).is(":checked"))
-                {
-                    disableAllCheck(selectChk);
-                    $(this).prop("disabled",false);
-                    viewSelected.prop("href",hrefViewSelected + "?serverID=" + $(this).val());
-                }
-                else
-                {
-                    enableAllCheck(selectChk);
-                    viewSelected.prop("href",hrefViewSelected);
-                }
-
-
-            });
+var getVar = "<?php echo "serverID" ?>";
 
         </script>
     </body>

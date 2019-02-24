@@ -246,7 +246,7 @@
         </div>
 <form method="post" action="servers.php">
         <?php
-            if(count($patchResults) > 0)
+            if(count($resultServer) > 0)
             {
                 echo "<div class='table-div'>";
                 echo "<h3>Current Servers</h3>";
@@ -312,7 +312,10 @@
         <div class="footer">
 
         </div>
+    <script>
+        var getVar = "<?php echo "patchID" ?>";
 
+        </script>
     </body>
 </html>
 
