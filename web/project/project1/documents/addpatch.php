@@ -57,21 +57,37 @@ if(count($_POST) > 0)
                // $db->query();
                 header("Location:patching.php");
                 break;
-           /* case "delete":
-                $db->query("DELETE FROM Patching WHERE Computers_id = '".$_POST["patchID"]."';");
-                $db->query("DELETE FROM Computers WHERE ID='".$_POST["patchID"]."';");
+            case "delete":
+
+                foreach($db->query("SELECT * FROM PatchSchedlue
+                 WHERE PatchCycle_ID ='".$_POST["patchID"]."';") as $patchSchID)
+                {
+                    $db->query("DELETE FROM Patching WHERE
+                    PatchSchedlue_id = '".$patchSchID["id"]."';");
+                }
+                $db->query("DELETE FROM PatchSchedlue WHERE PatchCycle_ID='".$_POST["patchID"]."';");
+                $db->query("DELETE FROM PatchCycle WHERE ID='".$_POST["patchID"]."';");
                 header("Location:patching.php");
-                break;*/
+                break;
             case "add":
+                //PatchCycle
                 $db->query("INSERT INTO PatchCycle(Name,Note)
                 VALUES('".$_POST['patchnameTxt']."','".$_POST['patchnotesTxt']."');");
 
-                /*$newpatchID = $db->lastInsertId('Computers_id_seq');
-                foreach($_POST["patches"] as $newPatch)
+                $newpatchID = $db->lastInsertId('PatchCycle_id_seq');
+
+                //PatchSchulde
+                $db->query("INSERT INTO PatchSchedlue(PatchCycle_ID,PatchDate,PatchTime)
+                VALUES($newpatchID,'".$_POST['patchDateTxt']."',
+                '".$_POST['patchTimeTxt']."');");
+
+                $newPatchSchID = $db->lastInsertId('PatchSchedlue_id_seq');
+
+                foreach($_POST["servers"] as $newServer)
                 {
                     $db->query("INSERT INTO Patching(Computers_id,PatchSchedlue_id)
-                                VALUES($newpatchID,$newPatch);");
-                }*/
+                                VALUES($newServer,$newPatchSchID);");
+                }
                 header("Location:patching.php");
                 break;
         }
@@ -180,7 +196,7 @@ if(isset($patchID))
                                 {
                                     echo "<li class='addContent-li' >";
                                     echo "<input value='$row[id]'
-                                          name='patches[]' type='checkbox'";
+                                          name='servers[]' type='checkbox'";
                                     if(isset($serverArray))
                                     {
                                         foreach($serverArray as $server)
