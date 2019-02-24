@@ -94,3 +94,6 @@ a.addContent:hover{
 .hidden{
     display: none;
 }
+.patch-table{
+    width: 600px;
+}

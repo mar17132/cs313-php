@@ -10,8 +10,8 @@
         <div class="content">
 
             <form method="post" action="addpatch.php">
-            <div class="table-div">
-                <h3>Patche Cycles</h3>
+            <div class="table-div patch-table">
+                <h3>Patch Cycles</h3>
                 <ul class="table-row row">
                     <li class="table-cell col">
                         <div class="table-cell-content">
@@ -139,7 +139,7 @@
                                 FROM PatchSchedlue
                                 JOIN PatchCycle ON
                                 PatchSchedlue.PatchCycle_ID = PatchCycle.ID
-                                WHERE PatchCycle.ID = '".$_GET['patchID']."';");
+                                WHERE PatchCycle.ID = '".$_POST['patchID']."';");
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
                 $statementServer = $db->query("SELECT DISTINCT Computers.ID, Computers.Name
