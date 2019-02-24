@@ -144,36 +144,7 @@
         <div class="footer">
 
         </div>
-        <script>
-            var selectChk = $(".selectValueChk");
 
-            function disableAllCheck(elem)
-            {
-                elem.prop("disabled",true);
-            }
-
-            function enableAllCheck(elem)
-            {
-                elem.prop("disabled",false);
-            }
-
-            selectChk.on("click",function(){
-
-
-                if($(this).is(":checked"))
-                {
-                    disableAllCheck(selectChk);
-                    $(this).prop("disabled",false);
-                }
-                else
-                {
-                    enableAllCheck(selectChk);
-                }
-
-
-            });
-
-        </script>
     </body>
 </html>
 

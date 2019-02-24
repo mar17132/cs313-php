@@ -110,7 +110,6 @@ if(isset($patchID))
                                 WHERE PatchSchedlue.PatchCycle_ID ='$patchID';");
     $serverArray = $statementServer->fetchAll(PDO::FETCH_ASSOC);
 
-    print_r($patchCyclesArray);
 }
 
 
@@ -164,8 +163,8 @@ if(isset($patchID))
                         <label>Time</label>
                     </li>
                     <li class="addContent-li">
-                        <input type="text" placeholder="HH:MM:SS" id="patchDateTxt"
-                               name="patchDateTxt"
+                        <input type="text" placeholder="HH:MM:SS" id="patchTimeTxt"
+                               name="patchTimeTxt"
                                value="<?php
                                        echo isset($patchCyclesArray)
                                            ? $patchCyclesArray[0]['patchtime'] : "";
@@ -217,7 +216,7 @@ if(isset($patchID))
                 {
                     echo "<div class='addContentBtn '>";
                     echo "<input type='hidden' name='addType' value='add' />";
-                    echo "<input type='submit' class='addContentBtn ' name='update' value='Add' />";
+                    echo "<input type='submit' class='addContentBtn ' disabled='disalbed' name='update' value='Add' />";
                     echo "</div>";
                 }
                 ?>
@@ -228,7 +227,7 @@ if(isset($patchID))
                 {
                     echo "<div class='addContentBtn '>
                     <form action='addserver.php' method='post'>
-                    <input type='hidden' class='addContentBtn' name='patchID' value='$patchID'/>
+                    <input type='hidden' name='patchID' value='$patchID'/>
                     <input type='submit'  name='addType' value='delete' />
                     </form></div>";
                 }

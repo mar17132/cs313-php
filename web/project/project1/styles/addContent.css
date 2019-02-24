@@ -34,3 +34,8 @@ div.addContentBtn{
 .pageName{
     margin-top: 25px;
 }
+
+.error{
+    border: 1px solid red;
+}
+
