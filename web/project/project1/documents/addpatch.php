@@ -38,17 +38,15 @@ if(count($_POST) > 0)
                 //patching
                 foreach($newPatchSchID as $id)
                 {
-                    echo "test1";
+
                     $statementPatching = $db->query("SELECT * FROM Computers;");
                     $resultsPatching= $statementPatching->fetchAll(PDO::FETCH_ASSOC);
 
                     foreach($resultsPatching as $serverPatch)
                     {
-                        echo $id['computers_id'];
-                        echo "test5";
+
                         if(in_array($serverPatch['id'],$_POST["servers"]))
                         {
-echo "test6";
                             $statement = $db->query("SELECT * FROM Patching WHERE
                             PatchSchedlue_id ='".$id["id"]."'
                             AND Computers_id='".$serverPatch[id]."';");
@@ -63,7 +61,7 @@ echo "test6";
                         }
                         else
                         {
-                            echo "test9";
+
                             $statement = $db->query("SELECT * FROM Patching WHERE
                             PatchSchedlue_id ='".$_POST["patchID"]."'
                             AND Computers_id='".$id["id"]."';");
@@ -81,7 +79,7 @@ echo "test6";
                     }
                 }
 
-              //  header("Location:patching.php");
+                header("Location:patching.php");
                 break;
             case "delete":
 
