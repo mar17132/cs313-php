@@ -8,18 +8,18 @@ include "documents/header-index.php";
         <div class="content">
             <h3>Upcoming Patches</h3>
             <div class="table-div">
-                <ul class="table-row">
-                    <li class="table-cell">
+                <ul class="table-row row">
+                    <li class="table-cell col">
                         <div class="table-cell-head-content">
                             Name
                         </div>
                     </li>
-                    <li class="table-cell">
+                    <li class="table-cell col">
                         <div class="table-cell-head-content">
                             Date
                         </div>
                     </li>
-                    <li class="table-cell">
+                    <li class="table-cell col">
                         <div class="table-cell-head-content">
                             Time
                         </div>
@@ -48,24 +48,24 @@ include "documents/header-index.php";
             {
                 foreach($result as $row)
                 {
-                    echo "<ul class='table-row'>";
+                    echo "<ul class='table-row row'>";
 
                     //Name
-                    echo "<li class='table-cell'>";
+                    echo "<li class='table-cell col'>";
                     echo "<div class='table-cell-content'>";
                     echo $row[name];
                     echo "</div>";
                     echo "</li>\r\n";
 
                     //Date
-                    echo "<li class='table-cell'>";
+                    echo "<li class='table-cell col'>";
                     echo "<div class='table-cell-content'>";
                     echo $row[patchdate];
                     echo "</div>";
                     echo "</li>\r\n";
 
                     //Time
-                    echo "<li class='table-cell'>";
+                    echo "<li class='table-cell col'>";
                     echo "<div class='table-cell-content'>";
                     echo $row[patchtime];
                     echo "</div>";
@@ -82,7 +82,7 @@ include "documents/header-index.php";
             }
             else
             {
-                echo "<ul class='table-row'><li class='table-cell'>
+                echo "<ul class='table-row row'><li class='table-cell col'>
                      <div class='table-cell-content'>";
                 echo "No current Patch Cycles";
                 echo "</div></li></ul>";

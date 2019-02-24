@@ -17,7 +17,6 @@
 
                                 <?php
 
-                            print_r($_POST);
                                 if(isset($_POST['serverID']))
                                 {
                                    echo "<input type='button' class='contentButtons buttonVisible' />
