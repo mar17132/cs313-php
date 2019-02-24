@@ -6,7 +6,7 @@ include "documents/header-index.php";
 
 
         <div class="content">
-            <h3>Upcoming Patches</h3>
+            <h3 class="pageName">Upcoming Patches</h3>
             <div class="table-div">
                 <ul class="table-row row">
                     <li class="table-cell col">
