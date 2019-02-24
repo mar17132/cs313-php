@@ -78,7 +78,7 @@ if(count($_POST) > 0)
     }
     else
     {
-        echo "test";
+
         $pageTitle = "Edit Patch";
         $patchID = $_POST["patchid"];
     }
@@ -103,7 +103,7 @@ if(isset($patchID))
                                 JOIN PatchSchedlue
                                 ON PatchSchedlue.ID = Patching.PatchSchedlue_id
                                 WHERE PatchSchedlue.PatchCycle_ID ='$patchID';");
-    $serverArray = $statementPatch->fetchAll(PDO::FETCH_ASSOC);
+    $serverArray = $statementServer->fetchAll(PDO::FETCH_ASSOC);
 }
 
 
