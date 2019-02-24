@@ -10,7 +10,7 @@ var showingYear; //this the year of the current showing month
 var monthsObj; //an object with varibles and function related to month
 var calendarElm;
 var daysInWeek = 7;
-
+var jsonPHPString;
 var appointmentObj; //this will contain the json from the db
 
 
