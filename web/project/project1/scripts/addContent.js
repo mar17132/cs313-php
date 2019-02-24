@@ -2,6 +2,8 @@ var selectChk;
 var addContentBtn;
 var dateTxt;
 var timeTxt;
+var patchname;
+var nameBool;
 var timeBool;
 var dateBool;
 
@@ -23,8 +25,29 @@ $(document).ready(function(){
     addContentBtn = $(".addContentBtn");
     dateTxt = $("#patchDateTxt");
     timeTxt = $("#patchTimeTxt");
+    patchname = $("#patchnameTxt");
     timeBool = false;
     dateBool = false;
+    nameBool = false;
+
+    patchname.on("input",function(){
+
+        if($(this).val() != "")
+        {
+            nameBool = true;
+            $(this).removeClass("error");
+            if(dateBool == true && timeBool == true && nameBool == true)
+            {
+                addContentBtn.prop('disabled',false);
+            }
+        }
+        else
+        {
+            $(this).addClass("error");
+            dateBool = false;
+            addContentBtn.prop('disabled',true);
+        }
+    });
 
 
     dateTxt.on("input",function(){
@@ -34,7 +57,7 @@ $(document).ready(function(){
         {
             dateBool = true;
             $(this).removeClass("error");
-            if(dateBool == true && timeBool == true)
+            if(dateBool == true && timeBool == true && nameBool == true)
             {
                 addContentBtn.prop('disabled',false);
             }
@@ -49,24 +72,24 @@ $(document).ready(function(){
     });
 
 
-    timeTxt.on("keyup",function(){
+    timeTxt.on("input",function(){
 
         reg = /^[0-9]{2}:[0-9]{2}:[0-9]{2}$/
 
         if(reg.test($(this).val()))
         {
-            timeBool = true;
+            dateBool = true;
             $(this).removeClass("error");
-            if(dateBool == true && timeBool == true)
+            if(dateBool == true && timeBool == true && nameBool == true)
             {
-                addContentBtn.attr('disabled',true);
+                addContentBtn.prop('disabled',false);
             }
         }
         else
         {
             $(this).addClass("error");
-            timeBool = false;
-            addContentBtn.attr('disabled',false);
+            dateBool = false;
+            addContentBtn.prop('disabled',true);
         }
     });
 
