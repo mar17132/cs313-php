@@ -72,26 +72,6 @@
                             Name
                         </div>
                     </li>
-                    <li class="table-cell col <?php
-                              if(!(isset($_GET['patchID']) || isset($_POST['patchID'])))
-                              {
-                                  echo "hidden";
-                              }
-                              ?>">
-                        <div class="table-cell-head-content">
-                            Date
-                        </div>
-                    </li>
-                    <li class="table-cell col <?php
-                              if(!(isset($_GET['patchID']) || isset($_POST['patchID'])))
-                              {
-                                  echo "hidden";
-                              }
-                              ?>">
-                        <div class="table-cell-head-content">
-                            Time
-                        </div>
-                    </li>
                     <li class="table-cell col">
                         <div class="table-cell-head-content">
                             Notes
@@ -108,6 +88,8 @@
 
             $statement = null;
             $result = null;
+            $statementSch = null;
+            $resultSch = null;
             $statementServer = null;
             $resultServer = null;
 
@@ -121,6 +103,9 @@
                                 PatchSchedlue.PatchCycle_ID = PatchCycle.ID
                                 WHERE PatchCycle.ID = '".$_GET['patchID']."';");
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+               // $statementSch = $db->query("SELECT * FROM PatchSchedlue WHERE ID ='".$_GET['patchID']."';");
+               // $resultSch = $statement->fetchAll(PDO::FETCH_ASSOC);
 
                 $statementServer = $db->query("SELECT DISTINCT Computers.ID, Computers.Name
                                             FROM Patching
@@ -141,6 +126,9 @@
                                 PatchSchedlue.PatchCycle_ID = PatchCycle.ID
                                 WHERE PatchCycle.ID = '".$_GET['patchID']."';");
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+                //$statementSch = $db->query("SELECT * FROM PatchSchedlue WHERE ID ='".$_POST['patchID']."';");
+               // $resultSch = $statement->fetchAll(PDO::FETCH_ASSOC);
 
                 $statementServer = $db->query("SELECT DISTINCT Computers.ID, Computers.Name
                                             FROM Patching
@@ -184,24 +172,11 @@
                     echo "</li>\r\n";
 
                     //date
-                    if(isset($_GET['patchID']) || isset($_POST['patchID']))
-                    {
-                        echo "<li class='table-cell  col'>";
-                        echo "<div class='table-cell-content'>";
-                        echo empty($row[patchdate]) ? "&nbsp;" : $row[patchdate] ;
-                        echo "</div>";
-                        echo "</li>\r\n";
-                    }
-
-                    //time
-                    if(isset($_GET['patchID']) || isset($_POST['patchID']))
-                    {
-                        echo "<li class='table-cell  col'>";
-                        echo "<div class='table-cell-content'>";
-                        echo empty($row[patchtime]) ? "&nbsp;" : $row[patchtime] ;
-                        echo "</div>";
-                        echo "</li>\r\n";
-                    }
+                    echo "<li class='table-cell  col'>";
+                    echo "<div class='table-cell-content'>";
+                    echo empty($row[note]) ? "&nbsp;" : $row[note] ;
+                    echo "</div>";
+                    echo "</li>\r\n";
 
                     //Notes
                     echo "<li class='table-cell  col'>";
