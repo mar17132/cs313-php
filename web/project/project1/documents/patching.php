@@ -129,7 +129,7 @@
                                             JOIN PatchSchedlue ON
                                             PatchSchedlue.ID = Patching.PatchSchedlue_id
                                             WHERE PatchSchedlue.PatchCycle_ID ='".$_GET['patchID']."';");
-                $resultServer = $statement->fetchAll(PDO::FETCH_ASSOC);
+                $resultServer = $statementServer->fetchAll(PDO::FETCH_ASSOC);
             }
             elseif(isset($_POST['patchID']))
             {
@@ -149,7 +149,7 @@
                                             JOIN PatchSchedlue ON
                                             PatchSchedlue.ID = Patching.PatchSchedlue_id
                                             WHERE PatchSchedlue.PatchCycle_ID ='".$_POST['patchID']."';");
-                $resultServer = $statement->fetchAll(PDO::FETCH_ASSOC);
+                $resultServer = $statementServer->fetchAll(PDO::FETCH_ASSOC);
             }
             else
             {
@@ -246,6 +246,8 @@
         </div>
 <form method="post" action="servers.php">
         <?php
+
+    print_r($resultServer);
             if(count($resultServer) > 0)
             {
                 echo "<div class='table-div'>";
