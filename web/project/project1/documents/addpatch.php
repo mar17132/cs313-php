@@ -43,12 +43,12 @@ if(count($_POST) > 0)
 
                     foreach($resultsPatching as $serverPatch)
                     {
-                        if(in_array($id['computers_id'],$_POST['servers']))
+                        if(in_array($id['computers_id'],$_POST["servers"]))
                         {
 
                             $statement = $db->query("SELECT * FROM Patching WHERE
                             PatchSchedlue_id ='".$_POST["patchID"]."'
-                            AND Computers_id='$serverPatch[id]';");
+                            AND Computers_id='".$serverPatch[id]."';");
                             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
                             if(count($results) == 0)

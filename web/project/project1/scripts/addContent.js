@@ -111,5 +111,9 @@ $(document).ready(function(){
     });
 
 
+    timeTxt.trigger("input");
+    dateTxt.trigger("input");
+    patchname.trigger("input");
+
 });
 
