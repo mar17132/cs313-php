@@ -78,7 +78,7 @@ $(document).ready(function(){
 
         if(reg.test($(this).val()))
         {
-            dateBool = true;
+            timeBool = true;
             $(this).removeClass("error");
             if(dateBool == true && timeBool == true && nameBool == true)
             {
@@ -88,7 +88,7 @@ $(document).ready(function(){
         else
         {
             $(this).addClass("error");
-            dateBool = false;
+            timeBool = false;
             addContentBtn.prop('disabled',true);
         }
     });
