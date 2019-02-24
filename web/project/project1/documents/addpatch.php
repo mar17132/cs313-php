@@ -114,6 +114,7 @@ if(isset($patchID))
 <?php include "header-docs.php"; ?>
 
         <div class="content">
+            <div class="addContent-div">
             <h3 class="pageName"><?php echo $pageTitle; ?></h3>
             <form method="post" action="addpatch.php">
                 <ul class="addContent-ul">
@@ -158,12 +159,12 @@ if(isset($patchID))
                                       ?>"/>
                     </li>
                     <li class="addContent-li">
-                        <label>Patches</label>
+                        <label>Servers</label>
                         <div>
                             <ul class="addContent-ul">
                                 <?php
 
-                                foreach($db->query("SELECT * FROM Computer;") as $row)
+                                foreach($db->query("SELECT * FROM Computers;") as $row)
                                 {
                                     echo "<li class='addContent-li' >";
                                     echo "<input value='$row[id]'
@@ -222,6 +223,7 @@ if(isset($patchID))
                 ?>
                 </div>
             </form>
+            </div>
         </div>
 
         <div class="footer">
