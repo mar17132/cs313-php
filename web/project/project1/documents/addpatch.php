@@ -109,6 +109,8 @@ if(isset($patchID))
                                 ON PatchSchedlue.ID = Patching.PatchSchedlue_id
                                 WHERE PatchSchedlue.PatchCycle_ID ='$patchID';");
     $serverArray = $statementServer->fetchAll(PDO::FETCH_ASSOC);
+
+    print_r($patchCyclesArray);
 }
 
 
