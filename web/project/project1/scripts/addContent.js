@@ -15,21 +15,6 @@ function enableAllCheck(elem)
     elem.prop("disabled",false);
 }
 
-selectChk.on("click",function(){
-
-
-    if($(this).is(":checked"))
-    {
-        disableAllCheck(selectChk);
-        $(this).prop("disabled",false);
-    }
-    else
-    {
-        enableAllCheck(selectChk);
-    }
-
-
-});
 
 
 
@@ -83,6 +68,23 @@ $(document).ready(function(){
             timeBool = false;
             addContentBtn.attr('disabled',false);
         }
+    });
+
+
+    selectChk.on("click",function(){
+
+
+        if($(this).is(":checked"))
+        {
+            disableAllCheck(selectChk);
+            $(this).prop("disabled",false);
+        }
+        else
+        {
+            enableAllCheck(selectChk);
+        }
+
+
     });
 
 
