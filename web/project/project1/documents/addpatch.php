@@ -143,12 +143,18 @@ if(isset($patchID))
                                       ?>"/>
                     </li>
                     <li class="addContent-li">
+                        <label>Date</label>
+                    </li>
+                    <li class="addContent-li">
                         <input type="text" placeholder="YYYY-MM-DD" id="patchDateTxt"
                                name="patchDateTxt"
                                value="<?php
                                        echo isset($patchCyclesArray)
                                            ? $patchCyclesArray[0]['patchdate'] : "";
                                       ?>"/>
+                    </li>
+                    <li class="addContent-li">
+                        <label>Time</label>
                     </li>
                     <li class="addContent-li">
                         <input type="text" placeholder="HH:MM:SS" id="patchDateTxt"
