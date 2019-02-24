@@ -47,7 +47,7 @@ if(count($_POST) > 0)
                         echo $id['computers_id'];
                         print_r($id);
                         echo "test5";
-                        if(in_array($id['computers_id'],$_POST["servers"]))
+                        if(in_array($serverPatch['id'],$_POST["servers"]))
                         {
 echo "test6";
                             $statement = $db->query("SELECT * FROM Patching WHERE
