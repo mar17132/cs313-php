@@ -48,7 +48,12 @@
                         </div>
                     </li>
                     <li class="table-cell col">
-                        <div class="table-cell-content">
+                        <div class="table-cell-content <?php
+                              if(isset($_GET['patchID']) || isset($_POST['patchID']))
+                              {
+                                  echo "patchingBtn";
+                              }
+                              ?>">
 
                         <input type="submit" class="contentButtons"  value="Edit Patch" />
 
@@ -247,7 +252,6 @@
 <form method="post" action="servers.php">
         <?php
 
-    print_r($resultServer);
             if(count($resultServer) > 0)
             {
                 echo "<div class='table-div'>";
@@ -261,7 +265,7 @@
                         </div>
                     </li>\r\n
                     <li class='table-cell col'>
-                        <div class='table-cell-content'>
+                        <div class='table-cell-content patchingBtn'>
                         <input type='submit' class='contentButtons'  value='View Computer' />
                         </div>
                     </li>\r\n
