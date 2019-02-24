@@ -8,16 +8,39 @@
 <?php include "header-docs.php"; ?>
 
         <div class="content">
-            <h3>Patche Cycles</h3>
+
             <form method="post" action="addpatch.php">
             <div class="table-div">
+                <h3>Patche Cycles</h3>
                 <ul class="table-row row">
                     <li class="table-cell col">
                         <div class="table-cell-content">
-                           <input type="button" class="contentButtons buttonVisible" />
+                              <?php
+                                if(isset($_POST['patchID']))
+                                {
+                                   echo "<input type='button' class='contentButtons buttonVisible' />
+                                   <input type='hidden' value='".$_POST['patchID']."' name='patchID' />";
+                                }
+                                elseif(isset($_GET['patchID']))
+                                {
+                                   echo "<input type='button' class='contentButtons buttonVisible' />
+                                   <input type='hidden' value='".$_GET['patchID']."' name='patchid' />";
+                                }
+                                else
+                                {
+                                    echo "<a href='patching.php' id='viewSelected' class='addContent'>
+                                    <input type='button' class='contentButtons' value='View Server' /></a>";
+                                }
+
+                                ?>
                         </div>
                     </li>
-                    <li class="table-cell col">
+                    <li class="table-cell col <?php
+                              if(isset($_GET['patchID']) || isset($_POST['patchID']))
+                              {
+                                  echo "hidden";
+                              }
+                              ?>">
                         <div class="table-cell-content">
                            <a href="addpatch.php" class="addContent">
                                 <input type="button" class="contentButtons"  value="Add Patch" />
@@ -34,7 +57,12 @@
                 </ul>
 
                 <ul class="table-row row">
-                    <li class="table-cell col">
+                    <li class="table-cell col <?php
+                              if(isset($_GET['patchID']) || isset($_POST['patchID']))
+                              {
+                                  echo "hidden";
+                              }
+                              ?>">
                         <div class="table-cell-head-content">
                             Select
                         </div>
@@ -58,18 +86,58 @@
 
             <?php
 
-            $statement = "";
-            $result = "";
+            $statement = null;
+            $result = null;
+            $statementSch = null;
+            $resultSch = null;
+            $statementServer = null;
+            $resultServer = null;
 
             if(isset($_GET['patchID']))
             {
-                $statement = $db->query("SELECT * FROM PatchCycle WHERE ID ='".$_GET['patchID']."';");
+                $statement = $db->query("SELECT PatchSchedlue.ID AS scheduleID,
+                                PatchSchedlue.patchdate,PatchSchedlue.patchtime,
+                                PatchCycle.Name,PatchCycle.ID AS id,PatchCycle.note
+                                FROM PatchSchedlue
+                                JOIN PatchCycle ON
+                                PatchSchedlue.PatchCycle_ID = PatchCycle.ID
+                                WHERE PatchCycle.ID = '".$_GET['patchID']."';");
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+               // $statementSch = $db->query("SELECT * FROM PatchSchedlue WHERE ID ='".$_GET['patchID']."';");
+               // $resultSch = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+                $statementServer = $db->query("SELECT DISTINCT Computers.ID, Computers.Name
+                                            FROM Patching
+                                            JOIN Computers ON
+                                            Computers.ID = Patching.Computers_id
+                                            JOIN PatchSchedlue ON
+                                            PatchSchedlue.ID = Patching.PatchSchedlue_id
+                                            WHERE PatchSchedlue.PatchCycle_ID ='".$_GET['patchID']."';");
+                $resultServer = $statement->fetchAll(PDO::FETCH_ASSOC);
             }
             elseif(isset($_POST['patchID']))
             {
-                $statement = $db->query("SELECT * FROM PatchCycle WHERE ID ='".$_POST['patchID']."';");
+                $statement = $db->query("SELECT PatchSchedlue.ID AS scheduleID,
+                                PatchSchedlue.patchdate,PatchSchedlue.patchtime,
+                                PatchCycle.Name,PatchCycle.ID AS id,PatchCycle.note
+                                FROM PatchSchedlue
+                                JOIN PatchCycle ON
+                                PatchSchedlue.PatchCycle_ID = PatchCycle.ID
+                                WHERE PatchCycle.ID = '".$_GET['patchID']."';");
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+                //$statementSch = $db->query("SELECT * FROM PatchSchedlue WHERE ID ='".$_POST['patchID']."';");
+               // $resultSch = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+                $statementServer = $db->query("SELECT DISTINCT Computers.ID, Computers.Name
+                                            FROM Patching
+                                            JOIN Computers ON
+                                            Computers.ID = Patching.Computers_id
+                                            JOIN PatchSchedlue ON
+                                            PatchSchedlue.ID = Patching.PatchSchedlue_id
+                                            WHERE PatchSchedlue.PatchCycle_ID ='".$_POST['patchID']."';");
+                $resultServer = $statement->fetchAll(PDO::FETCH_ASSOC);
             }
             else
             {
@@ -84,14 +152,17 @@
                 {
                     echo "<ul class='table-row row'>";
 
-                                        //Select
-                    echo "<li class='table-cell  col'>";
-                    echo "<div class='table-cell-content'>";
-                    echo "<input type='checkbox' name='patchid' class='selectValueChk' value='";
-                    echo $row[id];
-                    echo "'/>";
-                    echo "</div>";
-                    echo "</li>\r\n";
+                    if(!(isset($_GET['patchID']) || isset($_POST['patchID'])))
+                    {
+                        //Select
+                        echo "<li class='table-cell  col'>";
+                        echo "<div class='table-cell-content'>";
+                        echo "<input type='checkbox' name='patchid' class='selectValueChk' value='";
+                        echo $row[id];
+                        echo "'/>";
+                        echo "</div>";
+                        echo "</li>\r\n";
+                    }
 
                     //Name
                     echo "<li class='table-cell  col'>";
@@ -100,10 +171,17 @@
                     echo "</div>";
                     echo "</li>\r\n";
 
+                    //date
+                    echo "<li class='table-cell  col'>";
+                    echo "<div class='table-cell-content'>";
+                    echo empty($row[note]) ? "&nbsp;" : $row[note] ;
+                    echo "</div>";
+                    echo "</li>\r\n";
+
                     //Notes
                     echo "<li class='table-cell  col'>";
                     echo "<div class='table-cell-content'>";
-                    echo empty($row[notes]) ? "&nbsp;" : $row[notes] ;
+                    echo empty($row[note]) ? "&nbsp;" : $row[note] ;
                     echo "</div>";
                     echo "</li>\r\n";
 
@@ -139,7 +217,72 @@
 
             </div>
         </form>
+
         </div>
+<form method="post" action="servers.php">
+        <?php
+            if(count($patchResults) > 0)
+            {
+                echo "<div class='table-div'>";
+                echo "<h3>Current Servers</h3>";
+
+                echo " <div class='table-div'>
+                <ul class='table-row row'>
+                    <li class='table-cell col'>
+                        <div class='table-cell-content'>
+                           <input type='button' class='contentButtons buttonVisible' />
+                        </div>
+                    </li>\r\n
+                    <li class='table-cell col'>
+                        <div class='table-cell-content'>
+                        <input type='submit' class='contentButtons'  value='View Computer' />
+                        </div>
+                    </li>\r\n
+                </ul>";
+
+                echo " <ul class='table-row row'>
+                    <li class='table-cell col'>
+                        <div class='table-cell-head-content'>
+                            Select
+                        </div>
+                    </li>\r\n
+                    <li class='table-cell col'>
+                        <div class='table-cell-head-content'>
+                            Name
+                        </div>
+                    </li>\r\n
+                </ul>";
+
+                foreach($resultServer as $row)
+                {
+                    echo "<ul class='table-row row'>";
+
+                    //Select
+                    echo "<li class='table-cell col'>";
+                    echo "<div class='table-cell-content'>";
+                    echo "<input type='checkbox' name='serverid' class='selectValueChk' value='";
+                    echo $row[id];
+                    echo "'/>";
+                    echo "</div>";
+                    echo "</li>\r\n";
+
+                    //Name
+                    echo "<li class='table-cell col'>";
+                    echo "<div class='table-cell-content'>";
+                    echo $row[name];
+                    echo "</div>";
+                    echo "</li>\r\n";
+
+                    echo "</ul>";
+                }
+                echo "</div>";
+            }
+
+            ?>
+
+</form>
+
+
 
         <div class="footer">
 
